@@ -1,4 +1,20 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Starter kit to build static blog with Next, TS and markdown
+
+- `getStaticPath` and `getStaticProps` util functions and `fs` module to get path and read files
+- `gray-matter` module for reading content inside
+- `react-markdown` to render markdown content
+- `rehype-raw` to write html inside markdown if needed
+- `classnames` for `cn()` syntax
+- uses CSS modules for styling
+
+
+## Do not forget
+
+- `/data` for md
+- `/models` for content interfaces
+
+
+Common instructions from Next.js ⬇️
 
 ## Getting Started
 
