@@ -1,4 +1,5 @@
 # IMHR.top next + ts version
+# IMHR.top next + ts version
 
 - `getStaticPath` and `getStaticProps` util functions and `fs` module to get path and read files
 - `gray-matter` module for reading content inside
@@ -11,6 +12,8 @@
 
 - `/data` for md
 - `/models` for content interfaces
+
+## HTML, CSS and initial content source
 
 ## HTML, CSS and initial content source
 
