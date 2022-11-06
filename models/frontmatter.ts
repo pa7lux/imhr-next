@@ -1,9 +1,9 @@
 interface Frontmatter {
   title: string;
-  description: string;
-  author?: string;
+  author: string;
   updatedAt?: string;
   createdAt?: string;
+  theme: string;
 }
 
 export default Frontmatter;

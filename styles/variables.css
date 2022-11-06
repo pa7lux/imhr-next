@@ -1,0 +1,34 @@
+@import url('./fonts.css');
+
+.theme-turquoise {
+  --accent-color: #98E2DB;
+}
+
+.theme-red {
+  --accent-color: #F0716A;
+}
+
+.theme-blue {
+  --accent-color: #76BAF9;
+}
+
+.theme-purple {
+  --accent-color: #AE8BF4;
+}
+
+.theme-pink {
+  --accent-color: #F49ABE;
+}
+
+.theme-yellow {
+  --accent-color: #F2E369;
+}
+
+.theme-orange {
+  --accent-color: #F49F67;
+}
+
+.theme-green {
+  --accent-color: #99E1A2;
+}
+

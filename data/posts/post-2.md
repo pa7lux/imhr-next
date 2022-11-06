@@ -1,8 +1,9 @@
 ---
-title: "Заголовок поста 2"
-description: "Краткое описание"
+title: 'Заголовок поста 2'
+description: 'Краткое описание'
 updatedAt: 2022-11-03
-author: "Саша Патлух"
+author: 'Саша Патлух'
+theme: 'theme-turquoise'
 ---
 
 # Маркдаун

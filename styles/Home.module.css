@@ -1,21 +1,239 @@
-.main {
-  width: 80%;
-  margin: auto;
+.cover {
+  aspect-ratio: 1366/600;
+  position: relative;
+  margin-top: calc(2.5*var(--size-unit));
+  border-radius: var(--radius-main);
 }
 
-.card-list {
+@media screen and (max-width: 600px) {
+  .cover {
+    aspect-ratio: 1/1;
+  }
+}
+
+.cover::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: calc(100% - 2px);
+  background-image: linear-gradient(194deg, rgba(0, 0, 0, 0) 41%, rgba(0, 0, 0, 0.8) 90%);
+  border-radius: var(--radius-main);
+}
+
+.cover_image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: var(--radius-main);
+  
+}
+
+.heading_box {
+  z-index: 2;
+  color: #fff;
+  position: absolute;
+  left: 4.8%;
+  bottom: 10%;
+}
+
+@media screen and (max-width: 600px) {
+  .heading-box {
+    left: 1rem;
+    bottom: 7%;
+  }
+}
+
+.cover_title {
+  margin-bottom: var(--size-unit);
+  position: relative;
+  width: fit-content;
+  margin-left: -0.08em;
+  color: white;
+}
+
+.cover_title::after {
+  content: '';
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 214 217'%3E%3Cpath stroke='%2376BAF9' stroke-linecap='round' stroke-width='6' d='M3 5.98394c30.1212-4.52269 48.4793-4.80073 71.6676 5.52786C100.416 22.9807 122.087 52.3135 119.33 81.3631c-2.02 21.2809-10.78 39.7529-31.1598 44.2219-28.1627 6.177-37.131-18.911-31.1599-37.6891 5.2732-16.5834 23.5629-30.2704 37.3918-35.1769 48.6829-17.273 90.3639-4.5228 109.0589 37.187 15.837 35.33 2.597 82.415-36.353 118.094'/%3E%3Cpath stroke='%2376BAF9' stroke-linecap='round' stroke-width='6' d='M166.979 176.326c-1.641 7.791-.991 22.096-2.653 29.985-1.106 5.251 8.537 3.653 8.537 3.653l27.247-4.938'/%3E%3C/svg%3E");
+  width: 37.6%;
+  height: 213.8%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: .6em;
+  right: 0;
+  transform: translateX(calc(100% + var(--size-unit)));
+}
+
+@media screen and (max-width: 600px) {
+  .cover-title::after {
+    content: none;
+  }
+}
+
+.cover_subheading {
+  opacity: 0.8;
+  color: white;;
+}
+
+.stories {
+  padding-top: calc(4 * var(--size-unit));
+}
+
+.stories_list {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: calc(2 * var(--size-unit));
+  list-style: none;
 }
 
-.card {
-  background-color: #fff;
-  color: #000;
-  border-radius: 18px;
-  padding: 20px;
+@media screen and (max-width: 600px) {
+  .stories_list {
+    grid-template-columns: 1fr;
+    gap: calc(1.5 * var(--size-unit));
+  }
 }
 
-.card:hover {
-  transform: scale(1.01);
+
+
+/* ////////////////////////////
+// СВГ анимашки /////////////*/
+
+.svg {
+  position: absolute;
+  height: 100%;
+  z-index: 0;
+}
+
+
+/* Сердечко */
+
+.svg.svg_heart {
+  width: 50%;
+  right: -3%;
+  bottom: -12%;
+}
+
+.svg path {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+}
+
+.svg.svg_heart path:first-child {
+  animation-duration: 1s;
+}
+
+.svg.svg_heart path:not(:first-child) {
+  animation-duration: 3s;
+  animation-delay: .3s;
+}
+
+.svg.svg_heart path:first-child {
+  animation-duration: 1s;
+}
+
+
+/* рюкзак */
+
+.svg.svg_bag {
+  width: 45%;
+  right: 3%;
+  bottom: -12%;
+}
+
+.svg.svg_bag path:not(:first-child) {
+  animation-duration: 3s;
+  animation-delay: .3s;
+}
+
+.svg.svg_bag path:first-child {
+  animation-duration: 1s;
+}
+
+/* греча */
+
+.svg.svg_grecha {
+  width: 38%;
+  right: 5%;
+  bottom: -15%;
+}
+
+.svg.svg_grecha path {
+  animation-duration: 1.2s;
+}
+
+/* Z-Z-Z */
+
+.svg.svg_zzz {
+  width: 38%;
+  height: 40%;
+  top: -9%;
+  right: 16%;
+}
+
+.svg.svg_zzz path {
+  animation-duration: 2s;
+}
+
+.svg.svg_zzz path:nth-child(2) {
+  animation-delay: .15s;
+}
+
+.svg.svg_zzz path:nth-child(3) {
+  animation-delay: .3s;
+}
+
+.story_link:hover .svg path {
+  animation-name: svgAnimation;
+}
+
+/* telegram  */
+
+.svg.svg_telegram {
+  bottom: -34%;
+  left: 8%;
+  width: 90%;
+  height: 100%;
+}
+
+.svg.svg_telegram path:nth-child(1) {
+  stroke-dasharray: 0;
+  stroke-dashoffset: 0;
+}
+
+.svg.svg_telegram path:nth-child(2) {
+  stroke-dasharray: 530 40;
+  stroke-dashoffset: 0;
+  animation-duration: 2s;
+}
+
+.story_link:hover .svg_telegram path:nth-child(2) {
+  animation-name: svgAnimationTelegram;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@media screen and (max-width: 600px) {
+  .svg.svg_telegram {
+    left: 36%;
+    width: 60%;
+  }
+}
+
+
+
+@keyframes svgAnimation {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes svgAnimationTelegram {
+  to {
+    stroke-dashoffset:  1140;
+  }
 }

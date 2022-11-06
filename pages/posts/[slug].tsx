@@ -7,7 +7,7 @@ import ReactMarkdown from 'react-markdown';
 import rehypeRaw from 'rehype-raw';
 import PostStyles from '../../styles/Post.module.css';
 
-const PostPage: NextPage<Post> = ({ slug, content, frontmatter }: Post) => {
+const PostPage: NextPage<Post> = ({ slug, content, frontmatter }) => {
   return (
     <>
       <article className={cn(PostStyles.article)}>
