@@ -27,6 +27,10 @@
   transform: translateY(-50%) scaleX(1.2);
 }
 
+.story_link:hover .svg path {
+  animation-name: svgAnimation;
+}
+
 .story_card {
   position: relative;
   width: 100%;
@@ -102,7 +106,7 @@
 .svg {
   position: absolute;
   height: 100%;
-  z-index: 9999;
+  z-index: 0;
 }
 
 .svg path {
