@@ -38,7 +38,7 @@ const Home: NextPage<HomeProps> = ({ posts }) => {
       <section className={cn(HomeStyles.stories)}>
         <ul className={cn(HomeStyles.stories_list)}>
           {posts.map((item: Post) => {
-            return <Story title={item.frontmatter.title} author={item.frontmatter.author} theme={item.frontmatter.theme} slug={item.slug} />
+            return <Story title={item.frontmatter.title} author={item.frontmatter.author} theme={item.frontmatter.theme} slug={item.slug} key={item.slug} />
           })}
           <SendStory />
         </ul>

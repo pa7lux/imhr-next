@@ -27,23 +27,6 @@
   transform: translateY(-50%) scaleX(1.2);
 }
 
-.telegram_link {
-  background-color: var(--accent-color);
-  position: relative;
-}
-
-.telegram_link .story_graphics {
-  overflow: visible;
-}
-
-@media screen and (max-width: 600px) {
-  .telegram-link::after {
-    width: 60%;
-    left: initial;
-    right: 0;
-  }
-}
-
 .story_card {
   position: relative;
   width: 100%;
@@ -116,8 +99,17 @@
   }
 }
 
-.telegram_link .story_info::before {
-  content: none;
+.svg {
+  position: absolute;
+  height: 100%;
+  z-index: 9999;
+}
+
+.svg path {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
 }
 
 .svg.svg_bag {
@@ -133,4 +125,10 @@
 
 .svg.svg_bag path:first-child {
   animation-duration: 1s;
+}
+
+@keyframes svgAnimation {
+  to {
+    stroke-dashoffset: 0;
+  }
 }

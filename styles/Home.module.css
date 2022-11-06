@@ -139,21 +139,6 @@
 
 /* рюкзак */
 
-.svg.svg_bag {
-  width: 45%;
-  right: 3%;
-  bottom: -12%;
-}
-
-.svg.svg_bag path:not(:first-child) {
-  animation-duration: 3s;
-  animation-delay: .3s;
-}
-
-.svg.svg_bag path:first-child {
-  animation-duration: 1s;
-}
-
 /* греча */
 
 .svg.svg_grecha {
