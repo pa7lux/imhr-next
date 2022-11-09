@@ -3,6 +3,7 @@ title: "Заголовок поста"
 description: "Краткое описание"
 updatedAt: 2022-11-03
 author: "Саша Патлух"
+theme: "theme-turquoise"
 ---
 
 # Маркдаун

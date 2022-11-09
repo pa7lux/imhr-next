@@ -4,12 +4,14 @@ import cn from 'classnames';
 import LayoutStyles from './Layout.module.css';
 
 import { Header } from '../Header/Header';
+import Footer from '../Footer/Footer';
 
 export const Layout: NextPage<{ children: ReactNode }> = ({ children }) => {
   return (
     <>
-      <Header title="На главную" />
-      <main className={cn(LayoutStyles.main)}>{children}</main>
+      <Header />
+      <main>{children}</main>
+      <Footer />
     </>
   );
 };
