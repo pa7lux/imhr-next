@@ -2,6 +2,7 @@
   display: flex;
   align-items: center;
   gap: 15px;
+  align-self: center;
 }
 
 
@@ -31,29 +32,32 @@
 
 .swiper_button_next,
 .swiper_button_prev {
-  width: 12.8%;
+  /* width: 12.8%;
   height: calc(100% - 2em);
-  top: calc(50% - 2em);
+  top: calc(50% - 2em); */
   margin-top: 0;
   border: none;
   background-color: transparent;
   transform: translateY(-50%);
-  font-size: var(--text-caption);
+  /* font-size: var(--text-caption); */
+  cursor: pointer;
+  position: relative;
+  z-index: 9999;
 }
 
 .swiper_button_next {
-  right: var(--right-arrow-shift);
+  right: 50px;
 }
 
 .swiper_button_prev {
-  left: var(--left-arrow-shift);
+  left: 50px;
 }
 
 .swiper_button_next::after,
 .swiper_button_prev::after {
   position: absolute;
   content: "";
-  width: 0.8em;
+  width: 4em;
   height: 100%;
   background-repeat: no-repeat;
   background-position: center;
@@ -64,12 +68,17 @@
 
 .swiper_button_prev::after {
   background-image: url(../../public/images/icons/prev.svg);
+  background-size: 40px;
   transform: translateX(-4px);
+
+  right: 35px;
 }
 
 .swiper_button_next::after {
   background-image: url(../../public/images/icons/next.svg);
   transform: translateX(4px);
+  background-size: 40px;
+  right: 35px;
 }
 
 .swiper_form  {

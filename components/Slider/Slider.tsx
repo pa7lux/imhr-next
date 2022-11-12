@@ -7,7 +7,7 @@ import SwiperCore, { Navigation, Pagination } from 'swiper';
 import 'swiper/css'
 import 'swiper/swiper-bundle.css';
 
-SwiperCore.use([Navigation, Pagination]);
+
 
 import SliderStyles from './Slider.module.css'
 
@@ -22,6 +22,7 @@ const Slider: NextPage<Props> = ({ photos }) => {
 
     const navigationPrevRef = useRef<HTMLButtonElement>(null)
     const navigationNextRef = useRef<HTMLButtonElement>(null)
+    SwiperCore.use([Navigation, Pagination]);
 
     return (
         <div className={SliderStyles.slider_component}>
@@ -31,9 +32,9 @@ const Slider: NextPage<Props> = ({ photos }) => {
                 </svg>
             </button>
             <Swiper
-                navigation={{
-                    prevEl: navigationPrevRef.current!,
-                    nextEl: navigationNextRef.current!
+                 navigation={{
+                    prevEl: navigationPrevRef.current,
+                    nextEl: navigationNextRef.current,
                 }}
                 onSlideChange={() => console.log('slide change')}
                 onSwiper={(swiper) => console.log(swiper)}
@@ -41,16 +42,12 @@ const Slider: NextPage<Props> = ({ photos }) => {
                 pagination
                 className={SliderStyles.slider}
                 loop
-                onInit={(swiper) => {
-                    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-                    // @ts-ignore
-                    // eslint-disable-next-line no-param-reassign
-                    swiper.navigation.prevEl = navigationPrevRef.current
-                    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-                    // @ts-ignore
-                    // eslint-disable-next-line no-param-reassign
-                    swiper.navigation.nextEl = navigationNextRef.current
-                    swiper.navigation.update()
+                onBeforeInit={(Swiper) => {
+                    if (typeof Swiper.params.navigation !== 'boolean') {
+                        const navigation = Swiper.params.navigation!;
+                        navigation.prevEl = navigationPrevRef.current;
+                        navigation.nextEl = navigationNextRef.current;
+                    }
                 }}
             >
                 {photos.map((photo, i) => {
