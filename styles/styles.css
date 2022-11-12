@@ -599,7 +599,7 @@
 
 /* Слайдер */
 
-.swiper {
+/* .swiper {
   height: 100%;
 }
 
@@ -796,6 +796,19 @@
 .swiper-button-next:hover::after {
   transform: translateX(14px);
 }
+
+.swiper-button-next,
+.swiper-button-prev {
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+    display: none;
+} */
+
 
 
 /* Конец */

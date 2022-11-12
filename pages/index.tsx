@@ -62,7 +62,7 @@ export async function getStaticProps() {
     const frontmatter = { title: data.title, theme: data.theme, author: data.author };
 
     return {
-      slug: fileName.replace('.md', ''),
+      slug: fileName.replace('.mdx', ''),
       content: content,
       frontmatter,
     };

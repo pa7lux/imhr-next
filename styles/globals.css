@@ -255,3 +255,7 @@ body {
 .mb-2 {
   margin-bottom: calc(2 * var(--size-unit));
 }
+
+.box-radius {
+  border-radius: var(--radius-main);
+}

@@ -11,6 +11,8 @@
     "format": "prettier --write './**/*.{ts,tsx,css}'"
   },
   "dependencies": {
+    "@mdx-js/loader": "^2.0.0-rc.2",
+    "@mdx-js/react": "^2.0.0-rc.2",
     "@types/node": "18.11.9",
     "@types/react": "18.0.24",
     "@types/react-dom": "18.0.8",
@@ -20,7 +22,9 @@
     "react-dom": "18.2.0",
     "react-markdown": "^8.0.3",
     "rehype-raw": "^6.1.1",
+    "remark-frontmatter": "^4.0.1",
     "sass": "^1.55.0",
+    "swiper": "^8.4.4",
     "typescript": "4.8.4"
   },
   "devDependencies": {
