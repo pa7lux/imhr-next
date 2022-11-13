@@ -10,31 +10,26 @@ import Heading from '../../components/Heading/Heading';
 
 import PostStyles from './Post.module.css';
 import Slider from '../../components/Slider/Slider';
+import Blockquote from '../../components/Blockquote/Blockquote';
 
-type Props = {
-  slug: string;
-  frontmatter: Frontmatter;
-}
-
-const PostPage: NextPage<Props> = ({ slug, frontmatter }) => {
+const PostPage: NextPage<Post> = ({ slug, frontmatter }) => {
 
   const Article = dynamic(() => import(`../../data/posts/${slug}.mdx`))
 
   return (
     <>
-      <article className={cn(PostStyles.article) + ` ${frontmatter.theme}`}>
+      <article className={cn(PostStyles.article, frontmatter.theme)}>
         <main className={PostStyles.main}>
           <MDXProvider components={{
-            Heading: (props) => <Heading {...props} theme={frontmatter.theme} />,
+            Heading: (props) => <Heading {...props} />,
             p: (props) => <p className='text-type-p' {...props} />,
             h1: (props) => <h1 className='text-type-h2' {...props} />,
-            blockquote: (props) => <blockquote className={cn(PostStyles.quote, "text-type-quote")} {...props} />,
+            blockquote: (props) => <Blockquote {...props} />,
             Slider: (props) => <Slider {...props} /> 
           }}>
             <Article />
           </MDXProvider>
         </main>
-        
       </article>
     </>
   );
@@ -72,7 +67,7 @@ export async function getStaticProps({
   return {
     props: {
       slug,
-      frontmatter: { title: data.title, description: data.description },
+      frontmatter: { title: data.title, description: data.description, theme: data.theme },
     },
   };
 }

@@ -23,7 +23,7 @@ const Heading: NextPage<Props> = ({ photoLeft = false, author, title, img, theme
         <p className={cx(HeadingStyles.subheading, "text-type-p", "mt-1")}>Розповідає { author }</p>
       </div>
       <img
-        className={cx(HeadingStyles.cover_image, "box-radius", theme)}
+        className={cx(HeadingStyles.cover_image, "box-radius")}
         src={img}
         alt=""/>
     </section>
