@@ -35,7 +35,7 @@ body {
   --slider-width: 65.8%;
   --right-arrow-shift: 10%;
   --left-arrow-shift: 10%;
-
+  --article-content-width: calc(100% + 200px)
   /* ОТСТУПЫ */
   --space-m: 16px;
   --space-l: 20px;
@@ -67,6 +67,8 @@ body {
   --text-weight-normal: "wght" 350;
   --text-weight-light: "wght" 150;
 }
+
+
 
 @media screen and (max-width: 650px) {
   :root {
@@ -216,16 +218,6 @@ body {
   font-variation-settings: var(--text-weight-light);
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-  body {
-    color: white;
-    background: black;
-  }
-}
-
 .mt-1 {
   margin-top: var(--size-unit);
 }
@@ -254,4 +246,18 @@ body {
 
 .mb-2 {
   margin-bottom: calc(2 * var(--size-unit));
+}
+
+.box-radius {
+  border-radius: var(--radius-main);
+}
+
+.text-type-quote {
+  font-size: var(--text-size-2xl);
+  font-variation-settings: var(--text-weight-black);
+  color: var(--text-color-primary);
+}
+
+.reversed-shadow {
+  box-shadow: 1.38vw -1.38vw 0 var(--accent-color);
 }

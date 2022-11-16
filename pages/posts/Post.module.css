@@ -1,0 +1,17 @@
+.article {
+    display: flex;
+    justify-content: center;
+}
+.main {
+    display: flex;
+    width: 60%;
+    flex-direction: column;
+}
+
+@media (max-width: 1024px) {
+    .main {
+        width: 90%;
+    }
+}
+
+
