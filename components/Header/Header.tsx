@@ -1,12 +1,15 @@
-import type { NextPage } from 'next';
+import { FC } from 'react'
 import Link from 'next/link';
 
 import cn from 'classnames';
 import HeaderStyles from './Header.module.css';
+import { withTheme } from '../../store/context/context';
+import { ContextProps } from '../../models/themeContext';
 
-export const Header: NextPage = () => {
+export const Header = withTheme(({ theme }) => {
+
   return (
-    <header className={cn(HeaderStyles.header)}>
+    <header className={cn(HeaderStyles.header, theme)}>
       <div className={cn(HeaderStyles.header_logo)}>
         <Link href='/' legacyBehavior>
           <a className={cn(HeaderStyles.logo_link)}>
@@ -41,4 +44,4 @@ export const Header: NextPage = () => {
       </nav>
     </header>
   );
-};
+});

@@ -1,4 +1,4 @@
-import { NextPage } from 'next';
+import { FC } from 'react'
 import classNames from 'classnames/bind';
 
 import HeadingStyles from './Heading.module.css';
@@ -11,11 +11,9 @@ type Props = {
     theme: 'theme-purple' | 'theme-turquoise' | 'theme-green' | 'theme-blue',
 }
 
-
-
 let cx = classNames.bind(HeadingStyles);
 
-const Heading: NextPage<Props> = ({ photoLeft = false, author, title, img, theme }) => {
+const Heading: FC<Props> = ({ photoLeft = false, author, title, img }) => {
   return (
     <section className={cx({article_cover_two_columns: !photoLeft, article_cover_two_columns__reversed: photoLeft}, 'mt-2')}>
       <div className={cx(HeadingStyles.heading_box)}>

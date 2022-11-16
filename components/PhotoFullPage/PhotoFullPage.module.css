@@ -1,0 +1,19 @@
+.picture_full_page {
+  width: 100%;
+}
+
+.image_block_full_page {
+  margin-top: calc(2 * var(--size-unit));
+  min-width: 80vw;
+  align-self: center;
+}
+.image_block_full_page .caption {
+  margin-top: clamp(0.5rem, 0.4286rem + 0.3571vw, 0.75rem);
+}
+
+.image_block_medium {
+  width: var(--inner-width-over-content);
+  margin-top: calc(2 * var(--size-unit));
+  margin-left: auto;
+  margin-right: auto;
+}

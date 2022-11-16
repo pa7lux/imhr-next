@@ -6,7 +6,7 @@
   padding-top: 1rem;
   font-size: clamp(1.25rem, 0.9643rem + 1.4286vw, 2.25rem);
   font-variation-settings: "wght" 840, "CONT" 0, "MIDL" -800;
-  min-width: 47vw;
+  min-width: 55vw;
   align-self: center;
 }
 

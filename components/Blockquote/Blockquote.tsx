@@ -7,7 +7,7 @@ type Props =  DetailedHTMLProps<BlockquoteHTMLAttributes<HTMLQuoteElement>, HTML
 
 const Blockquote: FC<Props> = (props) => {
   return (
-    <blockquote className={cn(QuoteStyles.quote, "text-type-quote")}><h1 className='text-type-h1'>{props.children}</h1></blockquote>
+    <blockquote className={cn(QuoteStyles.quote, "text-type-quote")}>{props.children}</blockquote>
   )
 }
 

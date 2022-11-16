@@ -7,14 +7,27 @@ import Frontmatter from '../../models/frontmatter';
 import dynamic from 'next/dynamic';
 import {MDXProvider} from '@mdx-js/react'
 import Heading from '../../components/Heading/Heading';
-
 import PostStyles from './Post.module.css';
 import Slider from '../../components/Slider/Slider';
 import Blockquote from '../../components/Blockquote/Blockquote';
+import PhotoFullPage from '../../components/PhotoFullPage/PhotoFullPage';
+import HorizontalPhoto from '../../components/HorizontalPhoto/HorizontalPhoto';
+import { withTheme } from '../../store/context/context';
+import { ContextProps } from '../../models/themeContext';
+import { useEffect } from 'react';
+ 
+interface Props extends ContextProps {
+  slug: string;
+  frontmatter: Frontmatter;
+}
 
-const PostPage: NextPage<Post> = ({ slug, frontmatter }) => {
+const PostPage: NextPage<Props> = withTheme<Props>(({ slug, frontmatter, onChange }) => {
 
   const Article = dynamic(() => import(`../../data/posts/${slug}.mdx`))
+
+  useEffect(() => {
+    onChange(frontmatter.theme)
+  }, [frontmatter.theme])
 
   return (
     <>
@@ -23,9 +36,11 @@ const PostPage: NextPage<Post> = ({ slug, frontmatter }) => {
           <MDXProvider components={{
             Heading: (props) => <Heading {...props} />,
             p: (props) => <p className='text-type-p' {...props} />,
-            h1: (props) => <h1 className='text-type-h2' {...props} />,
+            h1: (props) => <h1 className='text-type-h2 mt-2' {...props} />,
             blockquote: (props) => <Blockquote {...props} />,
-            Slider: (props) => <Slider {...props} /> 
+            Slider: (props) => <Slider {...props} />,
+            PhotoFullPage: (props) => <PhotoFullPage {...props} />,
+            HorizontalPhoto: (props) => <HorizontalPhoto {...props} /> 
           }}>
             <Article />
           </MDXProvider>
@@ -33,7 +48,7 @@ const PostPage: NextPage<Post> = ({ slug, frontmatter }) => {
       </article>
     </>
   );
-};
+});
 
 export default PostPage;
 
