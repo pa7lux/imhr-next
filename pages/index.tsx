@@ -1,28 +1,33 @@
 import fs from 'fs';
 import matter from 'gray-matter';
 import cn from 'classnames';
-import Link from 'next/link';
 import type { NextPage } from 'next';
 import Post from '../models/post';
-
-import HomeStyles from '../styles/Home.module.css';
 import Story from '../components/Story/Story';
 import SendStory from '../components/SendStory/SendStory';
+import { withTheme } from '../store/context/context';
+import { ContextProps } from '../models/themeContext';
+import { useEffect } from 'react';
+import Head from 'next/head'
 
-type HomeProps = {
+import HomeStyles from '../styles/Home.module.css';
+
+
+interface HomeProps extends ContextProps {
   posts: Post[];
 };
 
-interface IData {
-  theme: 'theme-purple' | 'theme-turquoise' | 'theme-green' | 'theme-blue';
-  title: string;
-  author: string;
-}
+const Home: NextPage<HomeProps> = withTheme<HomeProps>(({ posts, onChange }) => {
 
-const Home: NextPage<HomeProps> = ({ posts }) => {
+  useEffect(() => {
+    onChange('theme-blue')
+  }, [])
 
   return (
     <>
+      <Head>
+        <title>imhr.top — історії українських підлітків</title>
+      </Head>
       <section className={cn(HomeStyles.cover)}>
       <picture>
         <source srcSet="/images/index/cover_mobile_1x.jpg, /images/index/cover_mobile_2x.jpg 2x" media="(max-width: 600px)" />
@@ -38,7 +43,13 @@ const Home: NextPage<HomeProps> = ({ posts }) => {
       <section className={cn(HomeStyles.stories)}>
         <ul className={cn(HomeStyles.stories_list)}>
           {posts.map((item: Post) => {
-            return <Story title={item.frontmatter.title} author={item.frontmatter.author} theme={item.frontmatter.theme} slug={item.slug} key={item.slug} />
+            return <Story 
+              title={item.frontmatter.title} 
+              author={item.frontmatter.author} 
+              theme={item.frontmatter.theme} 
+              slug={item.slug} 
+              key={item.slug} 
+              svg={item.frontmatter.svg} />
           })}
           <SendStory />
         </ul>
@@ -46,7 +57,7 @@ const Home: NextPage<HomeProps> = ({ posts }) => {
     </>
     
   );
-};
+});
 
 export default Home;
 
@@ -59,7 +70,7 @@ export async function getStaticProps() {
     const file = fs.readFileSync(`data/posts/${fileName}`).toString();
 
     const { data, content } = matter(file);
-    const frontmatter = { title: data.title, theme: data.theme, author: data.author };
+    const frontmatter = { title: data.title, theme: data.theme, author: data.author, svg: data.svg };
 
     return {
       slug: fileName.replace('.mdx', ''),

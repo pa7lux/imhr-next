@@ -1,12 +1,18 @@
 import { FC } from 'react'
 import Link from 'next/link';
-
-import cn from 'classnames';
-import HeaderStyles from './Header.module.css';
 import { withTheme } from '../../store/context/context';
-import { ContextProps } from '../../models/themeContext';
+import { useRouter } from 'next/router';
+import cn from 'classnames';
+
+import HeaderStyles from './Header.module.css';
+
+let cx = cn.bind(HeaderStyles);
 
 export const Header = withTheme(({ theme }) => {
+
+  const { pathname } = useRouter()
+
+  const { menu_list_item, menu_list_item__active } = HeaderStyles
 
   return (
     <header className={cn(HeaderStyles.header, theme)}>
@@ -22,14 +28,20 @@ export const Header = withTheme(({ theme }) => {
       </div>
       <nav className={cn(HeaderStyles.header_menu, HeaderStyles.main_menu)}>
         <ul className={cn(HeaderStyles.menu_list)}>
-          <li className={cn(HeaderStyles.menu_list_item, HeaderStyles.menu_list_item__active)}>
+          <li className={cx({
+              [menu_list_item]: true,
+              [menu_list_item__active]: pathname === '/' || pathname === '/posts/[slug]',
+            })}>
             <Link href='/' legacyBehavior>
               <a className={cn(HeaderStyles.menu_link)}>Історії</a>
             </Link>
           </li>
-          <li className={cn(HeaderStyles.menu_list_item)}>
+          <li className={cx({
+              [menu_list_item]: true,
+              [menu_list_item__active]: pathname === '/about',
+            })}>
             <Link href='/about' legacyBehavior>
-              <a className={cn(HeaderStyles.menu_link, HeaderStyles.menu_link)}>Про проект</a>
+              <a className={cn(HeaderStyles.menu_link)}>Про проект</a>
             </Link>
           </li>
           <li className={cn(HeaderStyles.menu_list_item)}><a href="https://t.me/+tiiH3XpLUB03YWFi" target="_blank" className={cn(HeaderStyles.menu_link, HeaderStyles.menu_link)}>У мене є історія</a></li>

@@ -10,11 +10,14 @@
 .horizontal_photo_and_text .image_for_text {
   aspect-ratio: 621/465;
   object-fit: cover;
+  height: 100%;
 }
 
 .horizontal_photo_and_text .image_box {
   width: 45%;
 }
+
+
 
 @media screen and (max-width: 1024px) {
   .horizontal_photo_and_text {

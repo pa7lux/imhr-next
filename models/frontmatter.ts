@@ -1,3 +1,4 @@
+import { SVG } from "./svg";
 import { Theme } from "./theme";
 
 interface Frontmatter {
@@ -6,6 +7,7 @@ interface Frontmatter {
   updatedAt?: string;
   createdAt?: string;
   theme: Theme;
+  svg: SVG;
 }
 
 export default Frontmatter;

@@ -1,5 +1,5 @@
 import { NextPage } from 'next'
-import { useEffect } from 'react'
+import { Children } from 'react'
 import { useRef } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore, { Navigation, Pagination } from 'swiper';
@@ -11,21 +11,16 @@ import 'swiper/swiper-bundle.css';
 import SliderStyles from './Slider.module.css'
 
 type Props = {
-    photos: {
-        src: string;
-        text: string;
-    }[],
-    theme: 'theme-purple' | 'theme-turquoise' | 'theme-green' | 'theme-blue'
+    children: JSX.Element | JSX.Element[]
 }
 
 let cx = classNames.bind(SliderStyles);
 
-const Slider: NextPage<Props> = ({ photos, theme }) => {
+const Slider: NextPage<Props> = ({ children }) => {
 
     const navigationPrevRef = useRef<HTMLButtonElement>(null)
     const navigationNextRef = useRef<HTMLButtonElement>(null)
     SwiperCore.use([Navigation, Pagination]);
-    console.log(theme);
 
     return (
         <div className={cx(SliderStyles.slider_component, 'mb-2 mt-2')}>
@@ -51,10 +46,9 @@ const Slider: NextPage<Props> = ({ photos, theme }) => {
                     }
                 }}
             >
-                {photos.map((photo, i) => {
+                {Children.map(children, (child, i) => {
                     return <SwiperSlide key={i} className={SliderStyles.swiper_slide} >
-                        <img src={photo.src} alt='' className={cx(SliderStyles.slide__image, 'box-radius')} />
-                        <p className='text-type-caption'>{photo.text}</p>
+                        {child}
                     </SwiperSlide>
                 })}
             </Swiper>

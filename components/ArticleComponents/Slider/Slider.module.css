@@ -50,7 +50,7 @@
   margin-top: 0;
   border: none;
   background-color: transparent;
-  transform: translateY(-50%);
+  transform: translateY(-30%);
   /* font-size: var(--text-caption); */
   cursor: pointer;
   position: relative;
@@ -79,7 +79,7 @@
 }
 
 .swiper_button_prev::after {
-  background-image: url(../../public/images/icons/prev.svg);
+  background-image: url(../../../public/images/icons/prev.svg);
   background-size: 40px;
   transform: translateX(-4px);
 
@@ -87,7 +87,7 @@
 }
 
 .swiper_button_next::after {
-  background-image: url(../../public/images/icons/next.svg);
+  background-image: url(../../../public/images/icons/next.svg);
   transform: translateX(4px);
   background-size: 40px;
   right: 35px;

@@ -1,0 +1,18 @@
+.photo_and_text {
+    margin-top: calc(4 * var(--size-unit));
+    align-self: center;
+}
+
+.image {
+    object-position: center;
+    object-fit: cover;
+    min-width: 60vw;
+    height: 80vh;
+}
+
+@media screen and (max-width: 1024px) {
+    .image {
+        min-width: 85vw;
+        height: 30vh;
+    }
+}

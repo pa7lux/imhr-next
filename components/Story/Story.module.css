@@ -27,7 +27,7 @@
   transform: translateY(-50%) scaleX(1.2);
 }
 
-.story_link:hover .svg path {
+.story_link:hover svg path {
   animation-name: svgAnimation;
 }
 
@@ -101,34 +101,6 @@
     width: 24%;
     height: 0.6em;
   }
-}
-
-.svg {
-  position: absolute;
-  height: 100%;
-  z-index: 0;
-}
-
-.svg path {
-  stroke-dasharray: 1000;
-  stroke-dashoffset: 1000;
-  animation-timing-function: ease-out;
-  animation-fill-mode: forwards;
-}
-
-.svg.svg_bag {
-  width: 45%;
-  right: 3%;
-  bottom: -12%;
-}
-
-.svg.svg_bag path:not(:first-child) {
-  animation-duration: 3s;
-  animation-delay: .3s;
-}
-
-.svg.svg_bag path:first-child {
-  animation-duration: 1s;
 }
 
 @keyframes svgAnimation {

@@ -261,3 +261,9 @@ body {
 .reversed-shadow {
   box-shadow: 1.38vw -1.38vw 0 var(--accent-color);
 }
+
+.center {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
