@@ -36,8 +36,8 @@ const Home: NextPage<HomeProps> = withTheme<HomeProps>(({ posts, onChange }) => 
         <img src="/images/index/cover_desktop_1x.jpg" alt="Фото редакції" className={cn(HomeStyles.cover_image)} />
       </picture>
       <div className={cn(HomeStyles.heading_box)}>
-        <h1 className={cn(HomeStyles.cover_title) + ' text-type-h1'}>I am here</h1>
-        <p className={cn(HomeStyles.cover_subheading) + 'text-type-p'}>Підлітки з&nbsp;України<br />розповідають свої історії</p>
+        <h1 className={cn(HomeStyles.cover_title, 'text-type-h1')}>I am here</h1>
+        <p className={cn(HomeStyles.cover_subheading, 'text-type-p')}>Підлітки з&nbsp;України<br />розповідають свої історії</p>
       </div>
       </section>
       <section className={cn(HomeStyles.stories)}>

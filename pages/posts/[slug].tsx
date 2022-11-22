@@ -40,7 +40,7 @@ const PostPage: NextPage<Props> = withTheme<Props>(({ slug, frontmatter, onChang
         <main className={PostStyles.main}>
           <MDXProvider components={{
             Heading: (props) => <Heading author={frontmatter.author} title={frontmatter.title} {...props} />,
-            p: (props) => <p className='text-type-p' {...props} />,
+            p: (props) => <p className='text-type-p mt-1' {...props} />,
             h1: (props) => <h1 className='text-type-h1 mt-2' {...props} />,
             h2: (props) => <h1 className='text-type-h2 mt-2' {...props} />,
             h3: (props) => <h3 className='text-type-h3' {...props} />,

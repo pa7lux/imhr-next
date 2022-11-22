@@ -1,5 +1,5 @@
 import { NextPage } from 'next'
-import { Children } from 'react'
+import { Children, cloneElement } from 'react'
 import { useRef } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore, { Navigation, Pagination } from 'swiper';
@@ -48,7 +48,7 @@ const Slider: NextPage<Props> = ({ children }) => {
             >
                 {Children.map(children, (child, i) => {
                     return <SwiperSlide key={i} className={SliderStyles.swiper_slide} >
-                        {child}
+                        {cloneElement(child, { className: 'slide-image' })}
                     </SwiperSlide>
                 })}
             </Swiper>

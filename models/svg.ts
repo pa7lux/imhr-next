@@ -1,1 +1,1 @@
-export type SVG = 'backpack' | 'heart' | 'insta' | 'tiktok'
+export type SVG = 'backpack' | 'heart' | 'insta' | 'tiktok';

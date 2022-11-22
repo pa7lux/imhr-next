@@ -13,6 +13,8 @@ type Props = {
 const AuthorCard: FC<Props> = ({children, src}) => {
 
   const modifiedChildrens = Children.map(children, (child) => {
+    console.log(child.type);
+    
     return cloneElement(child, {className: 'mt-1 text-type-p'})
   })
 
