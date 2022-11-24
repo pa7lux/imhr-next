@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import { FC, useEffect } from 'react'
 import Link from 'next/link';
 import { withTheme } from '../../store/context/context';
 import { useRouter } from 'next/router';
@@ -8,11 +8,17 @@ import HeaderStyles from './Header.module.css';
 
 let cx = cn.bind(HeaderStyles);
 
-export const Header = withTheme(({ theme }) => {
+export const Header = withTheme(({ theme, onChange }) => {
 
   const { pathname } = useRouter()
 
   const { menu_list_item, menu_list_item__active } = HeaderStyles
+
+  useEffect(() => {
+    if (pathname === '/' || pathname === '/about') {
+      onChange('theme-blue')
+    }
+  }, [pathname])
 
   return (
     <header className={cn(HeaderStyles.header, theme)}>

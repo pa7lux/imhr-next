@@ -1,13 +1,13 @@
 .quote {
   position: relative;
-  width: var(--inner-width-over-content);
+  min-width: var(--inner-width-over-content);
   margin-top: calc(6 * var(--size-unit));
   margin-bottom: calc(2 * var(--size-unit));
   padding-top: 1rem;
   font-size: clamp(1.25rem, 0.9643rem + 1.4286vw, 2.25rem);
   font-variation-settings: "wght" 840, "CONT" 0, "MIDL" -800;
-  min-width: 55vw;
-  align-self: center;
+  /* align-self: center; */
+  right: 4%;
 }
 
 @media screen and (max-width: 1024px) {

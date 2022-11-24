@@ -6,8 +6,8 @@
 .image {
     object-position: center;
     object-fit: cover;
-    min-width: 52vw;
-    height: 40vw;
+    min-width: 54vw;
+    height: 33vw;
 }
 
 @media screen and (max-width: 1024px) {

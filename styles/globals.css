@@ -190,6 +190,10 @@ body {
   color: var(--text-color-secondary);
 }
 
+.inner-width {
+  width: var(--inner-width-main);
+}
+
 .text-view-primary {
   color: var(--text-color-primary);
 }

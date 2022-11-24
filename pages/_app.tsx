@@ -4,7 +4,7 @@ import { Layout } from '../components/Layout/layout';
 import { ThemeProvider } from '../store/context/context';
 import Head from 'next/head'
 
-export default function App({ Component, pageProps }: AppProps) {
+const App = ({ Component, pageProps }: AppProps) => {
 
   return (
     <>
@@ -36,3 +36,5 @@ export default function App({ Component, pageProps }: AppProps) {
     
   );
 }
+
+export default App;

@@ -10,11 +10,13 @@
 .horizontal_photo_and_text .image_for_text {
   aspect-ratio: 621/465;
   object-fit: cover;
-  height: fit-content;
+  height: 100%;
+  object-position: center;
 }
 
 .horizontal_photo_and_text .image_box {
   width: 45%;
+  height: fit-content;
 }
 
 

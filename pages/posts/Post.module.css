@@ -4,14 +4,14 @@
 }
 .main {
     display: flex;
-    width: 60%;
     flex-direction: column;
+    width: var(--inner-width-main);
 }
 
-@media (max-width: 1024px) {
+/* @media (max-width: 1024px) {
     .main {
         width: 90%;
     }
-}
+} */
 
 

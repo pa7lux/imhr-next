@@ -11,35 +11,32 @@ import { useEffect } from 'react';
 import Head from 'next/head'
 
 import HomeStyles from '../styles/Home.module.css';
+import Frontmatter from '../models/frontmatter';
 
 
-interface HomeProps extends ContextProps {
+interface HomeProps {
   posts: Post[];
 };
 
-const Home: NextPage<HomeProps> = withTheme<HomeProps>(({ posts, onChange }) => {
-
-  useEffect(() => {
-    onChange('theme-blue')
-  }, [])
-
+const Home: NextPage<HomeProps> = (({ posts }) => {
   return (
     <>
       <Head>
         <title>imhr.top — історії українських підлітків</title>
       </Head>
+
       <section className={cn(HomeStyles.cover)}>
-      <picture>
-        <source srcSet="/images/index/cover_mobile_1x.jpg, /images/index/cover_mobile_2x.jpg 2x" media="(max-width: 600px)" />
-        <source srcSet="/images/index/cover_desktop_1x.jpg, /images/index/cover_desktop_2x.jpg 2x" media="(min-width: 601px)" />
-        
-        <img src="/images/index/cover_desktop_1x.jpg" alt="Фото редакції" className={cn(HomeStyles.cover_image)} />
-      </picture>
-      <div className={cn(HomeStyles.heading_box)}>
-        <h1 className={cn(HomeStyles.cover_title, 'text-type-h1')}>I am here</h1>
-        <p className={cn(HomeStyles.cover_subheading, 'text-type-p')}>Підлітки з&nbsp;України<br />розповідають свої історії</p>
-      </div>
-      </section>
+        <picture>
+          <source srcSet="/images/index/cover_mobile_1x.jpg, /images/index/cover_mobile_2x.jpg 2x" media="(max-width: 600px)" />
+          <source srcSet="/images/index/cover_desktop_1x.jpg, /images/index/cover_desktop_2x.jpg 2x" media="(min-width: 601px)" />
+          
+          <img src="/images/index/cover_desktop_1x.jpg" alt="Фото редакції" className={cn(HomeStyles.cover_image)} />
+        </picture>
+        <div className={cn(HomeStyles.heading_box)}>
+          <h1 className={cn(HomeStyles.cover_title, 'text-type-h1')}>I am here</h1>
+          <p className={cn(HomeStyles.cover_subheading, 'text-type-p')}>Підлітки з&nbsp;України<br />розповідають свої історії</p>
+        </div>
+        </section>
       <section className={cn(HomeStyles.stories)}>
         <ul className={cn(HomeStyles.stories_list)}>
           {posts.map((item: Post) => {
@@ -49,7 +46,8 @@ const Home: NextPage<HomeProps> = withTheme<HomeProps>(({ posts, onChange }) => 
               theme={item.frontmatter.theme} 
               slug={item.slug} 
               key={item.slug} 
-              svg={item.frontmatter.svg} />
+              svg={item.frontmatter.svg}
+              src={item.frontmatter.src}/>
           })}
           <SendStory />
         </ul>
@@ -69,12 +67,11 @@ export async function getStaticProps() {
   const posts: Post[] = files.map((fileName) => {
     const file = fs.readFileSync(`data/posts/${fileName}`).toString();
 
-    const { data, content } = matter(file);
-    const frontmatter = { title: data.title, theme: data.theme, author: data.author, svg: data.svg };
+    const { data } = matter(file);
+    const frontmatter: Frontmatter = { title: data.title, theme: data.theme, author: data.author, svg: data.svg };
 
     return {
       slug: fileName.replace('.mdx', ''),
-      content: content,
       frontmatter,
     };
   });

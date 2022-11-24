@@ -1,6 +1,7 @@
 import React, { FC } from 'react'
 import { SVG } from '../../models/svg';
 import Backpack from './backpack-icon/backpack-icon';
+import Grecha from './grecha-icon/grecha-icon';
 import Heart from './heart-icon/heart-icon';
 import Insta from './insta-icon/insta-icon';
 import Tiktok from './tiktok-icon/tiktok-icon';
@@ -23,6 +24,9 @@ const IconSelector: FC<Props> = ({ className, svgKey }) => {
 
         case 'tiktok': 
             return <Tiktok className={className} />
+
+        case 'grecha':
+            return <Grecha className={className}/>
     
         default:
             return <Backpack />

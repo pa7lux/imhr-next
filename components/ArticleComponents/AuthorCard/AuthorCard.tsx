@@ -42,7 +42,7 @@ const AuthorCard: FC<Props> = ({children, src}) => {
           />
         </svg>
 
-        {modifiedChildrens}
+        {children}
       </div>
     </div>
   )

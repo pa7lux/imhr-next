@@ -2,7 +2,6 @@ import fs from 'fs';
 import matter from 'gray-matter';
 import cn from 'classnames';
 import { NextPage } from 'next';
-import Post from '../../models/post';
 import Frontmatter from '../../models/frontmatter';
 import dynamic from 'next/dynamic';
 import {MDXProvider} from '@mdx-js/react'
@@ -20,6 +19,8 @@ import IconSelector from '../../components/UI/IconSelector';
 import LinkList from '../../components/ArticleComponents/LinkList/LinkList';
 import LinkListItem from '../../components/ArticleComponents/LinkListItem/LinkListItem';
 import PhotoAndText from '../../components/ArticleComponents/PhotoAndText/PhotoAndText';
+import TextWithUnder from '../../components/ArticleComponents/TextWithUnder/TextWithUnder';
+import BorderedSection from '../../components/ArticleComponents/BorderedSection/BorderedSection';
  
 interface Props extends ContextProps {
   slug: string;
@@ -40,11 +41,12 @@ const PostPage: NextPage<Props> = withTheme<Props>(({ slug, frontmatter, onChang
         <main className={PostStyles.main}>
           <MDXProvider components={{
             Heading: (props) => <Heading author={frontmatter.author} title={frontmatter.title} {...props} />,
-            p: (props) => <p className='text-type-p mt-1' {...props} />,
+            p: (props) => <p className='text-type-p mt-1 ' {...props} />,
             h1: (props) => <h1 className='text-type-h1 mt-2' {...props} />,
             h2: (props) => <h1 className='text-type-h2 mt-2' {...props} />,
             h3: (props) => <h3 className='text-type-h3' {...props} />,
             blockquote: (props) => <Blockquote {...props} />,
+            strong: (props) => <p className='text-type-lead'>{props.children}</p>,
             a: (props) => <a style={{"borderBottom": "none"}} className='center' {...props} />,
             Slider: (props) => <Slider {...props} />,
             PhotoFullPage: (props) => <PhotoFullPage {...props} />,
@@ -53,7 +55,9 @@ const PostPage: NextPage<Props> = withTheme<Props>(({ slug, frontmatter, onChang
             Icon: (props) => <IconSelector {...props} />,
             LinkList: (props) => <LinkList {...props}/>,
             LinkListItem: (props) => <LinkListItem {...props} />,
-            PhotoAndText: (props) => <PhotoAndText {...props} />
+            PhotoAndText: (props) => <PhotoAndText {...props} />,
+            BigHeading: (props) => <TextWithUnder {...props} />,
+            BorderedSection: (props) => <BorderedSection {...props}/>
           }}>
             <Article />
           </MDXProvider>
@@ -95,7 +99,7 @@ export async function getStaticProps({
   return {
     props: {
       slug,
-      frontmatter: { title: data.title, description: data.description, theme: data.theme, author: data.author },
+      frontmatter: { title: data.title, theme: data.theme, author: data.author },
     },
   };
 }
