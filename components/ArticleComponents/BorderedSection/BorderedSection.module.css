@@ -1,6 +1,5 @@
 .advice_section {
     position: relative;
-    min-width: 110%;
     padding: calc(3 * var(--size-unit)) calc(2 * var(--size-unit));
     margin-top: calc(5 * var(--size-unit));
     border-radius: var(--radius-main);

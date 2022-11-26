@@ -1,7 +1,6 @@
 .author_block {
     margin-top: calc(4 * var(--size-unit));
-    min-width: 85vw;
-    align-self: center;
+    width: 100%;
 }
 .author_content {
     position: relative;
@@ -58,8 +57,5 @@
         padding-bottom: clamp(1.25rem, 0.732rem + 2.7624vw, 2.5rem);
         padding-left: clamp(3.75rem, 2.7141rem + 5.5249vw, 6.25rem);
         transform: translateX(2vw);
-    }
-    .author_block {
-        min-width: 95vw;
     }
 }

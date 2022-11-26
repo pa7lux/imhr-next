@@ -2,8 +2,6 @@ import React, { FC, Children, cloneElement } from 'react';
 import cn from 'classnames'
 
 import CardStyles from './AuthorCard.module.css';
-import { SVG } from '../../../models/svg';
-import IconSelector from '../../UI/IconSelector';
 
 type Props = {
     children: JSX.Element[] | JSX.Element;

@@ -48,7 +48,7 @@ const Slider: NextPage<Props> = ({ children }) => {
             >
                 {Children.map(children, (child, i) => {
                     return <SwiperSlide key={i} className={SliderStyles.swiper_slide} >
-                        {cloneElement(child, { className: 'slide-image' })}
+                        {cloneElement(child, { className: SliderStyles.slide_image })}
                     </SwiperSlide>
                 })}
             </Swiper>

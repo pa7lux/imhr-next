@@ -21,6 +21,10 @@ import LinkListItem from '../../components/ArticleComponents/LinkListItem/LinkLi
 import PhotoAndText from '../../components/ArticleComponents/PhotoAndText/PhotoAndText';
 import TextWithUnder from '../../components/ArticleComponents/TextWithUnder/TextWithUnder';
 import BorderedSection from '../../components/ArticleComponents/BorderedSection/BorderedSection';
+import SmallBlock from '../../components/ArticleComponents/AlignBlocks/SmallBlock/SmallBlock';
+import MediumBlock from '../../components/ArticleComponents/AlignBlocks/MediumBlock/MediumBlock';
+import LargeBlock from '../../components/ArticleComponents/AlignBlocks/LargeBlock/LargeBlock';
+import FullpageBlock from '../../components/ArticleComponents/AlignBlocks/FullpageBlock/FullpageBlock';
  
 interface Props extends ContextProps {
   slug: string;
@@ -57,7 +61,11 @@ const PostPage: NextPage<Props> = withTheme<Props>(({ slug, frontmatter, onChang
             LinkListItem: (props) => <LinkListItem {...props} />,
             PhotoAndText: (props) => <PhotoAndText {...props} />,
             BigHeading: (props) => <TextWithUnder {...props} />,
-            BorderedSection: (props) => <BorderedSection {...props}/>
+            BorderedSection: (props) => <BorderedSection {...props} />,
+            Small: (props) => <SmallBlock {...props} />,
+            Medium: (props) => <MediumBlock {...props} />,
+            Large: (props) => <LargeBlock {...props} />,
+            Fullpage: (props) => <FullpageBlock {...props} />
           }}>
             <Article />
           </MDXProvider>

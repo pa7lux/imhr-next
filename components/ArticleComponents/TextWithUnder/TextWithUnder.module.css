@@ -1,7 +1,6 @@
 .big_heading_and_text {
     margin-bottom: calc(3 * var(--size-unit));
     position: relative;
-    right: 7%;
 }
 
 .big_heading_and_text .heading_big {

@@ -5,13 +5,7 @@
 .main {
     display: flex;
     flex-direction: column;
-    width: var(--inner-width-main);
+    align-items: center;
+    width: 100%;
 }
-
-/* @media (max-width: 1024px) {
-    .main {
-        width: 90%;
-    }
-} */
-
 
