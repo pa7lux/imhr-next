@@ -12,7 +12,7 @@
 }
 
 .slide_image {
-  min-height: var(--slide-size);
+  height: var(--slide-size);
 }
 
 @media screen and (max-width: 650px) {
