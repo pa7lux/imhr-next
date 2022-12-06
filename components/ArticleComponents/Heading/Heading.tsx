@@ -28,4 +28,4 @@ const Heading: FC<Props> = ({ photoLeft = false, author, title, img }) => {
   )
 }
 
-export default Heading
+export {Heading}

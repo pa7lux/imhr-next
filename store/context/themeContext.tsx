@@ -1,4 +1,4 @@
-import React, { Component, ComponentType, FC, useState } from "react";
+import React, { ComponentType, FC, useState } from "react";
 import { Theme } from "../../models/theme";
 import { InjectedProps, ContextProps, ThemeProviderProps } from "../../models/themeContext";
 

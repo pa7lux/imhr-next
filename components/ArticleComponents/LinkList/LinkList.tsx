@@ -1,31 +1,19 @@
-import React, {FC, useRef, useEffect, useState} from 'react'
+import React, {FC, PropsWithChildren} from 'react'
 import cn from 'classnames'
 
 import AuthorStyles from '../AuthorCard/AuthorCard.module.css';
+import useIsChild from '../../../lib/hooks/useIsChild';
 
-type Props = {
-    children: JSX.Element | JSX.Element[],
-}
-
-const LinkList: FC<Props> = ({ children }) => {
-
-    const ref = useRef<HTMLUListElement>(null)
-    const { author_links } = AuthorStyles;
-    const [isChild, setIsChild] = useState<boolean>(false)
-
-    useEffect(() => {
-        if (ref.current?.closest(`.${AuthorStyles.author_content}`)) {
-            setIsChild(true)
-        }
-    }, [])
+const LinkList: FC<PropsWithChildren> = ({ children }) => {
+    const { isChild, ref } = useIsChild<HTMLUListElement>(AuthorStyles.author_content)
 
     return (
         <ul style={{"listStyle": "none"}} ref={ref} className={cn({
-            [author_links]: isChild
+            [AuthorStyles.author_links]: isChild
         }, 'mt-1')}>
             {children}
         </ul>
     )
 }
 
-export default LinkList
+export {LinkList}

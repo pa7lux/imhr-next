@@ -32,4 +32,4 @@ const Insta: FC<Props> = ({className}) => {
   )
 }
 
-export default Insta
+export {Insta}

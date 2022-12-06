@@ -1,12 +1,8 @@
-import React, { FC } from 'react'
+import React, { FC, PropsWithChildren } from 'react'
 
 import BlockStyles from './LargeBlock.module.css';
 
-type Props = {
-    children: JSX.Element | JSX.Element[]
-}
-
-const LargeBlock: FC<Props> = ({ children }) => {
+const LargeBlock: FC<PropsWithChildren> = ({ children }) => {
   return (
     <div className={BlockStyles.block_large}>
         { children }
@@ -14,4 +10,4 @@ const LargeBlock: FC<Props> = ({ children }) => {
   )
 }
 
-export default LargeBlock
+export {LargeBlock}

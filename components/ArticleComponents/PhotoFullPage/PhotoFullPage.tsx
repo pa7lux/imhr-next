@@ -20,4 +20,4 @@ const PhotoFullPage: FC<Props> = ({ src, text }) => {
   )
 }
 
-export default PhotoFullPage
+export {PhotoFullPage}

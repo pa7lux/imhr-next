@@ -1,12 +1,8 @@
-import React, { FC } from 'react'
+import React, { FC, PropsWithChildren } from 'react'
 
 import BlockStyles from './MediumBlock.module.css';
 
-type Props = {
-    children: JSX.Element | JSX.Element[]
-}
-
-const MediumBlock: FC<Props> = ({ children }) => {
+const MediumBlock: FC<PropsWithChildren> = ({ children }) => {
   return (
     <div className={BlockStyles.block_medium}>
         { children }
@@ -14,4 +10,4 @@ const MediumBlock: FC<Props> = ({ children }) => {
   )
 }
 
-export default MediumBlock
+export {MediumBlock}

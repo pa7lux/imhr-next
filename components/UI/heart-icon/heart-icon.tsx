@@ -22,4 +22,4 @@ const Heart: FC<Props> = ({ className }) => {
   )
 }
 
-export default Heart
+export {Heart}

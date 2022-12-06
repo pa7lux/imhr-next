@@ -30,7 +30,7 @@ body {
   --inner-width-main: 58%;
   --inner-width-large: 63%;
   --inner-width-over-content: calc(var(--content-section-width-main) / 100 * 65.84);
-  --inner-width-small: calc(var(var(--inner-width-main)) - 10%);
+  --inner-width-small: calc(var(var(--inner-width-main)) - 50px);
   --header-height: 600px;
   --full-page-aspect-ratio: 1376/600;
   --slider-width: 65.8%;

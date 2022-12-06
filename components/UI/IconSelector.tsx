@@ -1,18 +1,18 @@
 import React, { FC } from 'react'
 import { SVG } from '../../models/svg';
-import Backpack from './backpack-icon/backpack-icon';
-import Grecha from './grecha-icon/grecha-icon';
-import Heart from './heart-icon/heart-icon';
-import Insta from './insta-icon/insta-icon';
-import Tiktok from './tiktok-icon/tiktok-icon';
+import {Backpack} from './backpack-icon/backpack-icon';
+import {Grecha} from './grecha-icon/grecha-icon';
+import {Heart} from './heart-icon/heart-icon';
+import {Insta} from './insta-icon/insta-icon';
+import {Tiktok} from './tiktok-icon/tiktok-icon';
 
 type Props = {
     className?: string;
-    svgKey: SVG;
+    icon: SVG;
 }
 
-const IconSelector: FC<Props> = ({ className, svgKey }) => {
-    switch (svgKey) {
+const IconSelector: FC<Props> = ({ className, icon }) => {
+    switch (icon) {
         case 'backpack':
             return <Backpack className={className} />
         

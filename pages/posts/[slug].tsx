@@ -5,35 +5,36 @@ import { NextPage } from 'next';
 import Frontmatter from '../../models/frontmatter';
 import dynamic from 'next/dynamic';
 import {MDXProvider} from '@mdx-js/react'
-import Heading from '../../components/ArticleComponents/Heading/Heading';
+import {Heading} from '../../components/ArticleComponents/Heading/Heading';
 import PostStyles from './Post.module.css';
-import Slider from '../../components/ArticleComponents/Slider/Slider';
-import Blockquote from '../../components/ArticleComponents/Blockquote/Blockquote';
-import PhotoFullPage from '../../components/ArticleComponents/PhotoFullPage/PhotoFullPage';
-import HorizontalPhoto from '../../components/ArticleComponents/HorizontalPhoto/HorizontalPhoto';
-import { withTheme } from '../../store/context/context';
+import {Slider} from '../../components/ArticleComponents/Slider/Slider';
+import {Blockquote} from '../../components/ArticleComponents/Blockquote/Blockquote';
+import {PhotoFullPage} from '../../components/ArticleComponents/PhotoFullPage/PhotoFullPage';
+import {HorizontalPhoto} from '../../components/ArticleComponents/HorizontalPhoto/HorizontalPhoto';
+import { withTheme } from '../../store/context/themeContext';
 import { ContextProps } from '../../models/themeContext';
 import { useEffect } from 'react';
-import AuthorCard from '../../components/ArticleComponents/AuthorCard/AuthorCard';
+import {AuthorCard} from '../../components/ArticleComponents/AuthorCard/AuthorCard';
 import IconSelector from '../../components/UI/IconSelector';
-import LinkList from '../../components/ArticleComponents/LinkList/LinkList';
-import LinkListItem from '../../components/ArticleComponents/LinkListItem/LinkListItem';
-import PhotoAndText from '../../components/ArticleComponents/PhotoAndText/PhotoAndText';
-import TextWithUnder from '../../components/ArticleComponents/TextWithUnder/TextWithUnder';
-import BorderedSection from '../../components/ArticleComponents/BorderedSection/BorderedSection';
-import SmallBlock from '../../components/ArticleComponents/AlignBlocks/SmallBlock/SmallBlock';
-import MediumBlock from '../../components/ArticleComponents/AlignBlocks/MediumBlock/MediumBlock';
-import LargeBlock from '../../components/ArticleComponents/AlignBlocks/LargeBlock/LargeBlock';
-import FullpageBlock from '../../components/ArticleComponents/AlignBlocks/FullpageBlock/FullpageBlock';
+import {LinkList} from '../../components/ArticleComponents/LinkList/LinkList';
+import {LinkListItem} from '../../components/ArticleComponents/LinkListItem/LinkListItem';
+import {PhotoAndText} from '../../components/ArticleComponents/PhotoAndText/PhotoAndText';
+import {TextWithUnder} from '../../components/ArticleComponents/TextWithUnder/TextWithUnder';
+import {BorderedSection} from '../../components/ArticleComponents/BorderedSection/BorderedSection';
+import {MediumBlock} from '../../components/ArticleComponents/AlignBlocks/MediumBlock/MediumBlock';
+import {LargeBlock} from '../../components/ArticleComponents/AlignBlocks/LargeBlock/LargeBlock';
+import {FullpageBlock} from '../../components/ArticleComponents/AlignBlocks/FullpageBlock/FullpageBlock';
+import Head from 'next/head';
  
 interface Props extends ContextProps {
   slug: string;
   frontmatter: Frontmatter;
+  locale: string;
 }
 
-const PostPage: NextPage<Props> = withTheme<Props>(({ slug, frontmatter, onChange }) => {
-
-  const Article = dynamic(() => import(`../../data/posts/${slug}.mdx`))
+const PostPage: NextPage<Props> = withTheme<Props>(({ slug, frontmatter, onChange, locale }) => {
+  
+  const Article = dynamic(() => import(`../../data/posts/${locale}/${slug}.mdx`))
 
   useEffect(() => {
     onChange(frontmatter.theme)
@@ -41,6 +42,13 @@ const PostPage: NextPage<Props> = withTheme<Props>(({ slug, frontmatter, onChang
 
   return (
     <>
+      <Head>
+        <meta
+          property="og:title"
+          content={`imhr.top — ${frontmatter.title}`}
+        />
+        <title>imhr.top — {frontmatter.title}</title>
+      </Head>
       <article className={cn(PostStyles.article, frontmatter.theme)}>
         <main className={PostStyles.main}>
           <MDXProvider components={{
@@ -62,7 +70,6 @@ const PostPage: NextPage<Props> = withTheme<Props>(({ slug, frontmatter, onChang
             PhotoAndText: (props) => <PhotoAndText {...props} />,
             BigHeading: (props) => <TextWithUnder {...props} />,
             BorderedSection: (props) => <BorderedSection {...props} />,
-            Small: (props) => <SmallBlock {...props} />,
             Medium: (props) => <MediumBlock {...props} />,
             Large: (props) => <LargeBlock {...props} />,
             Fullpage: (props) => <FullpageBlock {...props} />
@@ -79,16 +86,18 @@ export default PostPage;
 
 // Utils to get sigle content file from markdown
 
-export async function getStaticPaths() {
-  const files = fs.readdirSync(`${process.cwd()}/data/posts`);
+export async function getStaticPaths({ locales }: { locales: [string] }) {
+  const files = fs.readdirSync(`${process.cwd()}/data/posts/uk`);
 
-  const paths = files.map((fileName) => {
-    return {
-      params: {
-        slug: fileName.replace('.mdx', ''),
-      },
-    };
-  });
+  const paths = files.map((fileName) => locales.map((locale) => {
+      return {
+        params: {
+          slug: fileName.replace('.mdx', ''),
+        },
+        locale
+      };
+    })
+  ).flat();
 
   return {
     paths,
@@ -98,14 +107,17 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({
   params: { slug },
+  locale
 }: {
-  params: { slug: string };
+  params: { slug: string }
+  locale: string
 }) {
-  const file = fs.readFileSync(`data/posts/${slug}.mdx`).toString();
+  const file = fs.readFileSync(`data/posts/${locale}/${slug}.mdx`).toString();
   const { data } = matter(file);
 
   return {
     props: {
+      locale,
       slug,
       frontmatter: { title: data.title, theme: data.theme, author: data.author },
     },

@@ -1,20 +1,13 @@
-import React, { FC, Children, cloneElement } from 'react';
+import React, { FC, Children, cloneElement, PropsWithChildren } from 'react';
 import cn from 'classnames'
 
 import CardStyles from './AuthorCard.module.css';
 
 type Props = {
-    children: JSX.Element[] | JSX.Element;
     src: string;
 }
 
-const AuthorCard: FC<Props> = ({children, src}) => {
-
-  const modifiedChildrens = Children.map(children, (child) => {
-    console.log(child.type);
-    
-    return cloneElement(child, {className: 'mt-1 text-type-p'})
-  })
+const AuthorCard: FC<PropsWithChildren<Props>> = ({children, src}) => {
 
   return (
     <div className={CardStyles.author_block}>
@@ -46,4 +39,4 @@ const AuthorCard: FC<Props> = ({children, src}) => {
   )
 }
 
-export default AuthorCard
+export {AuthorCard}

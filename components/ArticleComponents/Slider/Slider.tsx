@@ -62,4 +62,4 @@ const Slider: NextPage<Props> = ({ children }) => {
     )
 }
 
-export default Slider
+export {Slider}

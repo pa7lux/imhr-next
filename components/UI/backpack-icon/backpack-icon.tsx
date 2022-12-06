@@ -21,4 +21,4 @@ const Backpack: FC<Props> = ({ className }) => {
   )
 }
 
-export default Backpack
+export {Backpack}

@@ -26,4 +26,4 @@ const HorizontalPhoto: FC<Props> = ({ src, children, photoDescription }) => {
   )
 }
 
-export default HorizontalPhoto
+export {HorizontalPhoto}

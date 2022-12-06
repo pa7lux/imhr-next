@@ -17,4 +17,4 @@ const Tiktok: FC<Props> = ({className}) => {
   )
 }
 
-export default Tiktok
+export {Tiktok}

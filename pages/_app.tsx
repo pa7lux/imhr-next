@@ -1,8 +1,9 @@
 import '../styles/globals.css';
 import type { AppProps } from 'next/app';
 import { Layout } from '../components/Layout/layout';
-import { ThemeProvider } from '../store/context/context';
+import { ThemeProvider } from '../store/context/themeContext';
 import Head from 'next/head'
+import { appWithTranslation } from "next-i18next";
 
 const App = ({ Component, pageProps }: AppProps) => {
 
@@ -26,6 +27,7 @@ const App = ({ Component, pageProps }: AppProps) => {
         <link rel="icon" href="/images/icons/favicon.svg" type="image/svg+xml" />
         <link rel="apple-touch-icon" href="/images/icons/icon.png" />
       </Head>
+
       <ThemeProvider>
         <Layout>
           <Component {...pageProps} />
@@ -37,4 +39,4 @@ const App = ({ Component, pageProps }: AppProps) => {
   );
 }
 
-export default App;
+export default appWithTranslation(App);

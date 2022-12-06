@@ -15,4 +15,4 @@ const Grecha: FC<Props> = ({ className }) => {
   )
 }
 
-export default Grecha
+export {Grecha}

@@ -16,4 +16,4 @@ const Footer: NextPage<Props> = () => {
   )
 }
 
-export default Footer
+export {Footer}

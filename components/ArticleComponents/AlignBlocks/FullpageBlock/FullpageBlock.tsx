@@ -1,12 +1,8 @@
-import React, { FC } from 'react'
+import React, { FC, PropsWithChildren } from 'react'
 
 import BlockStyles from './FullpageBlock.module.css';
 
-type Props = {
-    children: JSX.Element | JSX.Element[]
-}
-
-const FullpageBlock: FC<Props> = ({ children }) => {
+const FullpageBlock: FC<PropsWithChildren> = ({ children }) => {
   return (
     <div className={BlockStyles.block_fullpage}>
         { children }
@@ -14,4 +10,4 @@ const FullpageBlock: FC<Props> = ({ children }) => {
   )
 }
 
-export default FullpageBlock
+export { FullpageBlock }

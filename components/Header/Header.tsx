@@ -1,6 +1,6 @@
 import { FC, useEffect } from 'react'
 import Link from 'next/link';
-import { withTheme } from '../../store/context/context';
+import { withTheme } from '../../store/context/themeContext';
 import { useRouter } from 'next/router';
 import cn from 'classnames';
 
@@ -10,7 +10,7 @@ let cx = cn.bind(HeaderStyles);
 
 export const Header = withTheme(({ theme, onChange }) => {
 
-  const { pathname } = useRouter()
+  const { pathname, asPath, locale } = useRouter()
 
   const { menu_list_item, menu_list_item__active } = HeaderStyles
 
@@ -55,9 +55,29 @@ export const Header = withTheme(({ theme, onChange }) => {
       </nav>
       <nav className={cn(HeaderStyles.header_lang, HeaderStyles.lang_menu)}>
         <ul className={cn(HeaderStyles.lang_list)}>
-          <li><a  className={cn(HeaderStyles.lang_link, HeaderStyles.lang_link__active)}>UA</a></li>
+          <li>
+            <Link href={asPath} locale='uk'>  
+              <p className={cn(HeaderStyles.lang_link, {
+                [HeaderStyles.lang_link__active]: locale === 'uk'
+              })}>UA</p>
+            </Link>
+          </li>
           <li className={cn(HeaderStyles.divider)} aria-hidden="true">|</li>
-          <li><a className={cn(HeaderStyles.lang_link)}>RU</a></li>
+          <li>
+            <Link href={asPath} locale='ru'>
+              <p className={cn(HeaderStyles.lang_link, {
+                [HeaderStyles.lang_link__active]: locale === 'ru'
+              })}>RU</p>
+            </Link>
+          </li>
+          <li className={cn(HeaderStyles.divider)} aria-hidden="true">|</li>
+          <li>
+            <Link href={asPath} locale='en'>
+              <p className={cn(HeaderStyles.lang_link, {
+                [HeaderStyles.lang_link__active]: locale === 'en'
+              })}>EN</p>
+            </Link>
+          </li>
         </ul>
       </nav>
     </header>
