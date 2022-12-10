@@ -125,6 +125,10 @@ body {
   color: var(--text-color-primary);
 }
 
+ul {
+  list-style: none;
+}
+
 .text-type-h1 {
   font-size: var(--text-size-4xl);
   font-variation-settings: var(--text-weight-black);
@@ -173,11 +177,17 @@ body {
 }
 
 .text-type-list {
-  padding-left: 1.2em;
   font-size: var(--text-size-m);
   font-variation-settings: var(--text-weight-light);
   line-height: 1.5;
   color: var(--text-color-primary);
+  padding-left: 0.7em;
+}
+
+.text-type-list::marker {
+  content: "•";
+  font-size: clamp(0.625rem, 0.4464rem + 0.8929vw, 1.25rem);
+  font-variation-settings: "wght" 350;
 }
 
 .text-type-quote {
