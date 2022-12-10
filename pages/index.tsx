@@ -1,44 +1,55 @@
 import fs from 'fs';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
+import { useTranslation } from 'next-i18next'
 import matter from 'gray-matter';
 import cn from 'classnames';
-import Link from 'next/link';
 import type { NextPage } from 'next';
 import Post from '../models/post';
+import {Story} from '../components/Story/Story';
+import {SendStory} from '../components/SendStory/SendStory';
+import Head from 'next/head'
+import Frontmatter from '../models/frontmatter';
+import { useRouter } from 'next/router';
 
 import HomeStyles from '../styles/Home.module.css';
-import Story from '../components/Story/Story';
-import SendStory from '../components/SendStory/SendStory';
 
-type HomeProps = {
+
+interface HomeProps {
   posts: Post[];
 };
 
-interface IData {
-  theme: 'theme-purple' | 'theme-turquoise' | 'theme-green' | 'theme-blue';
-  title: string;
-  author: string;
-}
-
-const Home: NextPage<HomeProps> = ({ posts }) => {
+const Home: NextPage<HomeProps> = (({ posts }) => {
+  const { t } = useTranslation('');
 
   return (
     <>
+      <Head>
+        <title>{t("home.pageTitle")}</title>
+      </Head>
+
       <section className={cn(HomeStyles.cover)}>
-      <picture>
-        <source srcSet="/images/index/cover_mobile_1x.jpg, /images/index/cover_mobile_2x.jpg 2x" media="(max-width: 600px)" />
-        <source srcSet="/images/index/cover_desktop_1x.jpg, /images/index/cover_desktop_2x.jpg 2x" media="(min-width: 601px)" />
-        
-        <img src="/images/index/cover_desktop_1x.jpg" alt="Фото редакції" className={cn(HomeStyles.cover_image)} />
-      </picture>
-      <div className={cn(HomeStyles.heading_box)}>
-        <h1 className={cn(HomeStyles.cover_title) + ' text-type-h1'}>I am here</h1>
-        <p className={cn(HomeStyles.cover_subheading) + 'text-type-p'}>Підлітки з&nbsp;України<br />розповідають свої історії</p>
-      </div>
-      </section>
+        <picture>
+          <source srcSet="/images/index/cover_mobile_1x.jpg, /images/index/cover_mobile_2x.jpg 2x" media="(max-width: 600px)" />
+          <source srcSet="/images/index/cover_desktop_1x.jpg, /images/index/cover_desktop_2x.jpg 2x" media="(min-width: 601px)" />
+          
+          <img src="/images/index/cover_desktop_1x.jpg" alt="Фото редакції" className={cn(HomeStyles.cover_image)} />
+        </picture>
+        <div className={cn(HomeStyles.heading_box)}>
+          <h1 className={cn(HomeStyles.cover_title, 'text-type-h1')}>I am here</h1>
+          <p className={cn(HomeStyles.cover_subheading, 'text-type-p')}>{t("home.subTitle")}</p>
+        </div>
+        </section>
       <section className={cn(HomeStyles.stories)}>
         <ul className={cn(HomeStyles.stories_list)}>
           {posts.map((item: Post) => {
-            return <Story title={item.frontmatter.title} author={item.frontmatter.author} theme={item.frontmatter.theme} slug={item.slug} key={item.slug} />
+            return <Story 
+              title={item.frontmatter.title} 
+              author={item.frontmatter.author} 
+              theme={item.frontmatter.theme} 
+              slug={item.slug} 
+              key={item.slug} 
+              svg={item.frontmatter.svg}
+              src={item.frontmatter.src}/>
           })}
           <SendStory />
         </ul>
@@ -46,24 +57,24 @@ const Home: NextPage<HomeProps> = ({ posts }) => {
     </>
     
   );
-};
+});
 
 export default Home;
 
 // util to get multiple files from markdown directory
 
-export async function getStaticProps() {
-  const files = fs.readdirSync(`${process.cwd()}/data/posts`);
+export async function getStaticProps({ locale }: { locale: string }) {
+  console.log(locale)
+  const files = fs.readdirSync(`${process.cwd()}/data/posts/${locale}`);
 
   const posts: Post[] = files.map((fileName) => {
-    const file = fs.readFileSync(`data/posts/${fileName}`).toString();
+    const file = fs.readFileSync(`data/posts/${locale}/${fileName}`).toString();
 
-    const { data, content } = matter(file);
-    const frontmatter = { title: data.title, theme: data.theme, author: data.author };
+    const { data } = matter(file);
+    const frontmatter: Frontmatter = { title: data.title, theme: data.theme, author: data.author, svg: data.svg };
 
     return {
       slug: fileName.replace('.mdx', ''),
-      content: content,
       frontmatter,
     };
   });
@@ -71,6 +82,7 @@ export async function getStaticProps() {
   return {
     props: {
       posts,
+      ...(await serverSideTranslations(locale, ["common"]))
     },
   };
 }

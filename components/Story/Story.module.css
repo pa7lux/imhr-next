@@ -27,7 +27,7 @@
   transform: translateY(-50%) scaleX(1.2);
 }
 
-.story_link:hover .svg path {
+.story_link:hover svg path {
   animation-name: svgAnimation;
 }
 
@@ -90,45 +90,36 @@
   transform-origin: 0 center;
 }
 
+.story__large {
+  grid-row: span 2;
+  aspect-ratio: initial;
+}
+
+.story__large .story_info {
+  flex-grow: 1;
+  width: 100%;
+  padding: clamp(0.5rem, 0.2288rem + 1.3559vw, 1.5rem);
+  height: auto;
+}
+
 @media screen and (max-width: 600px) {
   .story_info {
     padding: 1.5rem 1rem;
   }
 }
 
+@media screen and (max-width: 600px) {
+  .story__large {
+    aspect-ratio: initial;
+  }
+}
+
+
 @media screen and (max-width: 800px) {
   .story_info::before {
     width: 24%;
     height: 0.6em;
   }
-}
-
-.svg {
-  position: absolute;
-  height: 100%;
-  z-index: 0;
-}
-
-.svg path {
-  stroke-dasharray: 1000;
-  stroke-dashoffset: 1000;
-  animation-timing-function: ease-out;
-  animation-fill-mode: forwards;
-}
-
-.svg.svg_bag {
-  width: 45%;
-  right: 3%;
-  bottom: -12%;
-}
-
-.svg.svg_bag path:not(:first-child) {
-  animation-duration: 3s;
-  animation-delay: .3s;
-}
-
-.svg.svg_bag path:first-child {
-  animation-duration: 1s;
 }
 
 @keyframes svgAnimation {

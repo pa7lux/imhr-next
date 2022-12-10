@@ -1,0 +1,41 @@
+.big_heading_and_text {
+    margin-bottom: calc(3 * var(--size-unit));
+    position: relative;
+}
+
+.big_heading_and_text .heading_big {
+    width: var(--inner-width-large);
+    margin-right: auto;
+    margin-bottom: var(--size-unit);
+    margin-left: auto;
+}
+
+.big_heading_and_text_paragraph {
+    width: var(--inner-width-large);
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.heading_and_text {
+    margin-top: calc(4 * var(--size-unit));
+}
+
+.heading_and_text .heading_medium {
+    width: var(--inner-width-main);
+    margin-right: auto;
+    margin-bottom: var(--size-unit);
+    margin-left: auto;
+}
+
+.heading_and_text_paragraph {
+    width: var(--inner-width-main);
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.heading_and_text .heading_small {
+    width: var(--inner-width-main);
+    margin-right: auto;
+    margin-bottom: var(--size-unit);
+    margin-left: auto;
+}

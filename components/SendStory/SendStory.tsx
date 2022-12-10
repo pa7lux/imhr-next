@@ -23,4 +23,4 @@ const SendStory: NextPage = () => {
   )
 }
 
-export default SendStory
+export {SendStory}

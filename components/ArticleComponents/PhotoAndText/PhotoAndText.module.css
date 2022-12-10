@@ -1,0 +1,12 @@
+.photo_and_text {
+    margin-top: calc(2 * var(--size-unit));
+    margin-bottom: var(--size-unit);
+    align-self: center;
+    width: 100%;
+    height: 100%;
+}
+
+.image {
+    object-position: center;
+    object-fit: cover;
+}

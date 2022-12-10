@@ -1,12 +1,24 @@
-import { FC } from 'react'
+import { FC, useEffect } from 'react'
 import Link from 'next/link';
-
+import { withTheme } from '../../store/context/themeContext';
+import { useRouter } from 'next/router';
 import cn from 'classnames';
-import HeaderStyles from './Header.module.css';
-import { withTheme } from '../../store/context/context';
-import { ContextProps } from '../../models/themeContext';
 
-export const Header = withTheme(({ theme }) => {
+import HeaderStyles from './Header.module.css';
+
+let cx = cn.bind(HeaderStyles);
+
+export const Header = withTheme(({ theme, onChange }) => {
+
+  const { pathname, asPath, locale } = useRouter()
+
+  const { menu_list_item, menu_list_item__active } = HeaderStyles
+
+  useEffect(() => {
+    if (pathname === '/' || pathname === '/about') {
+      onChange('theme-blue')
+    }
+  }, [pathname])
 
   return (
     <header className={cn(HeaderStyles.header, theme)}>
@@ -22,14 +34,20 @@ export const Header = withTheme(({ theme }) => {
       </div>
       <nav className={cn(HeaderStyles.header_menu, HeaderStyles.main_menu)}>
         <ul className={cn(HeaderStyles.menu_list)}>
-          <li className={cn(HeaderStyles.menu_list_item, HeaderStyles.menu_list_item__active)}>
+          <li className={cx({
+              [menu_list_item]: true,
+              [menu_list_item__active]: pathname === '/' || pathname === '/posts/[slug]',
+            })}>
             <Link href='/' legacyBehavior>
               <a className={cn(HeaderStyles.menu_link)}>Історії</a>
             </Link>
           </li>
-          <li className={cn(HeaderStyles.menu_list_item)}>
+          <li className={cx({
+              [menu_list_item]: true,
+              [menu_list_item__active]: pathname === '/about',
+            })}>
             <Link href='/about' legacyBehavior>
-              <a className={cn(HeaderStyles.menu_link, HeaderStyles.menu_link)}>Про проект</a>
+              <a className={cn(HeaderStyles.menu_link)}>Про проект</a>
             </Link>
           </li>
           <li className={cn(HeaderStyles.menu_list_item)}><a href="https://t.me/+tiiH3XpLUB03YWFi" target="_blank" className={cn(HeaderStyles.menu_link, HeaderStyles.menu_link)}>У мене є історія</a></li>
@@ -37,9 +55,29 @@ export const Header = withTheme(({ theme }) => {
       </nav>
       <nav className={cn(HeaderStyles.header_lang, HeaderStyles.lang_menu)}>
         <ul className={cn(HeaderStyles.lang_list)}>
-          <li><a  className={cn(HeaderStyles.lang_link, HeaderStyles.lang_link__active)}>UA</a></li>
+          <li>
+            <Link href={asPath} locale='uk'>  
+              <p className={cn(HeaderStyles.lang_link, {
+                [HeaderStyles.lang_link__active]: locale === 'uk'
+              })}>UA</p>
+            </Link>
+          </li>
           <li className={cn(HeaderStyles.divider)} aria-hidden="true">|</li>
-          <li><a className={cn(HeaderStyles.lang_link)}>RU</a></li>
+          <li>
+            <Link href={asPath} locale='ru'>
+              <p className={cn(HeaderStyles.lang_link, {
+                [HeaderStyles.lang_link__active]: locale === 'ru'
+              })}>RU</p>
+            </Link>
+          </li>
+          <li className={cn(HeaderStyles.divider)} aria-hidden="true">|</li>
+          <li>
+            <Link href={asPath} locale='en'>
+              <p className={cn(HeaderStyles.lang_link, {
+                [HeaderStyles.lang_link__active]: locale === 'en'
+              })}>EN</p>
+            </Link>
+          </li>
         </ul>
       </nav>
     </header>
