@@ -19,7 +19,6 @@
   height: fit-content;
 }
 
-
 @media screen and (max-width: 1024px) {
   .horizontal_photo_and_text {
     flex-direction: column;

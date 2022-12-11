@@ -1,39 +1,38 @@
 .svg {
-    position: absolute;
-    height: 100%;
-    z-index: 0;
+  position: absolute;
+  height: 100%;
+  z-index: 0;
 }
 
 .svg path {
-    stroke-dasharray: 1000;
-    stroke-dashoffset: 1000;
-    animation-timing-function: ease-out;
-    animation-fill-mode: forwards;
-  }
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+}
 
 .svg.svg_heart {
-    width: 50%;
-    right: -3%;
-    bottom: -12%;
-  }
-  
-  .svg path {
-    stroke-dasharray: 1000;
-    stroke-dashoffset: 1000;
-    animation-timing-function: ease-out;
-    animation-fill-mode: forwards;
-  }
-  
-  .svg.svg_heart path:first-child {
-    animation-duration: 1s;
-  }
-  
-  .svg.svg_heart path:not(:first-child) {
-    animation-duration: 3s;
-    animation-delay: .3s;
-  }
-  
-  .svg.svg_heart path:first-child {
-    animation-duration: 1s;
-  }
-  
+  width: 50%;
+  right: -3%;
+  bottom: -12%;
+}
+
+.svg path {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+}
+
+.svg.svg_heart path:first-child {
+  animation-duration: 1s;
+}
+
+.svg.svg_heart path:not(:first-child) {
+  animation-duration: 3s;
+  animation-delay: 0.3s;
+}
+
+.svg.svg_heart path:first-child {
+  animation-duration: 1s;
+}

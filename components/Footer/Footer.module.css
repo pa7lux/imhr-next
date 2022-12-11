@@ -8,7 +8,7 @@
 }
 
 .footer__index {
-  margin-top: calc(10*var(--size-unit));
+  margin-top: calc(10 * var(--size-unit));
 }
 
 .thanks {
@@ -18,22 +18,22 @@
 
 @media screen and (max-width: 800px) {
   .footer--index {
-    margin-top: calc(8*var(--size-unit));
+    margin-top: calc(8 * var(--size-unit));
   }
 }
 
 @media screen and (max-width: 600px) {
   .footer--index {
-    margin-top: calc(6*var(--size-unit));
+    margin-top: calc(6 * var(--size-unit));
   }
 }
 
 .footer__inner {
-  margin-top: calc(5*var(--size-unit));
+  margin-top: calc(5 * var(--size-unit));
 }
 
 @media screen and (max-width: 800px) {
   .footer--inner {
-    margin-top: calc(6*var(--size-unit));
+    margin-top: calc(6 * var(--size-unit));
   }
 }

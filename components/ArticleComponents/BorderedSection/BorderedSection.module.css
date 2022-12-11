@@ -1,25 +1,25 @@
 .advice_section {
-    position: relative;
-    padding: calc(3 * var(--size-unit)) calc(2 * var(--size-unit));
-    margin-top: calc(5 * var(--size-unit));
-    border-radius: var(--radius-main);
-    border: 2px solid var(--accent-color);
-    align-self: center;
+  position: relative;
+  padding: calc(3 * var(--size-unit)) calc(2 * var(--size-unit));
+  margin-top: calc(5 * var(--size-unit));
+  border-radius: var(--radius-main);
+  border: 2px solid var(--accent-color);
+  align-self: center;
 }
 .advice_section_badge {
-    position: absolute;
-    top: 0;
-    padding: 0.4em 1em;
-    font-size: var(--text-size-s);
-    font-variation-settings: var(--text-weight-normal);
-    line-height: 1.5;
-    background: #F5F5F5;
-    color: var(--accent-color);
-    transform: translate(-1em, calc(-50% - 2px));
+  position: absolute;
+  top: 0;
+  padding: 0.4em 1em;
+  font-size: var(--text-size-s);
+  font-variation-settings: var(--text-weight-normal);
+  line-height: 1.5;
+  background: #f5f5f5;
+  color: var(--accent-color);
+  transform: translate(-1em, calc(-50% - 2px));
 }
 .advice_section_heading:not(:first-of-type) {
-    margin-top: calc(3 * var(--size-unit));
+  margin-top: calc(3 * var(--size-unit));
 }
 .advice_section .list_box {
-    width: auto;
+  width: auto;
 }
