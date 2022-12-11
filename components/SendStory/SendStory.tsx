@@ -1,11 +1,11 @@
-import { FC } from "react";
-import cn from "classnames";
-import { useTranslation } from "next-i18next";
+import { FC } from 'react';
+import cn from 'classnames';
+import { useTranslation } from 'next-i18next';
 
-import SendStoryStyles from "./SendStory.module.css";
+import SendStoryStyles from './SendStory.module.css';
 
 const SendStory: FC = () => {
-  const { t } = useTranslation("common");
+  const { t } = useTranslation('common');
 
   return (
     <li className={cn(SendStoryStyles.story)}>
@@ -14,14 +14,14 @@ const SendStory: FC = () => {
         target="_blank"
         className={
           cn(SendStoryStyles.story_link, SendStoryStyles.telegram_link) +
-          " theme-blue"
+          ' theme-blue'
         }
       >
         <article className={cn(SendStoryStyles.story_card)}>
           <div className={cn(SendStoryStyles.story_info)}>
-            <h2 className="text-type-h3">{t("home.sendStory")}</h2>
+            <h2 className="text-type-h3">{t('home.sendStory')}</h2>
           </div>
-          <div className={cn(SendStoryStyles.story_graphics) + " theme-yellow"}>
+          <div className={cn(SendStoryStyles.story_graphics) + ' theme-yellow'}>
             <svg
               className={cn(SendStoryStyles.svg, SendStoryStyles.svg_telegram)}
               width="419"

@@ -1,7 +1,7 @@
-import React, { FC, Children, cloneElement, PropsWithChildren } from "react";
-import cn from "classnames";
+import React, { FC, Children, cloneElement, PropsWithChildren } from 'react';
+import cn from 'classnames';
 
-import CardStyles from "./AuthorCard.module.css";
+import CardStyles from './AuthorCard.module.css';
 
 type Props = {
   src: string;
@@ -10,7 +10,7 @@ type Props = {
 const AuthorCard: FC<PropsWithChildren<Props>> = ({ children, src }) => {
   return (
     <div className={CardStyles.author_block}>
-      <div className={cn(CardStyles.author_content, "box-radius")}>
+      <div className={cn(CardStyles.author_content, 'box-radius')}>
         <svg
           className={CardStyles.author_image}
           viewBox="0 0 244 242"

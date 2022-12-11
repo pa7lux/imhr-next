@@ -12,7 +12,7 @@
   padding-left: clamp(5rem, 3.625rem + 6.875vw, 9.8125rem);
   font-size: clamp(0.625rem, 0.4464rem + 0.8929vw, 1.25rem);
   background-color: var(--accent-color);
-  font-variation-settings: "wght" 150;
+  font-variation-settings: 'wght' 150;
 }
 
 .author_image {
@@ -27,8 +27,8 @@
   margin-bottom: clamp(0.5rem, 0.4286rem + 0.3571vw, 0.75rem);
   font-size: clamp(1.5rem, 1.0714rem + 2.1429vw, 3rem);
   letter-spacing: 0.02em;
-  font-feature-settings: "ss01" on;
-  font-variation-settings: "wght" 840, "CONT" 0, "MIDL" -800;
+  font-feature-settings: 'ss01' on;
+  font-variation-settings: 'wght' 840, 'CONT' 0, 'MIDL' -800;
 }
 
 .author_description {

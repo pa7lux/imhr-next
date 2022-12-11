@@ -8,8 +8,8 @@
   .header {
     display: grid;
     grid-template-areas:
-      "logo . lang"
-      "menu menu menu";
+      'logo . lang'
+      'menu menu menu';
     gap: calc(1.5 * var(--size-unit));
   }
 }
@@ -55,7 +55,7 @@
 .header nav ul {
   list-style: none;
   display: flex;
-  font-variation-settings: "wght" 150;
+  font-variation-settings: 'wght' 150;
 }
 
 .menu_list {
@@ -67,7 +67,7 @@
 }
 
 .menu_list_item::after {
-  content: "";
+  content: '';
   position: absolute;
   width: 3em;
   height: 0.3em;

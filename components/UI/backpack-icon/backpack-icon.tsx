@@ -1,7 +1,7 @@
-import React, { FC } from "react";
-import cn from "classnames";
+import React, { FC } from 'react';
+import cn from 'classnames';
 
-import SvgStyles from "./backpack-icon.module.css";
+import SvgStyles from './backpack-icon.module.css';
 
 type Props = {
   className?: string;

@@ -1,7 +1,7 @@
-import React, { FC, PropsWithChildren } from "react";
-import cn from "classnames";
+import React, { FC, PropsWithChildren } from 'react';
+import cn from 'classnames';
 
-import BorderStyles from "./BorderedSection.module.css";
+import BorderStyles from './BorderedSection.module.css';
 
 type Props = {
   text: string;

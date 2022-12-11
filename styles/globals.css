@@ -1,5 +1,5 @@
-@import url("./variables.css");
-@import url("./styles.css");
+@import url('./variables.css');
+@import url('./styles.css');
 
 *,
 *::before,
@@ -12,7 +12,7 @@ body {
   max-width: 1650px;
   margin: 0 auto;
   font-family: var(--font-main);
-  font-feature-settings: "ss01" on;
+  font-feature-settings: 'ss01' on;
   background-color: #f5f5f5;
   padding: clamp(0.5rem, 0.2288rem + 1.3559vw, 1.5rem)
     clamp(0.625rem, 0.1674rem + 2.2881vw, 2.3125rem)
@@ -67,11 +67,11 @@ body {
   --text-color-link-hover: #0975e8;
 
   /* жирности */
-  --text-weight-black: "wght" 840, "CONT" 0, "MIDL" -1000;
-  --text-weight-bold: "wght" 700;
-  --text-weight-semibold: "wght" 500;
-  --text-weight-normal: "wght" 350;
-  --text-weight-light: "wght" 150;
+  --text-weight-black: 'wght' 840, 'CONT' 0, 'MIDL' -1000;
+  --text-weight-bold: 'wght' 700;
+  --text-weight-semibold: 'wght' 500;
+  --text-weight-normal: 'wght' 350;
+  --text-weight-light: 'wght' 150;
 }
 
 @media screen and (max-width: 650px) {
@@ -187,9 +187,9 @@ ul {
 }
 
 .text-type-list::marker {
-  content: "•";
+  content: '•';
   font-size: clamp(0.625rem, 0.4464rem + 0.8929vw, 1.25rem);
-  font-variation-settings: "wght" 350;
+  font-variation-settings: 'wght' 350;
 }
 
 .text-type-quote {

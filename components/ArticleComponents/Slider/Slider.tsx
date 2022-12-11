@@ -1,14 +1,14 @@
-import { NextPage } from "next";
-import { Children, cloneElement } from "react";
-import { useRef } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import SwiperCore, { Navigation, Pagination } from "swiper";
-import classNames from "classnames";
+import { NextPage } from 'next';
+import { Children, cloneElement } from 'react';
+import { useRef } from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import SwiperCore, { Navigation, Pagination } from 'swiper';
+import classNames from 'classnames';
 
-import "swiper/css";
-import "swiper/swiper-bundle.css";
+import 'swiper/css';
+import 'swiper/swiper-bundle.css';
 
-import SliderStyles from "./Slider.module.css";
+import SliderStyles from './Slider.module.css';
 
 type Props = {
   children: JSX.Element | JSX.Element[];
@@ -22,7 +22,7 @@ const Slider: NextPage<Props> = ({ children }) => {
   SwiperCore.use([Navigation, Pagination]);
 
   return (
-    <div className={cx(SliderStyles.slider_component, "mb-2 mt-2")}>
+    <div className={cx(SliderStyles.slider_component, 'mb-2 mt-2')}>
       <button
         className={SliderStyles.swiper_button_prev}
         ref={navigationPrevRef}
@@ -49,7 +49,7 @@ const Slider: NextPage<Props> = ({ children }) => {
         className={SliderStyles.slider}
         loop
         onBeforeInit={(Swiper) => {
-          if (typeof Swiper.params.navigation !== "boolean") {
+          if (typeof Swiper.params.navigation !== 'boolean') {
             const navigation = Swiper.params.navigation!;
             navigation.prevEl = navigationPrevRef.current;
             navigation.nextEl = navigationNextRef.current;

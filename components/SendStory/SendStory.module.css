@@ -103,7 +103,7 @@
 }
 
 .story_info::before {
-  content: "";
+  content: '';
   background-color: var(--accent-color);
   position: absolute;
   top: 0;

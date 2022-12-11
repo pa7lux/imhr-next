@@ -1,7 +1,7 @@
-import React, { FC } from "react";
-import cn from "classnames";
+import React, { FC } from 'react';
+import cn from 'classnames';
 
-import GrechaStyles from "./grecha-icon.module.css";
+import GrechaStyles from './grecha-icon.module.css';
 
 type Props = {
   className?: string;

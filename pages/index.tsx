@@ -1,28 +1,28 @@
-import fs from "fs";
-import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-import { useTranslation } from "next-i18next";
-import matter from "gray-matter";
-import cn from "classnames";
-import type { NextPage } from "next";
-import Post from "../models/post";
-import { Story } from "../components/Story/Story";
-import { SendStory } from "../components/SendStory/SendStory";
-import Head from "next/head";
-import Frontmatter from "../models/frontmatter";
+import fs from 'fs';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { useTranslation } from 'next-i18next';
+import matter from 'gray-matter';
+import cn from 'classnames';
+import type { NextPage } from 'next';
+import Post from '../models/post';
+import { Story } from '../components/Story/Story';
+import { SendStory } from '../components/SendStory/SendStory';
+import Head from 'next/head';
+import Frontmatter from '../models/frontmatter';
 
-import HomeStyles from "../styles/Home.module.css";
+import HomeStyles from '../styles/Home.module.css';
 
 interface HomeProps {
   posts: Post[];
 }
 
 const Home: NextPage<HomeProps> = ({ posts }) => {
-  const { t } = useTranslation("");
+  const { t } = useTranslation('');
 
   return (
     <>
       <Head>
-        <title>{t("home.pageTitle")}</title>
+        <title>{t('home.pageTitle')}</title>
       </Head>
 
       <section className={cn(HomeStyles.cover)}>
@@ -43,11 +43,11 @@ const Home: NextPage<HomeProps> = ({ posts }) => {
           />
         </picture>
         <div className={cn(HomeStyles.heading_box)}>
-          <h1 className={cn(HomeStyles.cover_title, "text-type-h1")}>
+          <h1 className={cn(HomeStyles.cover_title, 'text-type-h1')}>
             I am here
           </h1>
-          <p className={cn(HomeStyles.cover_subheading, "text-type-p")}>
-            {t("home.subTitle")}
+          <p className={cn(HomeStyles.cover_subheading, 'text-type-p')}>
+            {t('home.subTitle')}
           </p>
         </div>
       </section>
@@ -92,7 +92,7 @@ export async function getStaticProps({ locale }: { locale: string }) {
     };
 
     return {
-      slug: fileName.replace(".mdx", ""),
+      slug: fileName.replace('.mdx', ''),
       frontmatter,
     };
   });
@@ -101,10 +101,10 @@ export async function getStaticProps({ locale }: { locale: string }) {
     props: {
       posts,
       ...(await serverSideTranslations(locale, [
-        "common",
-        "header",
-        "components",
-        "footer",
+        'common',
+        'header',
+        'components',
+        'footer',
       ])),
     },
   };

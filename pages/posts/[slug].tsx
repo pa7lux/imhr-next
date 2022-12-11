@@ -1,31 +1,31 @@
-import fs from "fs";
-import matter from "gray-matter";
-import cn from "classnames";
-import { NextPage } from "next";
-import Frontmatter from "../../models/frontmatter";
-import dynamic from "next/dynamic";
-import { MDXProvider } from "@mdx-js/react";
-import { Heading } from "../../components/ArticleComponents/Heading/Heading";
-import PostStyles from "./Post.module.css";
-import { Slider } from "../../components/ArticleComponents/Slider/Slider";
-import { Blockquote } from "../../components/ArticleComponents/Blockquote/Blockquote";
-import { PhotoFullPage } from "../../components/ArticleComponents/PhotoFullPage/PhotoFullPage";
-import { HorizontalPhoto } from "../../components/ArticleComponents/HorizontalPhoto/HorizontalPhoto";
-import { withTheme } from "../../store/context/themeContext";
-import { ContextProps } from "../../models/themeContext";
-import { useEffect } from "react";
-import { AuthorCard } from "../../components/ArticleComponents/AuthorCard/AuthorCard";
-import IconSelector from "../../components/UI/IconSelector";
-import { LinkList } from "../../components/ArticleComponents/LinkList/LinkList";
-import { LinkListItem } from "../../components/ArticleComponents/LinkListItem/LinkListItem";
-import { PhotoAndText } from "../../components/ArticleComponents/PhotoAndText/PhotoAndText";
-import { TextWithUnder } from "../../components/ArticleComponents/TextWithUnder/TextWithUnder";
-import { BorderedSection } from "../../components/ArticleComponents/BorderedSection/BorderedSection";
-import { MediumBlock } from "../../components/ArticleComponents/AlignBlocks/MediumBlock/MediumBlock";
-import { LargeBlock } from "../../components/ArticleComponents/AlignBlocks/LargeBlock/LargeBlock";
-import { FullpageBlock } from "../../components/ArticleComponents/AlignBlocks/FullpageBlock/FullpageBlock";
-import Head from "next/head";
-import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import fs from 'fs';
+import matter from 'gray-matter';
+import cn from 'classnames';
+import { NextPage } from 'next';
+import Frontmatter from '../../models/frontmatter';
+import dynamic from 'next/dynamic';
+import { MDXProvider } from '@mdx-js/react';
+import { Heading } from '../../components/ArticleComponents/Heading/Heading';
+import PostStyles from './Post.module.css';
+import { Slider } from '../../components/ArticleComponents/Slider/Slider';
+import { Blockquote } from '../../components/ArticleComponents/Blockquote/Blockquote';
+import { PhotoFullPage } from '../../components/ArticleComponents/PhotoFullPage/PhotoFullPage';
+import { HorizontalPhoto } from '../../components/ArticleComponents/HorizontalPhoto/HorizontalPhoto';
+import { withTheme } from '../../store/context/themeContext';
+import { ContextProps } from '../../models/themeContext';
+import { useEffect } from 'react';
+import { AuthorCard } from '../../components/ArticleComponents/AuthorCard/AuthorCard';
+import IconSelector from '../../components/UI/IconSelector';
+import { LinkList } from '../../components/ArticleComponents/LinkList/LinkList';
+import { LinkListItem } from '../../components/ArticleComponents/LinkListItem/LinkListItem';
+import { PhotoAndText } from '../../components/ArticleComponents/PhotoAndText/PhotoAndText';
+import { TextWithUnder } from '../../components/ArticleComponents/TextWithUnder/TextWithUnder';
+import { BorderedSection } from '../../components/ArticleComponents/BorderedSection/BorderedSection';
+import { MediumBlock } from '../../components/ArticleComponents/AlignBlocks/MediumBlock/MediumBlock';
+import { LargeBlock } from '../../components/ArticleComponents/AlignBlocks/LargeBlock/LargeBlock';
+import { FullpageBlock } from '../../components/ArticleComponents/AlignBlocks/FullpageBlock/FullpageBlock';
+import Head from 'next/head';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 interface Props extends ContextProps {
   slug: string;
@@ -73,7 +73,7 @@ const PostPage: NextPage<Props> = withTheme<Props>(
                 ),
                 a: (props) => (
                   <a
-                    style={{ borderBottom: "none" }}
+                    style={{ borderBottom: 'none' }}
                     className="center"
                     {...props}
                   />
@@ -117,7 +117,7 @@ export async function getStaticPaths({ locales }: { locales: [string] }) {
       locales.map((locale) => {
         return {
           params: {
-            slug: fileName.replace(".mdx", ""),
+            slug: fileName.replace('.mdx', ''),
           },
           locale,
         };
@@ -151,9 +151,9 @@ export async function getStaticProps({
         author: data.author,
       },
       ...(await serverSideTranslations(locale, [
-        "components",
-        "header",
-        "footer",
+        'components',
+        'header',
+        'footer',
       ])),
     },
   };

@@ -52,7 +52,7 @@
 .swiper_button_next::after,
 .swiper_button_prev::after {
   position: absolute;
-  content: "";
+  content: '';
   width: 4em;
   height: 100%;
   background-repeat: no-repeat;

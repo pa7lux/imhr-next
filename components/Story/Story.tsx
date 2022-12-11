@@ -1,11 +1,11 @@
-import { FC } from "react";
-import Link from "next/link";
-import cn from "classnames";
-import IconSelector from "../UI/IconSelector";
-import Frontmatter from "../../models/frontmatter";
-import { useRouter } from "next/router";
+import { FC } from 'react';
+import Link from 'next/link';
+import cn from 'classnames';
+import IconSelector from '../UI/IconSelector';
+import Frontmatter from '../../models/frontmatter';
+import { useRouter } from 'next/router';
 
-import StoryStyles from "./Story.module.css";
+import StoryStyles from './Story.module.css';
 
 interface Props extends Frontmatter {
   slug: string;

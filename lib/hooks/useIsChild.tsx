@@ -1,4 +1,4 @@
-import { useRef, useState, useEffect, RefObject, useMemo } from "react";
+import { useRef, useState, useEffect, RefObject, useMemo } from 'react';
 
 type ReturnData<T> = {
   ref: RefObject<T>;

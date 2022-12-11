@@ -1,4 +1,4 @@
-import Frontmatter from "./frontmatter";
+import Frontmatter from './frontmatter';
 
 interface Post {
   slug: string;

@@ -1,8 +1,8 @@
-import React, { FC, PropsWithChildren } from "react";
-import cn from "classnames";
+import React, { FC, PropsWithChildren } from 'react';
+import cn from 'classnames';
 
-import AuthorStyles from "../AuthorCard/AuthorCard.module.css";
-import useIsChild from "../../../lib/hooks/useIsChild";
+import AuthorStyles from '../AuthorCard/AuthorCard.module.css';
+import useIsChild from '../../../lib/hooks/useIsChild';
 
 const LinkListItem: FC<PropsWithChildren> = ({ children }) => {
   const { isChild, ref } = useIsChild<HTMLLIElement>(

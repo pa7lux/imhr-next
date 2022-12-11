@@ -1,5 +1,5 @@
-import { SVG } from "./svg";
-import { Theme } from "./theme";
+import { SVG } from './svg';
+import { Theme } from './theme';
 
 interface Frontmatter {
   title: string;

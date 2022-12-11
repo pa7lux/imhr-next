@@ -1,12 +1,12 @@
-import React, { ComponentType, FC, useState } from "react";
-import { Theme } from "../../models/theme";
+import React, { ComponentType, FC, useState } from 'react';
+import { Theme } from '../../models/theme';
 import {
   InjectedProps,
   ContextProps,
   ThemeProviderProps,
-} from "../../models/themeContext";
+} from '../../models/themeContext';
 
-const ThemeContext = React.createContext<InjectedProps>(["theme-purple", null]);
+const ThemeContext = React.createContext<InjectedProps>(['theme-purple', null]);
 
 const useTheme = () => React.useContext<InjectedProps>(ThemeContext);
 
@@ -19,7 +19,7 @@ const withTheme =
   };
 
 const ThemeProvider: FC<ThemeProviderProps> = ({ children }) => {
-  const [theme, setTheme] = useState<Theme>("theme-purple");
+  const [theme, setTheme] = useState<Theme>('theme-purple');
 
   return (
     <ThemeContext.Provider value={[theme, setTheme]}>

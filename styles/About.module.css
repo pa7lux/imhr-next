@@ -26,7 +26,7 @@
   margin-left: auto;
   margin-top: calc(4 * var(--size-unit));
   font-size: clamp(1.25rem, 0.75rem + 2.5vw, 3rem);
-  font-variation-settings: "wght" 700;
+  font-variation-settings: 'wght' 700;
   line-height: 1;
 }
 .image_grid {
