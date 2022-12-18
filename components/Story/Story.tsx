@@ -9,30 +9,33 @@ import StoryStyles from './Story.module.css';
 
 interface Props extends Frontmatter {
   slug: string;
+  src?: string;
 }
 
-const Story: FC<Props> = ({ title, author, theme, slug, svg, src }) => {
+const Story: FC<Props> = ({ title, author, theme, slug, svg }) => {
   const { locale } = useRouter();
 
-  if (!src) {
-    return (
-      <li className={cn(StoryStyles.story)}>
-        <Link href={`/posts/${slug}`} legacyBehavior locale={locale}>
-          <a className={StoryStyles.story_link}>
-            <article className={cn(StoryStyles.story_card, theme)}>
-              <div className={cn(StoryStyles.story_info)}>
-                <h2 className="text-type-h3">{title}</h2>
-                <p className="text-type-p text-view-secondary">{author}</p>
-              </div>
-              <div className={cn(StoryStyles.story_graphics)}>
-                <IconSelector icon={svg} />
-              </div>
-            </article>
-          </a>
-        </Link>
-      </li>
-    );
-  }
+  return (
+    <li className={cn(StoryStyles.story)}>
+      <Link href={`/posts/${slug}`} legacyBehavior locale={locale}>
+        <a className={StoryStyles.story_link}>
+          <article className={cn(StoryStyles.story_card, theme)}>
+            <div className={cn(StoryStyles.story_info)}>
+              <h2 className="text-type-h3">{title}</h2>
+              <p className="text-type-p text-view-secondary">{author}</p>
+            </div>
+            <div className={cn(StoryStyles.story_graphics)}>
+              <IconSelector icon={svg} />
+            </div>
+          </article>
+        </a>
+      </Link>
+    </li>
+  );
+};
+
+const BigStory: FC<Props> = ({ slug, src, theme, title, author }) => {
+  const { locale } = useRouter();
 
   return (
     <li className={cn(StoryStyles.story, StoryStyles.story__large)}>
@@ -51,4 +54,4 @@ const Story: FC<Props> = ({ title, author, theme, slug, svg, src }) => {
   );
 };
 
-export { Story };
+export { Story, BigStory };

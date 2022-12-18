@@ -8,3 +8,10 @@
   align-items: center;
   width: 100%;
 }
+
+.a_article {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  border-bottom: none;
+}

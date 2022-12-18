@@ -43,6 +43,10 @@ const PostPage: NextPage<Props> = withTheme<Props>(
       onChange(frontmatter.theme);
     }, [frontmatter.theme]);
 
+    useEffect(() => {
+      console.log(frontmatter.title);
+    }, [frontmatter.title]);
+
     return (
       <>
         <Head>
@@ -73,8 +77,7 @@ const PostPage: NextPage<Props> = withTheme<Props>(
                 ),
                 a: (props) => (
                   <a
-                    style={{ borderBottom: 'none' }}
-                    className="center"
+                    className={cn(PostStyles.a_article, 'center')}
                     {...props}
                   />
                 ),

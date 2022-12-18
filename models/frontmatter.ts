@@ -6,7 +6,6 @@ interface Frontmatter {
   author: string;
   theme: Theme;
   svg: SVG;
-  src?: string;
 }
 
 export default Frontmatter;

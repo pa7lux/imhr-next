@@ -7,12 +7,10 @@
 - `classnames` for `cn()` syntax
 - uses CSS modules for styling
 
-
 ## Do not forget
 
 - `/data` for md
 - `/models` for content interfaces
-
 
 ## HTML, CSS and initial content source
 

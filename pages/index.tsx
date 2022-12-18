@@ -5,7 +5,7 @@ import matter from 'gray-matter';
 import cn from 'classnames';
 import type { NextPage } from 'next';
 import Post from '../models/post';
-import { Story } from '../components/Story/Story';
+import { BigStory, Story } from '../components/Story/Story';
 import { SendStory } from '../components/SendStory/SendStory';
 import Head from 'next/head';
 import Frontmatter from '../models/frontmatter';
@@ -18,6 +18,43 @@ interface HomeProps {
 
 const Home: NextPage<HomeProps> = ({ posts }) => {
   const { t } = useTranslation('');
+
+  const bigStory = posts
+    .filter(
+      (item) =>
+        item.frontmatter.title === 'Від Одеси до Тбілісі за 4 дні' ||
+        item.frontmatter.title === 'От Одессы до Тбилиси за 4 дня'
+    )
+    .map((item) => {
+      return (
+        <BigStory
+          author={item.frontmatter.author}
+          theme={item.frontmatter.theme}
+          slug={item.slug}
+          svg={item.frontmatter.svg}
+          title={item.frontmatter.title}
+          src={'/images/sasha/stambyl.jpg'}
+        />
+      );
+    });
+
+  const stories = posts
+    .filter(
+      (item) =>
+        item.frontmatter.title !== 'От Одессы до Тбилиси за 4 дня' &&
+        item.frontmatter.title !== 'Від Одеси до Тбілісі за 4 дні'
+    )
+    .map((item) => {
+      return (
+        <Story
+          author={item.frontmatter.author}
+          theme={item.frontmatter.theme}
+          slug={item.slug}
+          svg={item.frontmatter.svg}
+          title={item.frontmatter.title}
+        />
+      );
+    });
 
   return (
     <>
@@ -53,19 +90,8 @@ const Home: NextPage<HomeProps> = ({ posts }) => {
       </section>
       <section className={cn(HomeStyles.stories)}>
         <ul className={cn(HomeStyles.stories_list)}>
-          {posts.map((item: Post) => {
-            return (
-              <Story
-                title={item.frontmatter.title}
-                author={item.frontmatter.author}
-                theme={item.frontmatter.theme}
-                slug={item.slug}
-                key={item.slug}
-                svg={item.frontmatter.svg}
-                src={item.frontmatter.src}
-              />
-            );
-          })}
+          {bigStory}
+          {stories}
           <SendStory />
         </ul>
       </section>
