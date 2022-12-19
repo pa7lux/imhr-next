@@ -11,6 +11,7 @@ import Head from 'next/head';
 import Frontmatter from '../models/frontmatter';
 
 import HomeStyles from '../styles/Home.module.css';
+import { useBigStory } from '../hooks/useBigStory';
 
 interface HomeProps {
   posts: Post[];
@@ -19,42 +20,15 @@ interface HomeProps {
 const Home: NextPage<HomeProps> = ({ posts }) => {
   const { t } = useTranslation('');
 
-  const bigStory = posts
-    .filter(
-      (item) =>
-        item.frontmatter.title === 'Від Одеси до Тбілісі за 4 дні' ||
-        item.frontmatter.title === 'От Одессы до Тбилиси за 4 дня'
-    )
-    .map((item) => {
-      return (
-        <BigStory
-          author={item.frontmatter.author}
-          theme={item.frontmatter.theme}
-          slug={item.slug}
-          svg={item.frontmatter.svg}
-          title={item.frontmatter.title}
-          src={'/images/sasha/stambyl.jpg'}
-        />
-      );
-    });
-
-  const stories = posts
-    .filter(
-      (item) =>
-        item.frontmatter.title !== 'От Одессы до Тбилиси за 4 дня' &&
-        item.frontmatter.title !== 'Від Одеси до Тбілісі за 4 дні'
-    )
-    .map((item) => {
-      return (
-        <Story
-          author={item.frontmatter.author}
-          theme={item.frontmatter.theme}
-          slug={item.slug}
-          svg={item.frontmatter.svg}
-          title={item.frontmatter.title}
-        />
-      );
-    });
+  const { stories, bigStory } = useBigStory(
+    posts,
+    {
+      uk: 'Від Одеси до Тбілісі за 4 дні',
+      ru: 'От Одессы до Тбилиси за 4 дня',
+      en: 'От Одессы до Тбилиси за 4 дня',
+    },
+    '/images/sasha/stambyl.jpg'
+  );
 
   return (
     <>
