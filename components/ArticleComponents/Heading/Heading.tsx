@@ -19,13 +19,10 @@ const Heading: FC<Props> = ({ photoLeft = false, author, title, img }) => {
 
   return (
     <section
-      className={cx(
-        {
-          article_cover_two_columns: !photoLeft,
-          article_cover_two_columns__reversed: photoLeft,
-        },
-        'mt-2'
-      )}
+      className={cx({
+        article_cover_two_columns: !photoLeft,
+        article_cover_two_columns__reversed: photoLeft,
+      })}
     >
       <div className={cx(HeadingStyles.heading_box)}>
         <h1 className={cx(HeadingStyles.heading_large, 'text-type-h1')}>
