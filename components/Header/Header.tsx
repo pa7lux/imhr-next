@@ -25,7 +25,13 @@ export const Header = withTheme(({ theme, onChange }) => {
   }, [pathname]);
 
   return (
-    <header className={cn(HeaderStyles.header, theme)}>
+    <header
+      className={cn(
+        HeaderStyles.header,
+        theme,
+        pathname !== '/' && HeaderStyles['header__inner']
+      )}
+    >
       <div className={cn(HeaderStyles.header_logo)}>
         <Link href="/" legacyBehavior>
           <a className={cn(HeaderStyles.logo_link)}>
