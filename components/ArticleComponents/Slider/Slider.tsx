@@ -22,7 +22,7 @@ const Slider: NextPage<Props> = ({ children }) => {
   SwiperCore.use([Navigation, Pagination]);
 
   return (
-    <div className={cx(SliderStyles.slider_component, 'mb-2 mt-2')}>
+    <div className={cx(SliderStyles.slider_component, 'mt-2')}>
       <button
         className={SliderStyles.swiper_button_prev}
         ref={navigationPrevRef}

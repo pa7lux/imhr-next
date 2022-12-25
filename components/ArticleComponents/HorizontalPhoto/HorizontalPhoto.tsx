@@ -13,7 +13,7 @@ const HorizontalPhoto: FC<Props> = ({ src, children, photoDescription }) => {
   return (
     <div className={cn(HorizontalStyles.horizontal_photo_and_text, 'mb-2')}>
       <div className="text-box">
-        <p className="image-description-paragraph text-type-p">{children}</p>
+        <p className="image-description-paragraph">{children}</p>
       </div>
       <figure className={HorizontalStyles.image_box}>
         <img

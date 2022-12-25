@@ -1,5 +1,5 @@
 .big_heading_and_text {
-  margin-bottom: calc(3 * var(--size-unit));
+  /* margin-bottom: calc(3 * var(--size-unit)); */
   position: relative;
 }
 
@@ -12,8 +12,6 @@
 
 .big_heading_and_text_paragraph {
   width: var(--inner-width-large);
-  margin-right: auto;
-  margin-left: auto;
 }
 
 .heading_and_text {

@@ -67,9 +67,9 @@ const PostPage: NextPage<Props> = withTheme<Props>(
                     {...props}
                   />
                 ),
-                p: (props) => <p className="text-type-p mt-1 " {...props} />,
-                h1: (props) => <h1 className="text-type-h1 mt-2" {...props} />,
-                h2: (props) => <h1 className="text-type-h2 mt-2" {...props} />,
+                p: (props) => <p className="text-type-p" {...props} />,
+                h1: (props) => <h1 className="text-type-h1" {...props} />,
+                h2: (props) => <h2 className="text-type-h2" {...props} />,
                 h3: (props) => <h3 className="text-type-h3" {...props} />,
                 blockquote: (props) => <Blockquote {...props} />,
                 strong: (props) => (
@@ -92,7 +92,9 @@ const PostPage: NextPage<Props> = withTheme<Props>(
                 LinkList: (props) => <LinkList {...props} />,
                 LinkListItem: (props) => <LinkListItem {...props} />,
                 PhotoAndText: (props) => <PhotoAndText {...props} />,
-                BigHeading: (props) => <TextWithUnder {...props} />,
+                BigHeading: (props) => (
+                  <TextWithUnder {...props} author={frontmatter.author} />
+                ),
                 BorderedSection: (props) => <BorderedSection {...props} />,
                 Medium: (props) => <MediumBlock {...props} />,
                 Large: (props) => <LargeBlock {...props} />,

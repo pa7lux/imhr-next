@@ -1,4 +1,11 @@
-import React, { FC, useState, useEffect, PropsWithChildren } from 'react';
+import React, {
+  FC,
+  useState,
+  useEffect,
+  PropsWithChildren,
+  Children,
+  cloneElement,
+} from 'react';
 import cn from 'classnames';
 
 import PhotoStyles from './PhotoAndText.module.css';
@@ -20,7 +27,7 @@ const PhotoAndText: FC<PropsWithChildren<Props>> = ({
         alt=""
         className={cn(PhotoStyles.image, 'box-radius', className)}
       />
-      {children}
+      <span className="caption text-type-caption">{children}</span>
     </div>
   );
 };

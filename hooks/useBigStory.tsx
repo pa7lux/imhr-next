@@ -32,6 +32,7 @@ const useBigStory = (
           svg={item.frontmatter.svg}
           title={item.frontmatter.title}
           src={src}
+          key={item.slug}
         />
       );
     });
@@ -54,6 +55,7 @@ const useBigStory = (
           slug={item.slug}
           svg={item.frontmatter.svg}
           title={item.frontmatter.title}
+          key={item.slug}
         />
       );
     });
