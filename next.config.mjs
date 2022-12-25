@@ -1,12 +1,11 @@
-/** @type {import('next').NextConfig} */
+// /** @type {import('next').NextConfig} */
 
-const remarkFrontmatter = require('remark-frontmatter');
-const { i18n } = require('./next-i18next.config.js');
+import i18nConfig from './next-i18next.config.js';
+import remarkFrontmatter from 'remark-frontmatter';
 
-// import remarkFrontmatter from 'remark-frontmatter';
-// import { i18nConfig } from './next-i18next.config.js';
+const { i18n } = i18nConfig;
 
-module.exports = {
+export default {
   webpack: (config, options) => {
     config.module.rules.push({
       test: /\.mdx?$/,

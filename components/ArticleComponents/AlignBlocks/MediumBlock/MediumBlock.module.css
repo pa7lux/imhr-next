@@ -1,3 +1,4 @@
 .block_medium {
-    width: var(--inner-width-main);
+  width: var(--inner-width-main);
+  margin-top: calc(4 * var(--size-unit));
 }

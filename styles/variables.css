@@ -1,34 +1,33 @@
 @import url('./fonts.css');
 
 .theme-turquoise {
-  --accent-color: #98E2DB;
+  --accent-color: #98e2db;
 }
 
 .theme-red {
-  --accent-color: #F0716A;
+  --accent-color: #f0716a;
 }
 
 .theme-blue {
-  --accent-color: #76BAF9;
+  --accent-color: #76baf9;
 }
 
 .theme-purple {
-  --accent-color: #AE8BF4;
+  --accent-color: #ae8bf4;
 }
 
 .theme-pink {
-  --accent-color: #F49ABE;
+  --accent-color: #f49abe;
 }
 
 .theme-yellow {
-  --accent-color: #F2E369;
+  --accent-color: #f2e369;
 }
 
 .theme-orange {
-  --accent-color: #F49F67;
+  --accent-color: #f49f67;
 }
 
 .theme-green {
-  --accent-color: #99E1A2;
+  --accent-color: #99e1a2;
 }
-

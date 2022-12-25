@@ -1,4 +1,9 @@
 @font-face {
   font-family: KyivType;
-  src: url(../public/fonts/KyivTypeSans-VarGX.ttf) format("truetype");
+  src: url(../public/fonts/KyivTypeSans-VarGX.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: KyivTypeSerif;
+  src: url(../public/fonts/KyivTypeSerif-VarGX.ttf) format('truetype');
 }

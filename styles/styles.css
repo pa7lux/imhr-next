@@ -24,13 +24,12 @@
 
 .link {
   color: var(--text-color-link);
-  transition: opacity .3s;
+  transition: opacity 0.3s;
 }
 
 .link:hover {
-  opacity: .6;
+  opacity: 0.6;
 }
-
 
 .box-radius {
   border-radius: var(--radius-main);
@@ -44,7 +43,7 @@
 }
 
 .heading-large::before {
-  content: "";
+  content: '';
   position: absolute;
   top: 0;
   left: 0;
@@ -96,17 +95,15 @@
   object-position: center;
 }
 
-
-
 .article-cover {
   position: relative;
 }
 .article-cover-full-page::before {
-  content: "";
+  content: '';
   position: absolute;
   inset: 0;
   z-index: 1;
-  background-color: #001D3D;
+  background-color: #001d3d;
   opacity: 0.3;
 }
 
@@ -120,7 +117,7 @@
 
 .subheading--full-page {
   opacity: 0.8;
-  background-color: #001D3D;
+  background-color: #001d3d;
   width: fit-content;
   margin: auto;
   padding: 0.2em 0.4em;
@@ -168,7 +165,6 @@
 
 /* Конец */
 
-
 /* Секция с текстом лида */
 
 .article-lead {
@@ -211,7 +207,6 @@
 .image-description-paragraph {
   max-width: 620px;
 }
-
 
 @media screen and (max-width: 1024px) {
   .vertical-photo-and-text {
@@ -323,9 +318,9 @@
 }
 
 .unordered-list-box li::marker {
-  content: "•";
+  content: '•';
   font-size: clamp(0.625rem, 0.4464rem + 0.8929vw, 1.25rem);
-  font-variation-settings: "wght" 350;
+  font-variation-settings: 'wght' 350;
 }
 
 /* Конец */
@@ -364,8 +359,6 @@
 
 /* Сетка с картинками */
 
-
-
 /* Конец */
 
 /* Карточка автора */
@@ -382,7 +375,7 @@
   padding-left: clamp(5rem, 3.625rem + 6.875vw, 9.8125rem);
   font-size: clamp(0.625rem, 0.4464rem + 0.8929vw, 1.25rem);
   background-color: var(--accent-color);
-  font-variation-settings: "wght" 150;
+  font-variation-settings: 'wght' 150;
 }
 
 .author-image {
@@ -397,8 +390,8 @@
   margin-bottom: clamp(0.5rem, 0.4286rem + 0.3571vw, 0.75rem);
   font-size: clamp(1.5rem, 1.0714rem + 2.1429vw, 3rem);
   letter-spacing: 0.02em;
-  font-feature-settings: "ss01" on;
-  font-variation-settings: "wght" 840, "CONT" 0, "MIDL" -800;
+  font-feature-settings: 'ss01' on;
+  font-variation-settings: 'wght' 840, 'CONT' 0, 'MIDL' -800;
 }
 
 .author-description {
@@ -424,19 +417,25 @@
   border-radius: 2px !important;
   opacity: 0.2 !important;
   background-color: var(--text-color-primary) !important;
-  transition: transform .4s, opacity .4s !important;
+  transition: transform 0.4s, opacity 0.4s !important;
 }
 
 .swiper-pagination {
   position: relative !important;
-  margin-top: var(--size-unit) !important;
+  margin-top: calc(var(--size-unit) + 10px) !important;
   text-align: right !important;
-  transform: translateY(calc(-100% - 0.5*var(--size-unit))) !important;
+  transform: translateY(calc(-100% - 0.5 * var(--size-unit))) !important;
 }
 
 .swiper-pagination-bullet-active {
   opacity: 0.6 !important;
   transform: rotate(135deg) !important;
+}
+
+@media screen and (max-width: 650px) {
+  .swiper-pagination {
+    text-align: center !important;
+  }
 }
 
 /* Конец */
@@ -456,7 +455,7 @@
 }
 
 .player::before {
-  content: "";
+  content: '';
   position: absolute;
   bottom: 0;
   left: 0;
@@ -512,7 +511,6 @@
 
 /* О проекте */
 
-
 /* Конец */
 
 /* Советы психолога */
@@ -531,7 +529,7 @@
   font-size: var(--text-size-s);
   font-variation-settings: var(--text-weight-normal);
   line-height: 1.5;
-  background: #F5F5F5;
+  background: #f5f5f5;
   color: var(--accent-color);
   transform: translate(-1em, calc(-50% - 2px));
 }

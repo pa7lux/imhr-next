@@ -6,7 +6,7 @@
 }
 
 .heading_large::before {
-  content: "";
+  content: '';
   position: absolute;
   top: 0;
   left: 0;
@@ -29,6 +29,11 @@
   min-width: 80vw;
   align-self: center;
   margin-bottom: 60px;
+  width: 100%;
+}
+
+.article_cover_two_columns__reversed {
+  width: 100%;
 }
 
 .article_cover_two_columns .heading_box {

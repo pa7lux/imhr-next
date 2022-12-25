@@ -1,5 +1,5 @@
-@import url("./variables.css");
-@import url("./styles.css");
+@import url('./variables.css');
+@import url('./styles.css');
 
 *,
 *::before,
@@ -12,9 +12,11 @@ body {
   max-width: 1650px;
   margin: 0 auto;
   font-family: var(--font-main);
-  font-feature-settings: "ss01" on;
-  background-color: #F5F5F5;
-  padding: clamp(0.5rem, 0.2288rem + 1.3559vw, 1.5rem) clamp(0.625rem, 0.1674rem + 2.2881vw, 2.3125rem) clamp(0.75rem, 0.2754rem + 2.3729vw, 2.5rem);
+  font-feature-settings: 'ss01' on;
+  background-color: #f5f5f5;
+  padding: clamp(0.5rem, 0.2288rem + 1.3559vw, 1.5rem)
+    clamp(0.625rem, 0.1674rem + 2.2881vw, 2.3125rem)
+    clamp(0.75rem, 0.2754rem + 2.3729vw, 2.5rem);
 }
 
 :root {
@@ -29,7 +31,9 @@ body {
   ); /* from 16px to 12px */
   --inner-width-main: 58%;
   --inner-width-large: 63%;
-  --inner-width-over-content: calc(var(--content-section-width-main) / 100 * 65.84);
+  --inner-width-over-content: calc(
+    var(--content-section-width-main) / 100 * 65.84
+  );
   --inner-width-small: calc(var(var(--inner-width-main)) - 50px);
   --header-height: 600px;
   --full-page-aspect-ratio: 1376/600;
@@ -46,7 +50,7 @@ body {
   --space-3xl: 40px;
 
   --font-main: kyivtype, sans-serif;
-  
+
   /* размеры считаются тут: clamp.font-size.app */
   --text-size-s: clamp(0.75rem, 0.6591rem + 0.4545vw, 1rem); /* 12-16px */
   --text-size-m: clamp(1rem, 0.9091rem + 0.4545vw, 1.25rem); /* 16-20px */
@@ -61,16 +65,14 @@ body {
   --text-color-secondary: hsla(211, 100%, 12%, 0.6);
   --text-color-link: #0975e8;
   --text-color-link-hover: #0975e8;
-  
+
   /* жирности */
-  --text-weight-black: "wght" 840, "CONT" 0, "MIDL" -1000;
-  --text-weight-bold: "wght" 700;
-  --text-weight-semibold: "wght" 500;
-  --text-weight-normal: "wght" 350;
-  --text-weight-light: "wght" 150;
+  --text-weight-black: 'wght' 840, 'CONT' 0, 'MIDL' -1000;
+  --text-weight-bold: 'wght' 700;
+  --text-weight-semibold: 'wght' 500;
+  --text-weight-normal: 'wght' 350;
+  --text-weight-light: 'wght' 150;
 }
-
-
 
 @media screen and (max-width: 650px) {
   :root {
@@ -125,6 +127,10 @@ body {
   color: var(--text-color-primary);
 }
 
+ul {
+  list-style: none;
+}
+
 .text-type-h1 {
   font-size: var(--text-size-4xl);
   font-variation-settings: var(--text-weight-black);
@@ -173,11 +179,17 @@ body {
 }
 
 .text-type-list {
-  padding-left: 1.2em;
   font-size: var(--text-size-m);
   font-variation-settings: var(--text-weight-light);
   line-height: 1.5;
   color: var(--text-color-primary);
+  padding-left: 0.7em;
+}
+
+.text-type-list::marker {
+  content: '•';
+  font-size: clamp(0.625rem, 0.4464rem + 0.8929vw, 1.25rem);
+  font-variation-settings: 'wght' 350;
 }
 
 .text-type-quote {

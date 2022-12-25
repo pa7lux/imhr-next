@@ -1,14 +1,9 @@
-import React, { FC, PropsWithChildren } from 'react'
+import React, { FC, PropsWithChildren } from 'react';
 
 import BlockStyles from './SmallBlock.module.css';
 
-
 const SmallBlock: FC<PropsWithChildren> = ({ children }) => {
-  return (
-    <div className={BlockStyles.block_small}>
-        { children }
-    </div>
-  )
-}
+  return <div className={BlockStyles.block_small}>{children}</div>;
+};
 
-export {SmallBlock}
+export { SmallBlock };

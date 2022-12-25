@@ -15,7 +15,7 @@
   border-bottom: none;
   border-radius: var(--radius-main);
   background-color: #fff;
-  transition: all .3s;
+  transition: all 0.3s;
 }
 
 .story_link:hover {
@@ -70,9 +70,8 @@
   flex-direction: column;
   justify-content: space-between;
   height: 100%;
-  padding: 
-    clamp(0.5rem, 0.0932rem + 2.0339vw, 2rem) 
-    clamp(0.5rem, 0.2288rem + 1.3559vw, 1.5rem) 
+  padding: clamp(0.5rem, 0.0932rem + 2.0339vw, 2rem)
+    clamp(0.5rem, 0.2288rem + 1.3559vw, 1.5rem)
     clamp(0.5rem, 0.2288rem + 1.3559vw, 1.5rem);
   z-index: 1;
 }
@@ -86,7 +85,7 @@
   transform: translateY(-50%) scaleX(1);
   width: 34%;
   height: 0.8em;
-  transition: all .4s;
+  transition: all 0.4s;
   transform-origin: 0 center;
 }
 
@@ -113,7 +112,6 @@
     aspect-ratio: initial;
   }
 }
-
 
 @media screen and (max-width: 800px) {
   .story_info::before {

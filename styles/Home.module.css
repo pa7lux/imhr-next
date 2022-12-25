@@ -1,7 +1,7 @@
 .cover {
   aspect-ratio: 1366/600;
   position: relative;
-  margin-top: calc(2.5*var(--size-unit));
+  margin-top: calc(2.5 * var(--size-unit));
   border-radius: var(--radius-main);
 }
 
@@ -18,7 +18,11 @@
   left: 0;
   width: 100%;
   height: calc(100% - 2px);
-  background-image: linear-gradient(194deg, rgba(0, 0, 0, 0) 41%, rgba(0, 0, 0, 0.8) 90%);
+  background-image: linear-gradient(
+    194deg,
+    rgba(0, 0, 0, 0) 41%,
+    rgba(0, 0, 0, 0.8) 90%
+  );
   border-radius: var(--radius-main);
 }
 
@@ -28,7 +32,6 @@
   object-fit: cover;
   object-position: center top;
   border-radius: var(--radius-main);
-  
 }
 
 .heading_box {
@@ -62,7 +65,7 @@
   background-size: contain;
   background-repeat: no-repeat;
   position: absolute;
-  top: .6em;
+  top: 0.6em;
   right: 0;
   transform: translateX(calc(100% + var(--size-unit)));
 }
@@ -75,7 +78,7 @@
 
 .cover_subheading {
   opacity: 0.8;
-  color: white;;
+  color: white;
 }
 
 .stories {
@@ -96,8 +99,6 @@
   }
 }
 
-
-
 /* ////////////////////////////
 // СВГ анимашки /////////////*/
 
@@ -106,7 +107,6 @@
   height: 100%;
   z-index: 0;
 }
-
 
 /* Сердечко */
 
@@ -129,13 +129,12 @@
 
 .svg.svg_heart path:not(:first-child) {
   animation-duration: 3s;
-  animation-delay: .3s;
+  animation-delay: 0.3s;
 }
 
 .svg.svg_heart path:first-child {
   animation-duration: 1s;
 }
-
 
 /* рюкзак */
 
@@ -165,11 +164,11 @@
 }
 
 .svg.svg_zzz path:nth-child(2) {
-  animation-delay: .15s;
+  animation-delay: 0.15s;
 }
 
 .svg.svg_zzz path:nth-child(3) {
-  animation-delay: .3s;
+  animation-delay: 0.3s;
 }
 
 .story_link:hover .svg path {
@@ -209,8 +208,6 @@
   }
 }
 
-
-
 @keyframes svgAnimation {
   to {
     stroke-dashoffset: 0;
@@ -219,6 +216,6 @@
 
 @keyframes svgAnimationTelegram {
   to {
-    stroke-dashoffset:  1140;
+    stroke-dashoffset: 1140;
   }
 }

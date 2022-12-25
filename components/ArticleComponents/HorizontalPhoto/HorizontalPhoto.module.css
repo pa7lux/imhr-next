@@ -3,22 +3,18 @@
   gap: clamp(0.5rem, -0.2143rem + 3.5714vw, 3rem);
   padding: 0 8.5%;
   margin-top: calc(4 * var(--size-unit));
-  min-width: 70vw;
-  align-self: center;
 }
 
 .horizontal_photo_and_text .image_for_text {
   aspect-ratio: 621/465;
+  width: 100%;
   object-fit: cover;
-  height: 100%;
   object-position: center;
 }
 
 .horizontal_photo_and_text .image_box {
   width: 45%;
-  height: fit-content;
 }
-
 
 @media screen and (max-width: 1024px) {
   .horizontal_photo_and_text {
