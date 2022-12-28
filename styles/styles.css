@@ -420,6 +420,10 @@
   transition: transform 0.4s, opacity 0.4s !important;
 }
 
+.swiper-pagination-bullets {
+  bottom: 40px !important;
+}
+
 .swiper-pagination {
   position: relative !important;
   margin-top: calc(var(--size-unit) + 10px) !important;
@@ -435,6 +439,10 @@
 @media screen and (max-width: 650px) {
   .swiper-pagination {
     text-align: center !important;
+  }
+
+  .swiper-pagination-bullets {
+    bottom: 10px !important;
   }
 }
 

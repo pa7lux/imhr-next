@@ -3,6 +3,9 @@ import {
   DetailedHTMLProps,
   FC,
   PropsWithChildren,
+  useEffect,
+  useRef,
+  useState,
 } from 'react';
 import cn from 'classnames';
 
@@ -14,9 +17,19 @@ type Props = DetailedHTMLProps<
 >;
 
 const Blockquote: FC<PropsWithChildren<Props>> = ({ children }) => {
+  const ref = useRef<HTMLParagraphElement>(null);
+  const [innerText, setInnerText] = useState<string | undefined>('');
+
+  useEffect(() => {
+    setInnerText(ref.current?.innerText);
+  }, []);
+
+  useEffect(() => {
+    console.log(innerText);
+  }, [innerText]);
   return (
     <blockquote className={cn(QuoteStyles.quote, 'text-type-quote')}>
-      {children}
+      <p ref={ref}>{!innerText ? children : innerText}</p>
     </blockquote>
   );
 };

@@ -72,6 +72,9 @@ const PostPage: NextPage<Props> = withTheme<Props>(
                 h2: (props) => <h2 className="text-type-h2" {...props} />,
                 h3: (props) => <h3 className="text-type-h3" {...props} />,
                 blockquote: (props) => <Blockquote {...props} />,
+                em: (props) => (
+                  <p className="text-type-caption">{props.children}</p>
+                ),
                 strong: (props) => (
                   <p className="text-type-lead">{props.children}</p>
                 ),

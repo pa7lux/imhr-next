@@ -177,6 +177,9 @@ ul {
 .text-type-p:not(:last-child) {
   margin-bottom: var(--space-m);
 }
+.text-type-lead:not(:last-child) {
+  margin-bottom: var(--space-l);
+}
 
 .text-type-list {
   font-size: var(--text-size-m);
