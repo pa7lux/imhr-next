@@ -1,5 +1,4 @@
 .image_block_full_page {
-  margin-top: calc(2 * var(--size-unit));
   align-self: center;
   width: 100%;
 }
