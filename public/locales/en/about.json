@@ -1,15 +1,15 @@
 {
   "about": {
-    "aboutProject": "О проекте",
-    "text1": "Мы команда подростков из Украины. Сейчас мы в Грузии. Нас зовут Вика, Макс, Саша и Катя. Мы приехали в Тбилиси из Киева, Одессы, Херсона и собрали небольшую редакцию, чтобы рассказать наши истории и поддержать других украинских подростков в разных частях мира.",
-    "text2": "Быть подростком тяжело, особенно в историческое время. Поэтому мы хотим писать о том, что нас беспокоит, о том, что нам интересно, и о том, что помогает нам справляться со всем этим. Мы надеемся, что наши истории помогут кому-то почувствовать себя менее одиноко. И будем рады тем, кто захочет присоединиться к нам.",
-    "projectCouratorsTitle": "Проект курируют",
-    "projectCourators": "Саша Патлух, Лиза Марантиди, Алексей Гармаш, Юля Миоцен, Вадим Матвеев.",
-    "sayThanksTitle": "Говорим спасибо",
-    "sayThanks": "Маше Яровой и Гоше Снегирю за предоставленное пространство для проведения занятий. Леониду Марантиди и Лизе Кочергиной за видео и фото. Проектам «Choose to help» и «Волонтёры Тбилиси» за информационную поддержку.",
-    "somethingToSayTitle": "Если вам есть что сказать",
-    "somethingToSay": "Мы будем рады, если нам напишут украинские подростки, которые сейчас разбросаны по странам из-за войны. Мы с радостью просто поболтаем или опубликуем вашу историю.",
-    "weAreWaiting": "Будем ждать вас в ",
-    "telegram": "телеграм-чате"
+    "aboutProject": "About us",
+    "text1": "We are a team of teenagers from Ukraine. At the moment, we are located in Georgia. Our names are Vika, Max, Sasha and Katya. We came to Tbilisi from Kiev, Odessa, Kherson and gathered a small editorial team to tell our stories and support other Ukrainian teenagers worldwide.",
+    "text2": "Being a teenager is hard, especially in historic times. So we want to write about things that bother us, things that interest us, and things that help us cope with all of it. We hope our stories will help someone feel less lonely. And we'd love to hear from anyone who wants to join us.",
+    "projectCouratorsTitle": "The project is overseen by",
+    "projectCourators": "Sasha Patlukh, Liza Mirantidi, Aleksey Garmash, Yulya Miotsen, Vadim Matveev.",
+    "sayThanksTitle": "We would like to thank",
+    "sayThanks": "Masha Yarovaya and Gosha Snegir for providing space for the class. Leonid Marantidi and Lisa Kochergina for video and photos. “Choose to help” and “Volunteers of Tbilisi” for informational support.",
+    "somethingToSayTitle": "If you have something to say",
+    "somethingToSay": "We would be delighted to hear from Ukrainian teenagers who are currently scattered across different countries due to the war. We would be happy to just chat or to publish your story.",
+    "weAreWaiting": "We look forward to seeing you in the ",
+    "telegram": "Telegram chat"
   }
 }
