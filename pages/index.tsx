@@ -25,7 +25,7 @@ const Home: NextPage<HomeProps> = ({ posts }) => {
     {
       uk: 'Від Одеси до Тбілісі за 4 дні',
       ru: 'От Одессы до Тбилиси за 4 дня',
-      en: 'От Одессы до Тбилиси за 4 дня',
+      en: 'From Odessa to Tbilisi in 4 days',
     },
     '/images/sasha/stambyl.jpg'
   );
