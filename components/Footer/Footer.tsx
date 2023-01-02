@@ -12,7 +12,7 @@ const Footer: NextPage<Props> = () => {
 
   return (
     <footer className={cn(FooterStyles.footer, FooterStyles.footer__inner)}>
-      <p className={cn(FooterStyles.copy)}>© IMHR 2022</p>
+      <p className={cn(FooterStyles.copy)}>© IMHR 2022-2023</p>
       <p className={cn(FooterStyles.thanks)}>{t('footer')}</p>
     </footer>
   );
