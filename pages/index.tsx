@@ -40,8 +40,8 @@ const Home: NextPage<HomeProps> = ({ posts }) => {
     <>
       <Head>
         <title>{t('home.metaTitle')}</title>
-        <meta name="description" content={metatags.description} />
         <meta property="og:title" content={metatags.ogTitle} />
+        <meta name="description" content={metatags.description} />
         <meta property="og:image" content={metatags.ogImage} />
       </Head>
 
