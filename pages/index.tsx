@@ -57,9 +57,10 @@ const Home: NextPage<HomeProps> = ({ posts }) => {
           <h1 className={cn(HomeStyles.cover_title, 'text-type-h1')}>
             I am here
           </h1>
-          <p className={cn(HomeStyles.cover_subheading, 'text-type-p')}>
-            {t('home.subTitle')}
-          </p>
+          <p
+            className={cn(HomeStyles.cover_subheading, 'text-type-p')}
+            dangerouslySetInnerHTML={{ __html: t('home.subTitle') }}
+          ></p>
         </div>
       </section>
       <section className={cn(HomeStyles.stories)}>
