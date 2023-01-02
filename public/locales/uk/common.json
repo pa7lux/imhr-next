@@ -2,6 +2,10 @@
   "home": {
     "subTitle": "Підлітки з України<br>розповідають свої історії",
     "pageTitle": "imhr.top — історії українських підлітків",
-    "sendStory": "Є історія? Поділись!"
+    "sendStory": "Є історія? Поділись!",
+    "metaTitle": "imhr.top — історії українських підлітків",
+    "metaDescription": "I am here. Сайт, де підлітки з України розповідають свої історії.",
+    "metaOgTitle": "imhr.top — історії українських підлітків",
+    "metaOgImage": "https://imhr.top/images/icons/og-index-uk.png"
   }
 }

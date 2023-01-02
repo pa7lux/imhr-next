@@ -30,10 +30,19 @@ const Home: NextPage<HomeProps> = ({ posts }) => {
     '/images/sasha/stambyl.jpg'
   );
 
+  const metatags = {
+    description: t('home.metaDescription'),
+    ogTitle: t('home.metaOgTitle'),
+    ogImage: t('home.metaOgImage'),
+  };
+
   return (
     <>
       <Head>
-        <title>{t('home.pageTitle')}</title>
+        <title>{t('home.metaTitle')}</title>
+        <meta name="description" content={metatags.description} />
+        <meta property="og:title" content={metatags.ogTitle} />
+        <meta property="og:image" content={metatags.ogImage} />
       </Head>
 
       <section className={cn(HomeStyles.cover)}>
