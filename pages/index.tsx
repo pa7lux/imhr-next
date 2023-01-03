@@ -99,6 +99,10 @@ export async function getStaticProps({ locale }: { locale: string }) {
       theme: data.theme,
       author: data.author,
       svg: data.svg,
+      metaTitle: data.metaTitle,
+      metaDescription: data.metaDescription,
+      metaOgTitle: data.metaOgTitle,
+      metaOgImage: data.metaOgImage,
     };
 
     return {
