@@ -11,6 +11,7 @@ import dynamic from 'next/dynamic';
 import { withTheme } from '../store/context/themeContext';
 import { ImageGrid } from '../components/ArticleComponents/ImageGrid/ImageGrid';
 import { GridPhoto } from '../components/ArticleComponents/GridPhoto/GridPhoto';
+import { BlankLink } from '../components/UI/BlankLink/BlankLink';
 
 import AboutStyles from '../styles/About.module.css';
 
@@ -54,6 +55,7 @@ const about: NextPage<Props> = withTheme<Props>(({ frontmatter, locale }) => {
             ),
             ImageGrid: (props) => <ImageGrid {...props} />,
             GridPhoto: (props) => <GridPhoto {...props} />,
+            BlankLink: (props) => <BlankLink {...props} />,
           }}
         >
           <Article />
