@@ -6,6 +6,10 @@ interface Frontmatter {
   author: string;
   theme: Theme;
   svg: SVG;
+  metaTitle?: string;
+  metaDescription?: string;
+  metaOgTitle?: string;
+  metaOgImage?: string;
 }
 
 export default Frontmatter;

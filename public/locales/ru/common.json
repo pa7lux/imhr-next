@@ -1,7 +1,11 @@
 {
   "home": {
-    "subTitle": "Подростки из Украины рассказывают свои истории",
+    "subTitle": "Подростки из Украины<br>рассказывают свои истории",
     "pageTitle": "imhr.top — истории украинских подростков",
-    "sendStory": "Есть история? Поделись!"
+    "sendStory": "Есть история? Поделись!",
+    "metaTitle": "imhr.top — истории украинских подростков",
+    "metaDescription": "I am here. Сайт, на котором подростки из Украины рассказывают свои истории.",
+    "metaOgTitle": "imhr.top — истории украинских подростков",
+    "metaOgImage": "https://imhr.top/images/icons/og-index-ru.png"
   }
 }
