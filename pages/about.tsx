@@ -1,146 +1,110 @@
-import { NextPage } from 'next';
-import Image from 'next/image';
-import cn from 'classnames';
-import AboutStyles from '../styles/About.module.css';
-import Head from 'next/head';
+import fs from 'fs';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import { useTranslation } from 'next-i18next';
+import { MDXProvider } from '@mdx-js/react';
+import matter from 'gray-matter';
+import cn from 'classnames';
+import type { NextPage } from 'next';
+import Head from 'next/head';
+import Frontmatter from '../models/frontmatter';
+import { ContextProps } from '../models/themeContext';
+import dynamic from 'next/dynamic';
+import { withTheme } from '../store/context/themeContext';
 
-const about: NextPage = () => {
-  const { t } = useTranslation('about');
+import { MediumBlock } from '../components/ArticleComponents/AlignBlocks/MediumBlock/MediumBlock';
+import { LargeBlock } from '../components/ArticleComponents/AlignBlocks/LargeBlock/LargeBlock';
+import { FullpageBlock } from '../components/ArticleComponents/AlignBlocks/FullpageBlock/FullpageBlock';
 
-  const metatags = {
-    description: t('about.metaDescription'),
-    ogTitle: t('about.metaOgTitle'),
-    ogImage: t('about.metaOgImage'),
-  };
+import { Slider } from '../components/ArticleComponents/Slider/Slider';
+import { Blockquote } from '../components/ArticleComponents/Blockquote/Blockquote';
+import { PhotoFullPage } from '../components/ArticleComponents/PhotoFullPage/PhotoFullPage';
+import { HorizontalPhoto } from '../components/ArticleComponents/HorizontalPhoto/HorizontalPhoto';
+import { LinkList } from '../components/ArticleComponents/LinkList/LinkList';
+import { LinkListItem } from '../components/ArticleComponents/LinkListItem/LinkListItem';
+import { PhotoAndText } from '../components/ArticleComponents/PhotoAndText/PhotoAndText';
+import { TextWithUnder } from '../components/ArticleComponents/TextWithUnder/TextWithUnder';
+import { BorderedSection } from '../components/ArticleComponents/BorderedSection/BorderedSection';
+
+import AboutStyles from '../styles/About.module.css';
+
+interface Props extends ContextProps {
+  slug: string;
+  frontmatter: Frontmatter;
+  locale: string;
+}
+
+const about: NextPage<Props> = withTheme<Props>(({ frontmatter, locale }) => {
+  const Article = dynamic(() => import(`../data/about/${locale}/about.mdx`));
 
   return (
     <>
       <Head>
-        <title>{t('about.metaTitle')}</title>
-        <meta property="og:title" content={metatags.ogTitle} />
-        <meta name="description" content={metatags.description} />
-        <meta property="og:image" content={metatags.ogImage} />
+        <meta property="og:title" content={frontmatter.metaOgTitle} />
+        <title>{frontmatter.metaTitle}</title>
+        <meta name="description" content={frontmatter.metaDescription} />
+        <meta property="og:image" content={frontmatter.metaOgImage} />
       </Head>
-      <section className={cn(AboutStyles.about)}>
-        <h1 className={cn(AboutStyles.about_heading, 'text-type-h1')}>
-          {t('about.aboutProject')}
-        </h1>
-        <p className={cn(AboutStyles.about_lead, 'text-type-lead')}>
-          {t('about.text1')}
-        </p>
-        <p className={cn(AboutStyles.about_paragraph, 'text-type-p')}>
-          {t('about.text2')}
-        </p>
+      <section className={cn(AboutStyles.about, frontmatter.theme)}>
+        <MDXProvider
+          components={{
+            p: (props) => <p className="text-type-p" {...props} />,
+            h1: (props) => <h1 className="text-type-h1" {...props} />,
+            h2: (props) => <h2 className="text-type-h2" {...props} />,
+            h3: (props) => <h3 className="text-type-h3" {...props} />,
+            em: (props) => (
+              <p className="text-type-caption">{props.children}</p>
+            ),
+            strong: (props) => (
+              <p className="text-type-lead">{props.children}</p>
+            ),
+            li: (props) => <li className="text-type-list">{props.children}</li>,
+            Medium: (props) => <MediumBlock {...props} />,
+            Large: (props) => <LargeBlock {...props} />,
+            Fullpage: (props) => <FullpageBlock {...props} />,
 
-        <div className={cn(AboutStyles.image_grid, 'mt-2')}>
-          <Image
-            src="/images/name/sasha.jpg"
-            sizes="(max-width: 760px) 310px,
-                       (max-width: 1080px) 540px,
-                       780px"
-            width={40}
-            height={40}
-            alt="Search"
-            className={cn(AboutStyles.image_grid_picture, 'box-radius')}
-          />
-          <Image
-            src="/images/name/vika.jpg"
-            sizes="(max-width: 760px) 310px,
-                       (max-width: 1080px) 540px,
-                       780px"
-            width={40}
-            height={40}
-            alt="Search"
-            className={cn(AboutStyles.image_grid_picture, 'box-radius')}
-          />
-          <Image
-            src="/images/name/maks-vika.jpg"
-            sizes="(max-width: 760px) 310px,
-                       (max-width: 1080px) 540px,
-                       780px"
-            width={40}
-            height={40}
-            alt="Search"
-            className={cn(AboutStyles.image_grid_picture, 'box-radius')}
-          />
-          <Image
-            src="/images/name/maks.jpg"
-            sizes="(max-width: 760px) 310px,
-                       (max-width: 1080px) 540px,
-                       780px"
-            alt="Search"
-            width={40}
-            height={40}
-            className={cn(AboutStyles.image_grid_picture, 'box-radius')}
-          />
-
-          <Image
-            src="/images/name/pes.jpg"
-            sizes="(max-width: 760px) 310px,
-                       (max-width: 1080px) 540px,
-                       780px"
-            alt="Search"
-            width={40}
-            height={40}
-            className={cn(AboutStyles.image_grid_picture, 'box-radius')}
-          />
-
-          <Image
-            src="/images/name/kate.jpg"
-            sizes="(max-width: 760px) 310px,
-                       (max-width: 1080px) 540px,
-                       780px"
-            alt="Search"
-            width={40}
-            height={40}
-            className={cn(AboutStyles.image_grid_picture, 'box-radius')}
-          />
-        </div>
-
-        <h2 className={cn(AboutStyles.about_second_heading, 'text-type-h2')}>
-          {t('about.projectCouratorsTitle')}
-        </h2>
-        <p className={cn(AboutStyles.about_paragraph, 'text-type-p')}>
-          {t('about.projectCourators')}
-        </p>
-
-        <h2 className={cn(AboutStyles.about_second_heading, 'text-type-h2')}>
-          {t('about.sayThanksTitle')}
-        </h2>
-        <p className={cn(AboutStyles.about_paragraph, 'text-type-p')}>
-          {t('about.sayThanks')}
-        </p>
-
-        <h2 className={cn(AboutStyles.about_second_heading, 'text-type-h2')}>
-          {t('about.somethingToSayTitle')}
-        </h2>
-        <p className={cn(AboutStyles.about_paragraph, 'text-type-p')}>
-          {t('about.somethingToSay')}
-        </p>
-        <p className={cn(AboutStyles.about_paragraph, 'text-type-p')}>
-          {t('about.weAreWaiting')}
-          <a
-            href="https://t.me/+tiiH3XpLUB03YWFi"
-            target="_blank"
-            className="link"
-          >
-            {t('about.telegram')}
-          </a>
-          .
-        </p>
+            blockquote: (props) => <Blockquote {...props} />,
+            Slider: (props) => <Slider {...props} />,
+            PhotoFullPage: (props) => <PhotoFullPage {...props} />,
+            HorizontalPhoto: (props) => <HorizontalPhoto {...props} />,
+            LinkList: (props) => <LinkList {...props} />,
+            LinkListItem: (props) => <LinkListItem {...props} />,
+            PhotoAndText: (props) => <PhotoAndText {...props} />,
+            BigHeading: (props) => (
+              <TextWithUnder {...props} author={frontmatter.author} />
+            ),
+            BorderedSection: (props) => <BorderedSection {...props} />,
+          }}
+        >
+          <Article />
+        </MDXProvider>
       </section>
     </>
   );
-};
+});
 
-export const getStaticProps = async ({ locale }: { locale: string }) => {
+export async function getStaticProps({ locale }: { locale: string }) {
+  const file = fs
+    .readFileSync(`${process.cwd()}/data/about/${locale}/about.mdx`)
+    .toString();
+  const { data } = matter(file);
+
   return {
     props: {
-      ...(await serverSideTranslations(locale, ['about', 'header', 'footer'])),
+      locale,
+      frontmatter: {
+        title: data.title,
+        theme: data.theme,
+        metaTitle: data.metaTitle,
+        metaDescription: data.metaDescription,
+        metaOgTitle: data.metaOgTitle,
+        metaOgImage: data.metaOgImage,
+      },
+      ...(await serverSideTranslations(locale, [
+        'components',
+        'header',
+        'footer',
+      ])),
     },
   };
-};
+}
 
 export default about;
