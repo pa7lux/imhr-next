@@ -1,7 +1,11 @@
 {
   "home": {
-    "subTitle": "Подростки из Украины рассказывают свои истории",
-    "pageTitle": "imhr.top — истории украинских подростков",
-    "sendStory": "Есть история? Поделись!"
+    "subTitle": "Teenagers from Ukraine<br>tell their stories",
+    "pageTitle": "imhr.top — stories of Ukrainian teenagers",
+    "sendStory": "Do you have a story? Share it in our chat!",
+    "metaTitle": "imhr.top — stories of Ukrainian teenagers",
+    "metaDescription": "I am here. The website where Ukrainian teenagers tells their stories.",
+    "metaOgTitle": "imhr.top — stories of Ukrainian teenagers",
+    "metaOgImage": "https://imhr.top/images/icons/og-index-en.png"
   }
 }

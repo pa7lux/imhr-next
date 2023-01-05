@@ -9,11 +9,19 @@ import { useTranslation } from 'next-i18next';
 const about: NextPage = () => {
   const { t } = useTranslation('about');
 
+  const metatags = {
+    description: t('about.metaDescription'),
+    ogTitle: t('about.metaOgTitle'),
+    ogImage: t('about.metaOgImage'),
+  };
+
   return (
     <>
       <Head>
-        <meta property="og:title" content="imhr.top — про проєкт" />
-        <title>imhr.top — про проєкт</title>
+        <title>{t('about.metaTitle')}</title>
+        <meta property="og:title" content={metatags.ogTitle} />
+        <meta name="description" content={metatags.description} />
+        <meta property="og:image" content={metatags.ogImage} />
       </Head>
       <section className={cn(AboutStyles.about)}>
         <h1 className={cn(AboutStyles.about_heading, 'text-type-h1')}>

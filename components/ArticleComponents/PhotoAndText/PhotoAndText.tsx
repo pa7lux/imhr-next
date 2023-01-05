@@ -5,6 +5,7 @@ import React, {
   PropsWithChildren,
   Children,
   cloneElement,
+  isValidElement,
 } from 'react';
 import cn from 'classnames';
 
@@ -27,7 +28,7 @@ const PhotoAndText: FC<PropsWithChildren<Props>> = ({
         alt=""
         className={cn(PhotoStyles.image, 'box-radius', className)}
       />
-      <span className="caption text-type-caption">{children}</span>
+      {children}
     </div>
   );
 };

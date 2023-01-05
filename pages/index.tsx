@@ -25,15 +25,24 @@ const Home: NextPage<HomeProps> = ({ posts }) => {
     {
       uk: 'Від Одеси до Тбілісі за 4 дні',
       ru: 'От Одессы до Тбилиси за 4 дня',
-      en: 'От Одессы до Тбилиси за 4 дня',
+      en: 'From Odessa to Tbilisi in 4 days',
     },
     '/images/sasha/stambyl.jpg'
   );
 
+  const metatags = {
+    description: t('home.metaDescription'),
+    ogTitle: t('home.metaOgTitle'),
+    ogImage: t('home.metaOgImage'),
+  };
+
   return (
     <>
       <Head>
-        <title>{t('home.pageTitle')}</title>
+        <title>{t('home.metaTitle')}</title>
+        <meta property="og:title" content={metatags.ogTitle} />
+        <meta name="description" content={metatags.description} />
+        <meta property="og:image" content={metatags.ogImage} />
       </Head>
 
       <section className={cn(HomeStyles.cover)}>
@@ -57,9 +66,10 @@ const Home: NextPage<HomeProps> = ({ posts }) => {
           <h1 className={cn(HomeStyles.cover_title, 'text-type-h1')}>
             I am here
           </h1>
-          <p className={cn(HomeStyles.cover_subheading, 'text-type-p')}>
-            {t('home.subTitle')}
-          </p>
+          <p
+            className={cn(HomeStyles.cover_subheading, 'text-type-p')}
+            dangerouslySetInnerHTML={{ __html: t('home.subTitle') }}
+          ></p>
         </div>
       </section>
       <section className={cn(HomeStyles.stories)}>
@@ -89,6 +99,10 @@ export async function getStaticProps({ locale }: { locale: string }) {
       theme: data.theme,
       author: data.author,
       svg: data.svg,
+      metaTitle: data.metaTitle,
+      metaDescription: data.metaDescription,
+      metaOgTitle: data.metaOgTitle,
+      metaOgImage: data.metaOgImage,
     };
 
     return {

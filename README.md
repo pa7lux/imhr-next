@@ -1,4 +1,7 @@
 # IMHR.top next + ts version
+# IMHR.top next + ts version
+
+# IMHR.top next + ts version
 
 - `getStaticPath` and `getStaticProps` util functions and `fs` module to get path and read files
 - `gray-matter` module for reading content inside
@@ -14,4 +17,7 @@
 
 ## HTML, CSS and initial content source
 
+## HTML, CSS and initial content source
+
 https://github.com/pa7lux/imhr-website
+

@@ -84,7 +84,7 @@
 }
 
 @media screen and (max-width: 600px) {
-  .menu-list {
+  .menu_list {
     gap: calc(2 * var(--size-unit));
   }
 }

@@ -50,11 +50,10 @@ const PostPage: NextPage<Props> = withTheme<Props>(
     return (
       <>
         <Head>
-          <meta
-            property="og:title"
-            content={`imhr.top — ${frontmatter.title}`}
-          />
-          <title>imhr.top — {frontmatter.title}</title>
+          <meta property="og:title" content={frontmatter.metaOgTitle} />
+          <title>{frontmatter.metaTitle}</title>
+          <meta name="description" content={frontmatter.metaDescription} />
+          <meta property="og:image" content={frontmatter.metaOgImage} />
         </Head>
         <article className={cn(PostStyles.article, frontmatter.theme)}>
           <main className={PostStyles.main}>
@@ -72,6 +71,9 @@ const PostPage: NextPage<Props> = withTheme<Props>(
                 h2: (props) => <h2 className="text-type-h2" {...props} />,
                 h3: (props) => <h3 className="text-type-h3" {...props} />,
                 blockquote: (props) => <Blockquote {...props} />,
+                em: (props) => (
+                  <p className="text-type-caption">{props.children}</p>
+                ),
                 strong: (props) => (
                   <p className="text-type-lead">{props.children}</p>
                 ),
@@ -154,6 +156,10 @@ export async function getStaticProps({
         title: data.title,
         theme: data.theme,
         author: data.author,
+        metaTitle: data.metaTitle,
+        metaDescription: data.metaDescription,
+        metaOgTitle: data.metaOgTitle,
+        metaOgImage: data.metaOgImage,
       },
       ...(await serverSideTranslations(locale, [
         'components',
