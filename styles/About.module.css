@@ -1,8 +1,10 @@
 @import url(../styles/variables.css);
 
-.about {
-  padding-top: calc(2 * var(--size-unit));
+.about_wrapper {
+  width: var(--inner-width-main);
+  margin: auto;
 }
+
 .about_heading {
   width: var(--inner-width-main);
   margin: auto;

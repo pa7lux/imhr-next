@@ -12,6 +12,7 @@ import { withTheme } from '../store/context/themeContext';
 import { ImageGrid } from '../components/ArticleComponents/ImageGrid/ImageGrid';
 import { GridPhoto } from '../components/ArticleComponents/GridPhoto/GridPhoto';
 import { BlankLink } from '../components/UI/BlankLink/BlankLink';
+import { PhotoFullPage } from '../components/ArticleComponents/PhotoFullPage/PhotoFullPage';
 
 import AboutStyles from '../styles/About.module.css';
 
@@ -53,9 +54,18 @@ const about: NextPage<Props> = withTheme<Props>(({ frontmatter, locale }) => {
                 {...props}
               />
             ),
-            ImageGrid: (props) => <ImageGrid {...props} />,
+            ImageGrid: (props) => (
+              <div className={cn(AboutStyles.about_wrapper)}>
+                <ImageGrid {...props} />
+              </div>
+            ),
             GridPhoto: (props) => <GridPhoto {...props} />,
             BlankLink: (props) => <BlankLink {...props} />,
+            PhotoFullPage: (props) => (
+              <div className={cn(AboutStyles.about_wrapper)}>
+                <PhotoFullPage {...props} />
+              </div>
+            ),
           }}
         >
           <Article />
