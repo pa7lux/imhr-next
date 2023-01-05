@@ -9,20 +9,8 @@ import Frontmatter from '../models/frontmatter';
 import { ContextProps } from '../models/themeContext';
 import dynamic from 'next/dynamic';
 import { withTheme } from '../store/context/themeContext';
-
-import { MediumBlock } from '../components/ArticleComponents/AlignBlocks/MediumBlock/MediumBlock';
-import { LargeBlock } from '../components/ArticleComponents/AlignBlocks/LargeBlock/LargeBlock';
-import { FullpageBlock } from '../components/ArticleComponents/AlignBlocks/FullpageBlock/FullpageBlock';
-
-import { Slider } from '../components/ArticleComponents/Slider/Slider';
-import { Blockquote } from '../components/ArticleComponents/Blockquote/Blockquote';
-import { PhotoFullPage } from '../components/ArticleComponents/PhotoFullPage/PhotoFullPage';
-import { HorizontalPhoto } from '../components/ArticleComponents/HorizontalPhoto/HorizontalPhoto';
-import { LinkList } from '../components/ArticleComponents/LinkList/LinkList';
-import { LinkListItem } from '../components/ArticleComponents/LinkListItem/LinkListItem';
-import { PhotoAndText } from '../components/ArticleComponents/PhotoAndText/PhotoAndText';
-import { TextWithUnder } from '../components/ArticleComponents/TextWithUnder/TextWithUnder';
-import { BorderedSection } from '../components/ArticleComponents/BorderedSection/BorderedSection';
+import { ImageGrid } from '../components/ArticleComponents/ImageGrid/ImageGrid';
+import { GridPhoto } from '../components/ArticleComponents/GridPhoto/GridPhoto';
 
 import AboutStyles from '../styles/About.module.css';
 
@@ -46,32 +34,26 @@ const about: NextPage<Props> = withTheme<Props>(({ frontmatter, locale }) => {
       <section className={cn(AboutStyles.about, frontmatter.theme)}>
         <MDXProvider
           components={{
-            p: (props) => <p className="text-type-p" {...props} />,
-            h1: (props) => <h1 className="text-type-h1" {...props} />,
-            h2: (props) => <h2 className="text-type-h2" {...props} />,
-            h3: (props) => <h3 className="text-type-h3" {...props} />,
-            em: (props) => (
-              <p className="text-type-caption">{props.children}</p>
+            p: (props) => (
+              <p
+                className={cn(AboutStyles.about_heading, 'text-type-p')}
+                {...props}
+              />
             ),
-            strong: (props) => (
-              <p className="text-type-lead">{props.children}</p>
+            h1: (props) => (
+              <h1
+                className={cn(AboutStyles.about_heading, 'text-type-h1')}
+                {...props}
+              />
             ),
-            li: (props) => <li className="text-type-list">{props.children}</li>,
-            Medium: (props) => <MediumBlock {...props} />,
-            Large: (props) => <LargeBlock {...props} />,
-            Fullpage: (props) => <FullpageBlock {...props} />,
-
-            blockquote: (props) => <Blockquote {...props} />,
-            Slider: (props) => <Slider {...props} />,
-            PhotoFullPage: (props) => <PhotoFullPage {...props} />,
-            HorizontalPhoto: (props) => <HorizontalPhoto {...props} />,
-            LinkList: (props) => <LinkList {...props} />,
-            LinkListItem: (props) => <LinkListItem {...props} />,
-            PhotoAndText: (props) => <PhotoAndText {...props} />,
-            BigHeading: (props) => (
-              <TextWithUnder {...props} author={frontmatter.author} />
+            h2: (props) => (
+              <h2
+                className={cn(AboutStyles.about_second_heading, 'text-type-h2')}
+                {...props}
+              />
             ),
-            BorderedSection: (props) => <BorderedSection {...props} />,
+            ImageGrid: (props) => <ImageGrid {...props} />,
+            GridPhoto: (props) => <GridPhoto {...props} />,
           }}
         >
           <Article />
