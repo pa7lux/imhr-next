@@ -23,9 +23,9 @@ const Home: NextPage<HomeProps> = ({ posts }) => {
   const { stories, bigStory } = useBigStory(
     posts,
     {
-      uk: 'Від Одеси до Тбілісі за 4 дні',
+      uk: 'Полтава, Берлін та кодування',
       ru: 'Полтава, Берлин и кодинг',
-      en: 'From Odessa to Tbilisi in 4 days',
+      en: 'Poltava, Berlin and coding',
     },
     '/images/ilya/party.jpg'
   );
