@@ -24,10 +24,10 @@ const Home: NextPage<HomeProps> = ({ posts }) => {
     posts,
     {
       uk: 'Від Одеси до Тбілісі за 4 дні',
-      ru: 'От Одессы до Тбилиси за 4 дня',
+      ru: 'Полтава, Берлин и кодинг',
       en: 'From Odessa to Tbilisi in 4 days',
     },
-    '/images/sasha/stambyl.jpg'
+    '/images/ilya/party.jpg'
   );
 
   const metatags = {
