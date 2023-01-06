@@ -24,6 +24,8 @@ import { BorderedSection } from '../../components/ArticleComponents/BorderedSect
 import { MediumBlock } from '../../components/ArticleComponents/AlignBlocks/MediumBlock/MediumBlock';
 import { LargeBlock } from '../../components/ArticleComponents/AlignBlocks/LargeBlock/LargeBlock';
 import { FullpageBlock } from '../../components/ArticleComponents/AlignBlocks/FullpageBlock/FullpageBlock';
+import { VerticalVideoAndText } from '../../components/ArticleComponents/VerticalVideoAndText/VerticalVideoAndText';
+import { BlankLink } from '../../components/UI/BlankLink/BlankLink';
 import Head from 'next/head';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
@@ -101,6 +103,10 @@ const PostPage: NextPage<Props> = withTheme<Props>(
                 Medium: (props) => <MediumBlock {...props} />,
                 Large: (props) => <LargeBlock {...props} />,
                 Fullpage: (props) => <FullpageBlock {...props} />,
+                VerticalVideoAndText: (props) => (
+                  <VerticalVideoAndText {...props} />
+                ),
+                BlankLink: (props) => <BlankLink {...props} />,
               }}
             >
               <Article />

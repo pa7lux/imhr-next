@@ -1,12 +1,4 @@
-import React, {
-  FC,
-  useState,
-  useEffect,
-  PropsWithChildren,
-  Children,
-  cloneElement,
-  isValidElement,
-} from 'react';
+import React, { FC, PropsWithChildren } from 'react';
 import cn from 'classnames';
 
 import PhotoStyles from './PhotoAndText.module.css';
