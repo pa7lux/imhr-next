@@ -6,11 +6,13 @@ import VerticalVideoAndTextStyles from './VerticalVideoAndText.module.css';
 type Props = {
   src: string;
   caption?: any;
+  poster?: string;
 };
 
 const VerticalVideoAndText: FC<PropsWithChildren<Props>> = ({
   children,
   src,
+  poster,
   caption,
 }) => {
   return (
@@ -23,6 +25,7 @@ const VerticalVideoAndText: FC<PropsWithChildren<Props>> = ({
           className={cn(VerticalVideoAndTextStyles.video_item, 'box-radius')}
           src={src}
           controls
+          poster={poster}
         ></video>
         <p
           className="text-type-caption"
