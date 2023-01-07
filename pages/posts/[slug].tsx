@@ -25,6 +25,7 @@ import { MediumBlock } from '../../components/ArticleComponents/AlignBlocks/Medi
 import { LargeBlock } from '../../components/ArticleComponents/AlignBlocks/LargeBlock/LargeBlock';
 import { FullpageBlock } from '../../components/ArticleComponents/AlignBlocks/FullpageBlock/FullpageBlock';
 import { VerticalVideoAndText } from '../../components/ArticleComponents/VerticalVideoAndText/VerticalVideoAndText';
+import { VerticalPhoto } from '../../components/ArticleComponents/VerticalPhoto/VerticalPhoto';
 import { BlankLink } from '../../components/UI/BlankLink/BlankLink';
 import Head from 'next/head';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
@@ -107,6 +108,7 @@ const PostPage: NextPage<Props> = withTheme<Props>(
                   <VerticalVideoAndText {...props} />
                 ),
                 BlankLink: (props) => <BlankLink {...props} />,
+                VerticalPhoto: (props) => <VerticalPhoto {...props} />,
               }}
             >
               <Article />
