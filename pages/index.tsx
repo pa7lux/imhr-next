@@ -23,11 +23,11 @@ const Home: NextPage<HomeProps> = ({ posts }) => {
   const { stories, bigStory } = useBigStory(
     posts,
     {
-      uk: 'Від Одеси до Тбілісі за 4 дні',
-      ru: 'От Одессы до Тбилиси за 4 дня',
-      en: 'From Odessa to Tbilisi in 4 days',
+      uk: 'Полтава, Берлін та кодування',
+      ru: 'Полтава, Берлин и кодинг',
+      en: 'Poltava, Berlin and coding',
     },
-    '/images/sasha/stambyl.jpg'
+    '/images/ilya/party.jpg'
   );
 
   const metatags = {

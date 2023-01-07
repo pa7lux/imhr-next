@@ -21,8 +21,12 @@ const Story: FC<Props> = ({ title, author, theme, slug, svg }) => {
         <a className={StoryStyles.story_link}>
           <article className={cn(StoryStyles.story_card, theme)}>
             <div className={cn(StoryStyles.story_info)}>
-              <h2 className="text-type-h3">{title}</h2>
-              <p className="text-type-p text-view-secondary">{author}</p>
+              <h2 className={cn(StoryStyles.story_heading)}>{title}</h2>
+              <p
+                className={cn(StoryStyles.story_author, 'text-view-secondary')}
+              >
+                {author}
+              </p>
             </div>
             <div className={cn(StoryStyles.story_graphics)}>
               <IconSelector icon={svg} />
@@ -44,8 +48,12 @@ const BigStory: FC<Props> = ({ slug, src, theme, title, author }) => {
           <article className={cn(StoryStyles.story_card, theme)}>
             <img src={src} alt="" className={cn(StoryStyles.story_image)} />
             <div className={cn(StoryStyles.story_info)}>
-              <h2 className="text-type-h3">{title}</h2>
-              <p className="text-type-p text-view-secondary">{author}</p>
+              <h2 className={cn(StoryStyles.story_heading)}>{title}</h2>
+              <p
+                className={cn(StoryStyles.story_author, 'text-view-secondary')}
+              >
+                {author}
+              </p>
             </div>
           </article>
         </a>

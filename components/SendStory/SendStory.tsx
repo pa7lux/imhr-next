@@ -19,7 +19,9 @@ const SendStory: FC = () => {
       >
         <article className={cn(SendStoryStyles.story_card)}>
           <div className={cn(SendStoryStyles.story_info)}>
-            <h2 className="text-type-h3">{t('home.sendStory')}</h2>
+            <h2 className={cn(SendStoryStyles.story_heading)}>
+              {t('home.sendStory')}
+            </h2>
           </div>
           <div className={cn(SendStoryStyles.story_graphics) + ' theme-yellow'}>
             <svg

@@ -5,6 +5,8 @@ import { Grecha } from './grecha-icon/grecha-icon';
 import { Heart } from './heart-icon/heart-icon';
 import { Insta } from './insta-icon/insta-icon';
 import { Tiktok } from './tiktok-icon/tiktok-icon';
+import { Fire } from './fire-icon/fire-icon';
+import { Route } from './route-icon/route-icon';
 
 type Props = {
   className?: string;
@@ -27,6 +29,12 @@ const IconSelector: FC<Props> = ({ className, icon }) => {
 
     case 'grecha':
       return <Grecha className={className} />;
+
+    case 'fire':
+      return <Fire className={className} />;
+
+    case 'route':
+      return <Route className={className} />;
 
     default:
       return <Backpack />;

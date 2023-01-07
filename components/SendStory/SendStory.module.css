@@ -1,5 +1,7 @@
 .story {
-  aspect-ratio: 433/236;
+  aspect-ratio: 1366/102;
+  grid-column: 1/-1;
+  box-sizing: border-box;
 }
 
 @media screen and (max-width: 600px) {
@@ -65,13 +67,50 @@
   flex-direction: column;
 }
 
+.story_heading {
+  font-size: var(--text-size-xl);
+  font-variation-settings: var(--text-weight-bold);
+  line-height: 1.2;
+  color: var(--text-color-primary);
+}
+
+@media screen and (max-width: 1035px) {
+  .story_heading {
+    font-size: calc(var(--text-size-xl) - 5px);
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .story_heading {
+    font-size: calc(var(--text-size-xl) - 8px);
+  }
+}
+
+@media screen and (max-width: 655px) {
+  .story_heading {
+    font-size: calc(var(--text-size-xl) - 10px);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .story_heading {
+    font-size: var(--text-size-xl);
+  }
+}
+
 .story_graphics {
   position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
+  top: -16%;
   right: 0;
   overflow: hidden;
+  width: 30%;
+  aspect-ratio: 402/186;
+}
+
+@media screen and (max-width: 600px) {
+  .story_graphics {
+    display: none;
+  }
 }
 
 .story_image {
@@ -94,11 +133,12 @@
   display: flex;
   position: relative;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
   height: 100%;
-  padding: clamp(0.5rem, 0.0932rem + 2.0339vw, 2rem)
+  /* padding: clamp(0.5rem, 0.0932rem + 2.0339vw, 2rem)
     clamp(0.5rem, 0.2288rem + 1.3559vw, 1.5rem)
-    clamp(0.5rem, 0.2288rem + 1.3559vw, 1.5rem);
+    clamp(0.5rem, 0.2288rem + 1.3559vw, 1.5rem); */
   z-index: 1;
 }
 
@@ -133,10 +173,7 @@
 }
 
 .svg.svg_telegram {
-  bottom: -34%;
-  left: 8%;
-  width: 90%;
-  height: 100%;
+  width: 100%;
 }
 
 .svg.svg_telegram path:nth-child(1) {
