@@ -47,10 +47,6 @@ const PostPage: NextPage<Props> = withTheme<Props>(
       onChange(frontmatter.theme);
     }, [frontmatter.theme]);
 
-    useEffect(() => {
-      console.log(frontmatter.title);
-    }, [frontmatter.title]);
-
     return (
       <>
         <Head>

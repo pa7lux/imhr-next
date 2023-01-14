@@ -24,9 +24,6 @@ const Blockquote: FC<PropsWithChildren<Props>> = ({ children }) => {
     setInnerText(ref.current?.innerText);
   }, []);
 
-  useEffect(() => {
-    console.log(innerText);
-  }, [innerText]);
   return (
     <blockquote className={cn(QuoteStyles.quote, 'text-type-quote')}>
       <p ref={ref}>{!innerText ? children : innerText}</p>
