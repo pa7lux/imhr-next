@@ -4,6 +4,7 @@ import { Layout } from '../components/Layout/layout';
 import { ThemeProvider } from '../store/context/themeContext';
 import Head from 'next/head';
 import { appWithTranslation } from 'next-i18next';
+import Script from 'next/script';
 import { Router } from 'next/router';
 import NProgress from 'nprogress';
 import 'nprogress/nprogress.css';
@@ -28,6 +29,20 @@ const App = ({ Component, pageProps }: AppProps) => {
         />
         <link rel="apple-touch-icon" href="/images/icons/icon.png" />
       </Head>
+      <Script
+        async
+        src="https://www.googletagmanager.com/gtag/js?id=G-2KMKDPW1DR"
+      ></Script>
+      <Script
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: `window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments)}
+      gtag('js', new Date());
+
+      gtag('config', 'G-2KMKDPW1DR')`,
+        }}
+      ></Script>
 
       <ThemeProvider>
         <Layout>

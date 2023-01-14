@@ -4,6 +4,7 @@ import { useTranslation } from 'next-i18next';
 import matter from 'gray-matter';
 import cn from 'classnames';
 import type { NextPage } from 'next';
+import Script from 'next/script';
 import Post from '../models/post';
 import { BigStory, Story } from '../components/Story/Story';
 import { SendStory } from '../components/SendStory/SendStory';
@@ -44,6 +45,20 @@ const Home: NextPage<HomeProps> = ({ posts }) => {
         <meta name="description" content={metatags.description} />
         <meta property="og:image" content={metatags.ogImage} />
       </Head>
+      <Script
+        async
+        src="https://www.googletagmanager.com/gtag/js?id=G-2KMKDPW1DR"
+      ></Script>
+      <Script
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: `window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments)}
+      gtag('js', new Date());
+
+      gtag('config', 'G-2KMKDPW1DR')`,
+        }}
+      ></Script>
 
       <section className={cn(HomeStyles.cover)}>
         <picture>

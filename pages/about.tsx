@@ -4,6 +4,7 @@ import { MDXProvider } from '@mdx-js/react';
 import matter from 'gray-matter';
 import cn from 'classnames';
 import type { NextPage } from 'next';
+import Script from 'next/script';
 import Head from 'next/head';
 import Frontmatter from '../models/frontmatter';
 import { ContextProps } from '../models/themeContext';
@@ -33,6 +34,20 @@ const about: NextPage<Props> = withTheme<Props>(({ frontmatter, locale }) => {
         <meta name="description" content={frontmatter.metaDescription} />
         <meta property="og:image" content={frontmatter.metaOgImage} />
       </Head>
+      <Script
+        async
+        src="https://www.googletagmanager.com/gtag/js?id=G-2KMKDPW1DR"
+      ></Script>
+      <Script
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: `window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments)}
+      gtag('js', new Date());
+
+      gtag('config', 'G-2KMKDPW1DR')`,
+        }}
+      ></Script>
       <section className={cn(AboutStyles.about, frontmatter.theme)}>
         <MDXProvider
           components={{

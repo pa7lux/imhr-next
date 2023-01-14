@@ -28,6 +28,7 @@ import { VerticalVideoAndText } from '../../components/ArticleComponents/Vertica
 import { VerticalPhoto } from '../../components/ArticleComponents/VerticalPhoto/VerticalPhoto';
 import { BlankLink } from '../../components/UI/BlankLink/BlankLink';
 import Head from 'next/head';
+import Script from 'next/script';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 interface Props extends ContextProps {
@@ -58,6 +59,20 @@ const PostPage: NextPage<Props> = withTheme<Props>(
           <meta name="description" content={frontmatter.metaDescription} />
           <meta property="og:image" content={frontmatter.metaOgImage} />
         </Head>
+        <Script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-2KMKDPW1DR"
+        ></Script>
+        <Script
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments)}
+      gtag('js', new Date());
+
+      gtag('config', 'G-2KMKDPW1DR')`,
+          }}
+        ></Script>
         <article className={cn(PostStyles.article, frontmatter.theme)}>
           <main className={PostStyles.main}>
             <MDXProvider
