@@ -1,4 +1,8 @@
-# IMHR.top next + ts version
+# IMHR.top about project
+
+«I am here» — is a project devoted to stories that Ukrainian teenagers are ready to share during the war. We have assembled an editorial team that consists of guys who found themselves in Georgia in 2022. Along with curators, they have developed this website and continue to fill it with stories and the results of creative projects.
+
+## IMHR.top next + ts version
 
 - `getStaticPath` and `getStaticProps` util functions and `fs` module to get path and read files
 - `gray-matter` module for reading content inside
@@ -12,18 +16,17 @@
 - `/data` for md
 - `/models` for content interfaces
 
-## HTML, CSS and initial content source
-
-https://github.com/pa7lux/imhr-website
-
 ## Documentation for the new pages
 
 ### File location
+
 Directory /data/posts is intended for articles. There are 3 directories inside: `en`, `uk`, `ru`
 When you want to create new article, you must make in every directory from above new file with `.mdx` ending. **This files must have the same names**. For example, we want to create new article with title `My new article`. For this you supposed to add for each directory, file `my-new-article` **The name must be without spaces**.
 
 ### Frontmatter
-In Frontmatter stored information about article: `author`, `title`, `theme`, `svg` and `meta information`. Also Frontmatter must be written in very top of the article file. It must look so: 
+
+In Frontmatter stored information about article: `author`, `title`, `theme`, `svg` and `meta information`. Also Frontmatter must be written in very top of the article file. It must look so:
+
 ```
 ---
 author: 'Someone`s name'
@@ -36,6 +39,7 @@ metaOgTitle: 'some og title'
 metaOgImage: 'some link on some image'
 ---
 ```
+
 **Don't forget to use quotes**
 
 - `author` - Author name
@@ -48,9 +52,15 @@ metaOgImage: 'some link on some image'
 - `metaOgImage` - Image which will be shown as an icon for tab in browser.
 
 ### Tags
+
 Article builds from simple tags which are going after Frontmatter. Every tag must be wrapped in some of three "boxes":
+
 - `Fullpage`
 - `Large`
 - `Medium`
 
 Only `Heading`, `AuthorCard` and `PhotoFullPage` don't need to be wrapped in one of the following box
+
+## Contribution
+
+If you've found any mistake or ready for contribution to upgrade our code, feel free to open issue or pull request
