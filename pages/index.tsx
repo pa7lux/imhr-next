@@ -26,6 +26,7 @@ const Home: NextPage<HomeProps> = ({ posts }) => {
   const metatags = {
     description: t('home.metaDescription'),
     ogTitle: t('home.metaOgTitle'),
+    ogUrl: t('home.ogUrl'),
     ogImage: t('home.metaOgImage'),
   };
 
@@ -35,6 +36,7 @@ const Home: NextPage<HomeProps> = ({ posts }) => {
         <title>{t('home.metaTitle')}</title>
         <meta property="og:title" content={metatags.ogTitle} />
         <meta name="description" content={metatags.description} />
+        <meta property="og:url" content={metatags.ogUrl} />
         <meta property="og:image" content={metatags.ogImage} />
       </Head>
       <Script
@@ -111,6 +113,7 @@ export async function getStaticProps({ locale }: { locale: string }) {
       metaOgImage: data.metaOgImage,
       isBigStory: data.isBigStory,
       bigImageLink: data.bigImageLink,
+      ogUrl: data.ogUrl,
     };
 
     return {

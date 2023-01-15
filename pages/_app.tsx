@@ -19,7 +19,6 @@ const App = ({ Component, pageProps }: AppProps) => {
       <Head>
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta property="og:url" content="https://imhr.top" />
         <meta property="twitter:card" content="summary_large_image" />
         <link rel="icon" href="/images/icons/favicon.ico" sizes="any" />
         <link

@@ -32,6 +32,7 @@ const about: NextPage<Props> = withTheme<Props>(({ frontmatter, locale }) => {
         <meta property="og:title" content={frontmatter.metaOgTitle} />
         <title>{frontmatter.metaTitle}</title>
         <meta name="description" content={frontmatter.metaDescription} />
+        <meta property="og:url" content={frontmatter.ogUrl} />
         <meta property="og:image" content={frontmatter.metaOgImage} />
       </Head>
       <Script
@@ -106,6 +107,7 @@ export async function getStaticProps({ locale }: { locale: string }) {
         metaDescription: data.metaDescription,
         metaOgTitle: data.metaOgTitle,
         metaOgImage: data.metaOgImage,
+        ogUrl: data.ogUrl,
       },
       ...(await serverSideTranslations(locale, [
         'components',
