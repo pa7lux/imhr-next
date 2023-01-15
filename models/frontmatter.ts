@@ -10,6 +10,7 @@ interface Frontmatter {
   metaDescription?: string;
   metaOgTitle?: string;
   metaOgImage?: string;
+  ogUrl?: string;
 }
 
 export default Frontmatter;
