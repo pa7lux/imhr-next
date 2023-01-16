@@ -63,7 +63,7 @@ Only `HorizontalPhoto`, `Heading`, `AuthorCard` and `PhotoFullPage` don't need t
 Wrapping looks like simple html construction: 
 ```
 <Large>
-  > ### Одному полицейскому не понравились украинские номера. Мы дали ему 100$ и поехали дальше.
+  > ### Some text for blockquote
 </Large>
 ```
 There is a list with all tags which you can use in your article:
