@@ -12,6 +12,7 @@ interface Frontmatter {
   metaOgImage?: string;
   isBigStory?: boolean;
   bigImageLink?: string;
+  ogUrl?: string;
 }
 
 export default Frontmatter;
