@@ -9,7 +9,6 @@ import StoryStyles from './Story.module.css';
 
 interface Props extends Frontmatter {
   slug: string;
-  src?: string;
 }
 
 const Story: FC<Props> = ({ title, author, theme, slug, svg }) => {
@@ -38,7 +37,7 @@ const Story: FC<Props> = ({ title, author, theme, slug, svg }) => {
   );
 };
 
-const BigStory: FC<Props> = ({ slug, src, theme, title, author }) => {
+const BigStory: FC<Props> = ({ slug, bigImageLink, theme, title, author }) => {
   const { locale } = useRouter();
 
   return (
@@ -46,7 +45,11 @@ const BigStory: FC<Props> = ({ slug, src, theme, title, author }) => {
       <Link href={`/posts/${slug}`} legacyBehavior locale={locale}>
         <a href="/odessa-tbilisi.html" className={cn(StoryStyles.story_link)}>
           <article className={cn(StoryStyles.story_card, theme)}>
-            <img src={src} alt="" className={cn(StoryStyles.story_image)} />
+            <img
+              src={bigImageLink}
+              alt=""
+              className={cn(StoryStyles.story_image)}
+            />
             <div className={cn(StoryStyles.story_info)}>
               <h2 className={cn(StoryStyles.story_heading)}>{title}</h2>
               <p

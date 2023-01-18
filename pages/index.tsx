@@ -21,15 +21,7 @@ interface HomeProps {
 const Home: NextPage<HomeProps> = ({ posts }) => {
   const { t } = useTranslation('');
 
-  const { stories, bigStory } = useBigStory(
-    posts,
-    {
-      uk: 'Полтава, Берлін та кодування',
-      ru: 'Полтава, Берлин и кодинг',
-      en: 'Poltava, Berlin and coding',
-    },
-    '/images/ilya/party.jpg'
-  );
+  const stories = useBigStory(posts);
 
   const metatags = {
     description: t('home.metaDescription'),
@@ -89,7 +81,6 @@ const Home: NextPage<HomeProps> = ({ posts }) => {
       </section>
       <section className={cn(HomeStyles.stories)}>
         <ul className={cn(HomeStyles.stories_list)}>
-          {bigStory}
           {stories}
           <SendStory />
         </ul>
@@ -118,6 +109,8 @@ export async function getStaticProps({ locale }: { locale: string }) {
       metaDescription: data.metaDescription,
       metaOgTitle: data.metaOgTitle,
       metaOgImage: data.metaOgImage,
+      isBigStory: data.isBigStory,
+      bigImageLink: data.bigImageLink,
     };
 
     return {

@@ -2,70 +2,29 @@ import { useMemo } from 'react';
 import { BigStory, Story } from '../components/Story/Story';
 import Post from '../models/post';
 
-interface BigStoryCondition {
-  uk: string;
-  ru: string;
-  en: string;
-}
+const useBigStory = (posts: Post[]) => {
+  const firstBigStory = posts.find((item) => item.frontmatter.isBigStory);
+  const indexOfFirstBigStory = firstBigStory
+    ? posts.indexOf(firstBigStory)
+    : -1;
+  [posts[0], posts[indexOfFirstBigStory]] = [
+    posts[indexOfFirstBigStory],
+    posts[0],
+  ];
 
-const useBigStory = (
-  posts: Post[],
-  bigStoryCondition: BigStoryCondition,
-  src: string
-) => {
-  const bigStory = posts
-    .filter(
-      (item) =>
-        item.frontmatter.title.toLowerCase() ===
-          bigStoryCondition.ru.toLowerCase() ||
-        item.frontmatter.title.toLowerCase() ===
-          bigStoryCondition.uk.toLowerCase() ||
-        item.frontmatter.title.toLowerCase() ===
-          bigStoryCondition.en.toLowerCase()
-    )
-    .map((item) => {
+  const stories = posts.map((item) => {
+    if (item.frontmatter.isBigStory) {
       return (
-        <BigStory
-          author={item.frontmatter.author}
-          theme={item.frontmatter.theme}
-          slug={item.slug}
-          svg={item.frontmatter.svg}
-          title={item.frontmatter.title}
-          src={src}
-          key={item.slug}
-        />
+        <BigStory slug={item.slug} {...item.frontmatter} key={item.slug} />
       );
-    });
+    }
 
-  const stories = posts
-    .filter(
-      (item) =>
-        item.frontmatter.title.toLowerCase() !==
-          bigStoryCondition.uk.toLowerCase() &&
-        item.frontmatter.title.toLowerCase() !==
-          bigStoryCondition.ru.toLowerCase() &&
-        item.frontmatter.title.toLowerCase() !==
-          bigStoryCondition.en.toLowerCase()
-    )
-    .map((item) => {
-      return (
-        <Story
-          author={item.frontmatter.author}
-          theme={item.frontmatter.theme}
-          slug={item.slug}
-          svg={item.frontmatter.svg}
-          title={item.frontmatter.title}
-          key={item.slug}
-        />
-      );
-    });
+    return <Story {...item.frontmatter} slug={item.slug} key={item.slug} />;
+  });
 
   return useMemo(() => {
-    return {
-      stories,
-      bigStory,
-    };
-  }, [posts, bigStoryCondition]);
+    return stories;
+  }, [posts]);
 };
 
 export { useBigStory };

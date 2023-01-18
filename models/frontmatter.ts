@@ -10,6 +10,8 @@ interface Frontmatter {
   metaDescription?: string;
   metaOgTitle?: string;
   metaOgImage?: string;
+  isBigStory?: boolean;
+  bigImageLink?: string;
 }
 
 export default Frontmatter;
