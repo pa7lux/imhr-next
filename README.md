@@ -60,14 +60,17 @@ Article builds from simple tags which are going after Frontmatter. Every tag mus
 - `Medium`
 
 Only `HorizontalPhoto`, `Heading`, `AuthorCard` and `PhotoFullPage` don't need to be wrapped in one of the following box.
-Wrapping looks like simple html construction: 
+Wrapping looks like simple html construction:
+
 ```
 <Large>
   > ### Some text for blockquote
 </Large>
 ```
+
 There is a list with all tags which you can use in your article:
-- `h1 h2 h3` - `#` for `h1`, `##` for `h2`, `###` from `h3` 
+
+- `h1 h2 h3` - `#` for `h1`, `##` for `h2`, `###` from `h3`
 - `blockquote` - `> ### Some text`
 - `strong` - `**Some text**`
 - `Heading` - `<Heading img="image-url photoLeft />` If you don't want to use photoLeft just delete this prop from component
@@ -78,7 +81,8 @@ There is a list with all tags which you can use in your article:
     Some text
   </HorizontalPhoto>
   ```
-- `PhotoFullPage` - 
+
+- `PhotoFullPage` -
 
   ```
   <PhotoFullPage className="some-class (not necessary)"
@@ -86,6 +90,7 @@ There is a list with all tags which you can use in your article:
     text="Some photo description"
   />
   ```
+
 - `Slider` - `*` are necessary!
 
   ```
@@ -99,13 +104,15 @@ There is a list with all tags which you can use in your article:
     </PhotoAndText>
    </Slider>
   ```
+
 - `PhotoAndText` - `*` are necessary
 
   ```
   <PhotoAndText src='image-url'>
-    *Some text* 
+    *Some text*
   </PhotoAndText>
   ```
+
 - `AuthorCard` -
 
   ```
@@ -113,15 +120,17 @@ There is a list with all tags which you can use in your article:
     Some text
   </AuthorCard>
   ```
--  `VeticalPhoto` - 
 
-    ```
-    <VerticalPhoto src="image-url" photoDescription="photo description">
-      Some text
-    </VerticalPhoto>
-    ```
+- `VeticalPhoto` -
+
+  ```
+  <VerticalPhoto src="image-url" photoDescription="photo description">
+    Some text
+  </VerticalPhoto>
+  ```
+
 - `LinkList & LinkListItem` - Mostly used only in `AuthorCard`
-  
+
   ```
    <LinkList>
     <LinkListItem>
@@ -132,21 +141,23 @@ There is a list with all tags which you can use in your article:
     </LinkListItem>
   </LinkList>
   ```
- - `Icon` - `<Icon icon='icon-name' />`. **Before writing name, ask if it exists**
- 
- - `BigHeading` - 
- 
-    ```
-    <BigHeading>
-      # Some text
-    </BigHeading>
-    ```
- - `BorderedSection` - 
-    ```
-    <BorderedSection text='Some text'>
-        Some text
-    </BorderedSection>
-    ```
+
+- `Icon` - `<Icon icon='icon-name' />`. **Before writing name, ask if it exists**
+
+- `BigHeading` -
+
+  ```
+  <BigHeading>
+    # Some text
+  </BigHeading>
+  ```
+
+- `BorderedSection` -
+  ```
+  <BorderedSection text='Some text'>
+      Some text
+  </BorderedSection>
+  ```
 
 ## Contribution
 
