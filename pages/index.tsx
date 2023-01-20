@@ -82,7 +82,7 @@ const Home: NextPage<HomeProps> = ({ posts }) => {
       <section className={cn(HomeStyles.stories)}>
         <ul className={cn(HomeStyles.stories_list)}>
           {stories}
-          <SendStory />
+          <SendStory isLarge />
         </ul>
       </section>
     </>
