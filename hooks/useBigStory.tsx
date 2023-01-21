@@ -3,15 +3,12 @@ import { BigStory, Story } from '../components/Story/Story';
 import Post from '../models/post';
 
 const useBigStory = (posts: Post[]) => {
-  const firstBigStory = posts.find((item) => item.frontmatter.isBigStory);
-  const indexOfFirstBigStory = firstBigStory
-    ? posts.indexOf(firstBigStory)
-    : -1;
-  [posts[0], posts[indexOfFirstBigStory]] = [
-    posts[indexOfFirstBigStory],
-    posts[0],
-  ];
-
+  posts.sort((a, b) => {
+    return (
+      new Date(b.frontmatter.createdAt).setHours(0, 0, 0, 0) -
+      new Date(a.frontmatter.createdAt).setHours(0, 0, 0, 0)
+    );
+  });
   const stories = posts.map((item) => {
     if (item.frontmatter.isBigStory) {
       return (

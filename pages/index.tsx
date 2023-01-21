@@ -111,6 +111,7 @@ export async function getStaticProps({ locale }: { locale: string }) {
       metaOgImage: data.metaOgImage,
       isBigStory: data.isBigStory,
       bigImageLink: data.bigImageLink,
+      createdAt: data.createdAt,
     };
 
     return {
