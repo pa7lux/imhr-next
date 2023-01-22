@@ -4,28 +4,55 @@ import { useTranslation } from 'next-i18next';
 
 import SendStoryStyles from './SendStory.module.css';
 
-const SendStory: FC = () => {
+type Props = {
+  isLarge?: boolean;
+};
+
+const SendStory: FC<Props> = ({ isLarge }) => {
   const { t } = useTranslation('common');
 
   return (
-    <li className={cn(SendStoryStyles.story)}>
+    <li
+      className={cn(
+        {
+          [SendStoryStyles.large]: isLarge,
+        },
+        SendStoryStyles.story
+      )}
+    >
       <a
         href="https://t.me/+tiiH3XpLUB03YWFi"
         target="_blank"
-        className={
-          cn(SendStoryStyles.story_link, SendStoryStyles.telegram_link) +
-          ' theme-blue'
-        }
+        className={cn(
+          SendStoryStyles.story_link,
+          SendStoryStyles.telegram_link,
+          'theme-blue'
+        )}
       >
         <article className={cn(SendStoryStyles.story_card)}>
-          <div className={cn(SendStoryStyles.story_info)}>
+          <div
+            className={cn(SendStoryStyles.story_info, {
+              [SendStoryStyles.large]: isLarge,
+            })}
+          >
             <h2 className={cn(SendStoryStyles.story_heading)}>
               {t('home.sendStory')}
             </h2>
           </div>
-          <div className={cn(SendStoryStyles.story_graphics) + ' theme-yellow'}>
+          <div
+            className={cn(
+              SendStoryStyles.story_graphics,
+              {
+                [SendStoryStyles.large]: isLarge,
+              },
+              'theme-yellow'
+            )}
+          >
             <svg
-              className={cn(SendStoryStyles.svg, SendStoryStyles.svg_telegram)}
+              className={cn(SendStoryStyles.svg, {
+                [SendStoryStyles.svg_telegram__large]: isLarge,
+                [SendStoryStyles.svg_telegram]: !isLarge,
+              })}
               width="419"
               height="226"
               viewBox="0 0 419 226"

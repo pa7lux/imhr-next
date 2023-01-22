@@ -1,11 +1,16 @@
 .story {
+  aspect-ratio: 433/236;
+}
+
+.story.large {
   aspect-ratio: 1366/102;
   grid-column: 1/-1;
   box-sizing: border-box;
 }
 
 @media screen and (max-width: 600px) {
-  .story {
+  .story,
+  .story.large {
     aspect-ratio: initial;
   }
 }
@@ -52,7 +57,7 @@
 }
 
 @media screen and (max-width: 600px) {
-  .telegram-link::after {
+  .telegram_link::after {
     width: 60%;
     left: initial;
     right: 0;
@@ -100,8 +105,18 @@
 
 .story_graphics {
   position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  overflow: hidden;
+}
+
+.story_graphics.large {
+  position: absolute;
   top: -16%;
   right: 0;
+  left: 70%;
   overflow: hidden;
   width: 30%;
   aspect-ratio: 402/186;
@@ -130,6 +145,18 @@
 }
 
 .story_info {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  padding: clamp(0.5rem, 0.0932rem + 2.0339vw, 2rem)
+    clamp(0.5rem, 0.2288rem + 1.3559vw, 1.5rem)
+    clamp(0.5rem, 0.2288rem + 1.3559vw, 1.5rem);
+  z-index: 1;
+}
+
+.story_info.large {
   display: flex;
   position: relative;
   flex-direction: column;
@@ -172,8 +199,39 @@
   content: none;
 }
 
-.svg.svg_telegram {
+.svg.svg_telegram__large {
   width: 100%;
+}
+
+.svg.svg_telegram__large path:nth-child(1) {
+  stroke-dasharray: 0;
+  stroke-dashoffset: 0;
+}
+
+.svg.svg_telegram__large path:nth-child(2) {
+  stroke-dasharray: 530 40;
+  stroke-dashoffset: 0;
+  animation-duration: 2s;
+}
+
+.story_link:hover .svg_telegram__large path:nth-child(2) {
+  animation-name: svgAnimationTelegram;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@media screen and (max-width: 600px) {
+  .svg.svg_telegram__large {
+    left: 36%;
+    width: 60%;
+  }
+}
+
+.svg.svg_telegram {
+  bottom: -34%;
+  left: 8%;
+  width: 90%;
+  height: 100%;
 }
 
 .svg.svg_telegram path:nth-child(1) {

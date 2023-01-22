@@ -84,7 +84,7 @@ const Home: NextPage<HomeProps> = ({ posts }) => {
       <section className={cn(HomeStyles.stories)}>
         <ul className={cn(HomeStyles.stories_list)}>
           {stories}
-          <SendStory />
+          <SendStory isLarge />
         </ul>
       </section>
     </>
@@ -113,6 +113,7 @@ export async function getStaticProps({ locale }: { locale: string }) {
       metaOgImage: data.metaOgImage,
       isBigStory: data.isBigStory,
       bigImageLink: data.bigImageLink,
+      createdAt: data.createdAt,
       ogUrl: data.ogUrl,
     };
 
