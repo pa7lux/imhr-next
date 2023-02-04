@@ -5,4 +5,5 @@ export type SVG =
   | 'tiktok'
   | 'grecha'
   | 'fire'
-  | 'route';
+  | 'route'
+  | 'star';
