@@ -12,7 +12,21 @@ const Footer: NextPage<Props> = () => {
 
   return (
     <footer className={cn(FooterStyles.footer, FooterStyles.footer__inner)}>
-      <p className={cn(FooterStyles.copy)}>© IMHR 2022-2023</p>
+      <div className={cn(FooterStyles.copy)}>
+        <p>© IMHR 2022-2023</p>
+        <ul className={cn(FooterStyles.social_links)}>
+          <li>
+            <a href="https://t.me/+tiiH3XpLUB03YWFi" target="_blank">
+              Telegram
+            </a>
+          </li>
+          <li>
+            <a href="https://www.instagram.com/imhr.top" target="_blank">
+              Instagram
+            </a>
+          </li>
+        </ul>
+      </div>
       <p className={cn(FooterStyles.thanks)}>{t('footer')}</p>
     </footer>
   );

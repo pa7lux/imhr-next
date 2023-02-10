@@ -16,6 +16,11 @@
   text-align: right;
 }
 
+.social_links {
+  display: flex;
+  gap: 1em;
+}
+
 @media screen and (max-width: 800px) {
   .footer--index {
     margin-top: calc(8 * var(--size-unit));
