@@ -6,4 +6,5 @@ export type SVG =
   | 'grecha'
   | 'fire'
   | 'route'
-  | 'star';
+  | 'star'
+  | 'lightning';
