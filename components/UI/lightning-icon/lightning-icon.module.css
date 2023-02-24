@@ -10,17 +10,28 @@
   animation-fill-mode: forwards;
 }
 
-.svg.svg_star {
+.svg.svg_lightning {
   right: 10px;
   bottom: 10px;
 }
 
-.svg.svg_star path:not(:first-child) {
+.svg path {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+}
+
+.svg.svg_lightning path:first-child {
+  animation-duration: 1s;
+}
+
+.svg.svg_lightning path:not(:first-child) {
   animation-duration: 3s;
   animation-delay: 0.3s;
 }
 
-.svg.svg_star path:first-child {
+.svg.svg_lightning path:first-child {
   animation-duration: 1s;
 }
 
@@ -31,7 +42,7 @@
 }
 
 @media screen and (max-width: 1024px) {
-  .svg.svg_star {
+  .svg.svg_lightning {
     right: 10px;
     bottom: -10px;
     transform: scale(0.6);
