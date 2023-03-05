@@ -3,9 +3,15 @@ import cn from 'classnames';
 
 import ButtonStyles from './DownloadButton.module.css';
 
-const DownloadButton: FC<PropsWithChildren> = ({ children }) => {
+const DownloadButton: FC<PropsWithChildren> = ({ children, ...props }) => {
+  const clickHandler = (e: React.MouseEvent<HTMLButtonElement>) => {
+    window.open('/pdf/comic-book.pdf');
+  };
   return (
-    <button className={cn(ButtonStyles['download-button'])}>
+    <button
+      onClick={clickHandler}
+      className={cn(ButtonStyles['download-button'])}
+    >
       {children}
       <svg
         className={cn(ButtonStyles['download-button__icon'])}

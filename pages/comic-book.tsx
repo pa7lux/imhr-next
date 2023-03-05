@@ -103,7 +103,11 @@ const about: NextPage<Props> = withTheme<Props>(({ frontmatter, locale }) => {
               GridPhoto: (props) => <GridPhoto {...props} />,
               BlankLink: (props) => <BlankLink {...props} />,
               DownloadButton: (props) => {
-                return <DownloadButton>Скачать</DownloadButton>;
+                return (
+                  <DownloadButton onClick={props.clickHandler}>
+                    Скачать
+                  </DownloadButton>
+                );
               },
               PhotoFullPage: (props) => (
                 <div className={cn(ComicBook['comic-book__wrapper'])}>
