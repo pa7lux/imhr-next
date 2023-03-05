@@ -81,16 +81,16 @@ const PostPage: NextPage<Props> = withTheme<Props>(
                     {...props}
                   />
                 ),
-                p: (props) => <p className="text-type-p" {...props} />,
-                h1: (props) => <h1 className="text-type-h1" {...props} />,
-                h2: (props) => <h2 className="text-type-h2" {...props} />,
-                h3: (props) => <h3 className="text-type-h3" {...props} />,
+                p: (props) => <p className="text-type-p" {...props}></p>,
+                h1: (props) => <h1 className="text-type-h1" {...props}></h1>,
+                h2: (props) => <h2 className="text-type-h2" {...props}></h2>,
+                h3: (props) => <h3 className="text-type-h3" {...props}></h3>,
                 blockquote: (props) => <Blockquote {...props} />,
                 em: (props) => (
-                  <p className="text-type-caption">{props.children}</p>
+                  <span className="text-type-caption">{props.children}</span>
                 ),
                 strong: (props) => (
-                  <p className="text-type-lead">{props.children}</p>
+                  <span className="text-type-lead">{props.children}</span>
                 ),
                 a: (props) => (
                   <a

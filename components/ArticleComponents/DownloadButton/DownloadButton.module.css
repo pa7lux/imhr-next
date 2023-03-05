@@ -1,0 +1,23 @@
+.download-button {
+  background-color: var(--accent-color);
+  border: none;
+  padding: 2% 6%;
+  color: inherit;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.6em;
+  font-size: 1.2em;
+  width: 35%;
+  transition: opacity 0.5s;
+}
+
+.download-button:hover {
+  opacity: 0.6;
+}
+
+.download-button__icon {
+  width: 20%;
+  height: auto;
+}

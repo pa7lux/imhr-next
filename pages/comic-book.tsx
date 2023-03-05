@@ -10,10 +10,14 @@ import Frontmatter from '../models/frontmatter';
 import { ContextProps } from '../models/themeContext';
 import dynamic from 'next/dynamic';
 import { withTheme } from '../store/context/themeContext';
+import { Heading } from '../components/ArticleComponents/Heading/Heading';
+import { MediumBlock } from '../components/ArticleComponents/AlignBlocks/MediumBlock/MediumBlock';
+import { LargeBlock } from '../components/ArticleComponents/AlignBlocks/LargeBlock/LargeBlock';
 import { ImageGrid } from '../components/ArticleComponents/ImageGrid/ImageGrid';
 import { GridPhoto } from '../components/ArticleComponents/GridPhoto/GridPhoto';
 import { BlankLink } from '../components/UI/BlankLink/BlankLink';
 import { PhotoFullPage } from '../components/ArticleComponents/PhotoFullPage/PhotoFullPage';
+import { DownloadButton } from '../components/ArticleComponents/DownloadButton/DownloadButton';
 
 import ComicBook from '../styles/ComicBook.module.css';
 
@@ -51,43 +55,66 @@ const about: NextPage<Props> = withTheme<Props>(({ frontmatter, locale }) => {
       gtag('config', 'G-2KMKDPW1DR')`,
         }}
       ></Script>
-      <section className={cn(ComicBook.about, frontmatter.theme)}>
-        <MDXProvider
-          components={{
-            p: (props) => (
-              <p
-                className={cn(ComicBook.about_heading, 'text-type-p')}
-                {...props}
-              />
-            ),
-            h1: (props) => (
-              <h1
-                className={cn(ComicBook.about_heading, 'text-type-h1')}
-                {...props}
-              />
-            ),
-            h2: (props) => (
-              <h2
-                className={cn(ComicBook.about_second_heading, 'text-type-h2')}
-                {...props}
-              />
-            ),
-            ImageGrid: (props) => (
-              <div className={cn(ComicBook.about_wrapper)}>
-                <ImageGrid {...props} />
-              </div>
-            ),
-            GridPhoto: (props) => <GridPhoto {...props} />,
-            BlankLink: (props) => <BlankLink {...props} />,
-            PhotoFullPage: (props) => (
-              <div className={cn(ComicBook.about_wrapper)}>
-                <PhotoFullPage {...props} />
-              </div>
-            ),
-          }}
-        >
-          <Article />
-        </MDXProvider>
+      <section className={cn(ComicBook['comic-book'], frontmatter.theme)}>
+        <article className={cn(ComicBook['comic-book__article'])}>
+          <MDXProvider
+            components={{
+              p: (props) => (
+                <p
+                  className={cn(ComicBook['comic-book__text'], 'text-type-p')}
+                  {...props}
+                />
+              ),
+              h1: (props) => (
+                <h1
+                  className={cn(
+                    ComicBook['comic-book__heading'],
+                    'text-type-h1'
+                  )}
+                  {...props}
+                />
+              ),
+              h2: (props) => (
+                <h2
+                  className={cn(
+                    ComicBook['comic-book__second-hrading'],
+                    'text-type-h2'
+                  )}
+                  {...props}
+                />
+              ),
+              strong: (props) => (
+                <span className="text-type-lead">{props.children}</span>
+              ),
+              ImageGrid: (props) => (
+                <div className={cn(ComicBook['comic-book__wrapper'])}>
+                  <ImageGrid {...props} />
+                </div>
+              ),
+              Heading: (props) => (
+                <Heading
+                  title={frontmatter.title}
+                  author={frontmatter.title}
+                  {...props}
+                />
+              ),
+              Medium: (props) => <MediumBlock {...props} />,
+              Large: (props) => <LargeBlock {...props} />,
+              GridPhoto: (props) => <GridPhoto {...props} />,
+              BlankLink: (props) => <BlankLink {...props} />,
+              DownloadButton: (props) => {
+                return <DownloadButton>Скачать</DownloadButton>;
+              },
+              PhotoFullPage: (props) => (
+                <div className={cn(ComicBook['comic-book__wrapper'])}>
+                  <PhotoFullPage {...props} />
+                </div>
+              ),
+            }}
+          >
+            <Article />
+          </MDXProvider>
+        </article>
       </section>
     </>
   );
