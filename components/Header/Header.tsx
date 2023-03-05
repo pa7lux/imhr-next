@@ -75,11 +75,11 @@ export const Header = withTheme(({ theme, onChange }) => {
           </li>
           <li className={cn(HeaderStyles.menu_list_item)}>
             <a
-              href="https://t.me/+tiiH3XpLUB03YWFi"
+              href="/comic-book"
               target="_blank"
               className={cn(HeaderStyles.menu_link, HeaderStyles.menu_link)}
             >
-              {t('header.iHaveStory')}
+              {t('header.comicBook')}
             </a>
           </li>
         </ul>
