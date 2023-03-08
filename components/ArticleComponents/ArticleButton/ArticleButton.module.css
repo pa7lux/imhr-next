@@ -1,4 +1,4 @@
-.download-button {
+.article-button {
   background-color: var(--accent-color);
   border: none;
   padding: 2% 6%;
@@ -8,16 +8,29 @@
   justify-content: center;
   align-items: center;
   gap: 0.6em;
-  font-size: 1.2em;
+  font-size: inherit;
   width: 35%;
   transition: opacity 0.5s;
+  text-align: left;
 }
 
-.download-button:hover {
+.article-button:hover {
   opacity: 0.6;
 }
 
-.download-button__icon {
+.article-button__icon {
   width: 20%;
   height: auto;
+}
+
+@media screen and (max-width: 850px) {
+  .article-button {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .article-button {
+    width: 100%;
+  }
 }

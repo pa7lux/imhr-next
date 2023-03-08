@@ -3,7 +3,8 @@ import { Theme } from './theme';
 
 interface Frontmatter {
   title: string;
-  author: string;
+  author?: string;
+  subtitle?: string;
   theme: Theme;
   svg: SVG;
   metaTitle?: string;

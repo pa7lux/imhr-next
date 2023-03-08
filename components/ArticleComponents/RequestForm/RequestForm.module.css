@@ -1,0 +1,51 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 1.2rem;
+  width: 100%;
+}
+
+.label_text {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.textfield {
+  display: block;
+  width: 100%;
+  background-color: transparent;
+  border: 2px solid var(--accent-color);
+  font-size: inherit;
+  font-family: inherit;
+  padding: 2%;
+}
+
+.textarea {
+  width: 100%;
+  background-color: transparent;
+  border: 2px solid var(--accent-color);
+  font-size: inherit;
+  font-family: inherit;
+  padding: 2%;
+}
+
+.button {
+  background-color: var(--accent-color);
+  border: none;
+  padding: 3% 6%;
+  color: inherit;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.6em;
+  font-size: inherit;
+  width: 100%;
+  transition: opacity 0.5s;
+  text-align: left;
+}
+
+.button:hover {
+  opacity: 0.6;
+}

@@ -109,11 +109,7 @@ export async function getStaticProps({ locale }: { locale: string }) {
         metaOgImage: data.metaOgImage,
         ogUrl: data.ogUrl,
       },
-      ...(await serverSideTranslations(locale, [
-        'components',
-        'header',
-        'footer',
-      ])),
+      ...(await serverSideTranslations(locale, ['header', 'footer'])),
     },
   };
 }
