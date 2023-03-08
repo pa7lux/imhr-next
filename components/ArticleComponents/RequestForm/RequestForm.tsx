@@ -29,7 +29,7 @@ const RequestForm: FC = () => {
     const query = new URLSearchParams();
 
     Object.keys(values).forEach((k) => {
-      query.set(k, values[k]);
+      query.set(k, values[k as keyof typeof values]);
     });
 
     return query;
@@ -96,7 +96,7 @@ const RequestForm: FC = () => {
           name="name"
           type="text"
           id="userName"
-          placeholder={t('form.userNamePlaceholder')}
+          placeholder={t('form.userNamePlaceholder') as string}
           value={formData.userName}
           onInput={handleInput}
         />
@@ -111,7 +111,7 @@ const RequestForm: FC = () => {
           name="email"
           type="email"
           id="email"
-          placeholder={t('form.emailPlaceholder')}
+          placeholder={t('form.emailPlaceholder') as string}
           value={formData.email}
           onInput={handleInput}
         />
@@ -126,7 +126,7 @@ const RequestForm: FC = () => {
           name="telegram"
           type="text"
           id="telegram"
-          placeholder={t('form.telegramPlaceholder')}
+          placeholder={t('form.telegramPlaceholder') as string}
           value={formData.telegram}
           onInput={handleInput}
         />
@@ -141,7 +141,7 @@ const RequestForm: FC = () => {
           name="place"
           type="text"
           id="place"
-          placeholder={t('form.placePlaceholder')}
+          placeholder={t('form.placePlaceholder') as string}
           value={formData.place}
           onInput={handleInput}
         />
@@ -154,13 +154,13 @@ const RequestForm: FC = () => {
           className={cn(RequestFormStyles.textarea)}
           name="message"
           id="message"
-          placeholder={t('form.messagePlaceholder')}
+          placeholder={t('form.messagePlaceholder') as string}
           value={formData.message}
           onInput={handleInput}
         ></textarea>
       </label>
       <button className={cn(RequestFormStyles.button)} type="submit">
-        Отправить
+        {t('form.buttonText')}
       </button>
       {sendingState === 'success' && (
         <p className={cn(RequestFormStyles.error_message)}>
