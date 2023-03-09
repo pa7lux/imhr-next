@@ -19,6 +19,7 @@
   font-size: inherit;
   font-family: inherit;
   padding: 2%;
+  appearance: none;
 }
 
 .textarea {
@@ -28,6 +29,7 @@
   font-size: inherit;
   font-family: inherit;
   padding: 2%;
+  appearance: none;
 }
 
 .button {
@@ -44,6 +46,7 @@
   width: 100%;
   transition: opacity 0.5s;
   text-align: left;
+  appearance: none;
 }
 
 .button:hover {
