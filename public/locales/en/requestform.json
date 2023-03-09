@@ -1,17 +1,17 @@
 {
   "form": {
-    "userName": "Имя",
+    "userName": "Name",
     "email": "Email",
     "telegram": "Telegram",
-    "place": "Страна и город",
-    "message": "Любое сообщение",
-    "userNamePlaceholder": "Важа Пшавела",
+    "place": "Country and City",
+    "message": "Write any message",
+    "userNamePlaceholder": "Lana Wachowski",
     "emailPlaceholder": "hello@wearehere.top",
-    "telegramPlaceholder": "https://t.me/vazha",
-    "placePlaceholder": "Амстердам, Нидерланды",
-    "messagePlaceholder": "Ваши тёплые пожелания",
-    "buttonText": "Отправить",
-    "error": "🚫 Форма сломалась, напишите нам в Телеграм, пожалуйста",
-    "success": "✅ Заявка отправилась, мы скоро напишем вам на почту или в Телеграм и обо всём договоримся"
+    "telegramPlaceholder": "https://t.me/LanaWachowski",
+    "placePlaceholder": "Netherlands, Amsterdam",
+    "messagePlaceholder": "Your best wishes",
+    "buttonText": "Send",
+    "error": "🚫 There is an error, please, contact us on Telegram.",
+    "success": "✅ The form is sent, we will contact you soon by email or on Telegram for further details."
   }
 }
