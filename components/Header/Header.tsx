@@ -3,7 +3,6 @@ import Link from 'next/link';
 import { withTheme } from '../../store/context/themeContext';
 import { useRouter } from 'next/router';
 import cn from 'classnames';
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'next-i18next';
 import { GetStaticProps } from 'next';
 
@@ -19,7 +18,11 @@ export const Header = withTheme(({ theme, onChange }) => {
   const { menu_list_item, menu_list_item__active } = HeaderStyles;
 
   useEffect(() => {
-    if (pathname === '/' || pathname === '/about') {
+    if (
+      pathname === '/' ||
+      pathname === '/about' ||
+      pathname === '/comic-book'
+    ) {
       onChange('theme-blue');
     }
   }, [pathname]);
@@ -66,21 +69,24 @@ export const Header = withTheme(({ theme, onChange }) => {
           <li
             className={cx({
               [menu_list_item]: true,
+              [menu_list_item__active]: pathname === '/comic-book',
+            })}
+          >
+            <Link href="/comic-book" legacyBehavior>
+              <a className={cn(HeaderStyles.menu_link)}>
+                {t('header.comicBook')}
+              </a>
+            </Link>
+          </li>
+          <li
+            className={cx({
+              [menu_list_item]: true,
               [menu_list_item__active]: pathname === '/about',
             })}
           >
             <Link href="/about" legacyBehavior>
               <a className={cn(HeaderStyles.menu_link)}>{t('header.about')}</a>
             </Link>
-          </li>
-          <li className={cn(HeaderStyles.menu_list_item)}>
-            <a
-              href="https://t.me/+tiiH3XpLUB03YWFi"
-              target="_blank"
-              className={cn(HeaderStyles.menu_link, HeaderStyles.menu_link)}
-            >
-              {t('header.iHaveStory')}
-            </a>
           </li>
         </ul>
       </nav>

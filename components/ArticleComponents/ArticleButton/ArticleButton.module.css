@@ -1,0 +1,36 @@
+.article-button {
+  background-color: var(--accent-color);
+  border: none;
+  padding: 2% 6%;
+  color: inherit;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.6em;
+  font-size: inherit;
+  width: 35%;
+  transition: opacity 0.5s;
+  text-align: left;
+}
+
+.article-button:hover {
+  opacity: 0.6;
+}
+
+.article-button__icon {
+  width: 20%;
+  height: auto;
+}
+
+@media screen and (max-width: 850px) {
+  .article-button {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .article-button {
+    width: 100%;
+  }
+}

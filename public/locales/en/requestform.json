@@ -1,0 +1,17 @@
+{
+  "form": {
+    "userName": "Name",
+    "email": "Email",
+    "telegram": "Telegram",
+    "place": "Country and City",
+    "message": "Write any message",
+    "userNamePlaceholder": "Lana Wachowski",
+    "emailPlaceholder": "hello@wearehere.top",
+    "telegramPlaceholder": "https://t.me/LanaWachowski",
+    "placePlaceholder": "Netherlands, Amsterdam",
+    "messagePlaceholder": "Your best wishes",
+    "buttonText": "Send",
+    "error": "🚫 There is an error, please, contact us on Telegram.",
+    "success": "✅ The form is sent, we will contact you soon by email or on Telegram for further details."
+  }
+}

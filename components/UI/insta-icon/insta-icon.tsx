@@ -39,19 +39,19 @@ const Insta: FC<Props> = ({ className }) => {
           y2="30.5263"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#4845A2" />
-          <stop offset="0.0453646" stop-color="#5945A2" />
-          <stop offset="0.1713" stop-color="#8444A1" />
-          <stop offset="0.2698" stop-color="#9E44A1" />
-          <stop offset="0.3282" stop-color="#A844A1" />
-          <stop offset="0.3905" stop-color="#AB429A" />
-          <stop offset="0.4788" stop-color="#B43C88" />
-          <stop offset="0.4896" stop-color="#B53B85" />
-          <stop offset="0.5577" stop-color="#BE3572" />
-          <stop offset="0.6762" stop-color="#D22749" />
-          <stop offset="0.7388" stop-color="#DF4F3E" />
-          <stop offset="0.8559" stop-color="#F9A326" />
-          <stop offset="1" stop-color="#F9DD26" />
+          <stop stopColor="#4845A2" />
+          <stop offset="0.0453646" stopColor="#5945A2" />
+          <stop offset="0.1713" stopColor="#8444A1" />
+          <stop offset="0.2698" stopColor="#9E44A1" />
+          <stop offset="0.3282" stopColor="#A844A1" />
+          <stop offset="0.3905" stopColor="#AB429A" />
+          <stop offset="0.4788" stopColor="#B43C88" />
+          <stop offset="0.4896" stopColor="#B53B85" />
+          <stop offset="0.5577" stopColor="#BE3572" />
+          <stop offset="0.6762" stopColor="#D22749" />
+          <stop offset="0.7388" stopColor="#DF4F3E" />
+          <stop offset="0.8559" stopColor="#F9A326" />
+          <stop offset="1" stopColor="#F9DD26" />
         </linearGradient>
       </defs>
     </svg>

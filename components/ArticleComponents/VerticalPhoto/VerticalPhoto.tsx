@@ -13,7 +13,7 @@ const VerticalPhoto: FC<Props> = ({ src, children, photoDescription }) => {
   return (
     <div className={cn(VerticalPhotoStyles.vertical_photo_and_text, 'mb-2')}>
       <div className="text-box">
-        <p className="image-description-paragraph">{children}</p>
+        <div className="image-description-paragraph">{children}</div>
       </div>
       <figure className={VerticalPhotoStyles.image_box}>
         <img
