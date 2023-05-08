@@ -206,6 +206,7 @@ ul {
   font-variation-settings: var(--text-weight-normal);
   line-height: 1.5;
   color: var(--text-color-secondary);
+  display: block;
 }
 
 .text-view-primary {
