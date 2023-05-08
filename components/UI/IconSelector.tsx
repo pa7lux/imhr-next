@@ -9,6 +9,7 @@ import { Fire } from './fire-icon/fire-icon';
 import { Route } from './route-icon/route-icon';
 import { Star } from './star-icon/star-icon';
 import { Lightning } from './lightning-icon/lightning-icon';
+import { Rain } from './rain-icon/rain-icon';
 
 type Props = {
   className?: string;
@@ -43,6 +44,9 @@ const IconSelector: FC<Props> = ({ className, icon }) => {
 
     case 'lightning':
       return <Lightning className={className} />;
+
+    case 'rain':
+      return <Rain className={className} />;
 
     default:
       return <Backpack />;
