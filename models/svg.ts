@@ -7,4 +7,5 @@ export type SVG =
   | 'fire'
   | 'route'
   | 'star'
-  | 'lightning';
+  | 'lightning'
+  | 'rain';
