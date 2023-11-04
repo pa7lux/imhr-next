@@ -27,6 +27,7 @@ import { FullpageBlock } from '../../components/ArticleComponents/AlignBlocks/Fu
 import { VerticalVideoAndText } from '../../components/ArticleComponents/VerticalVideoAndText/VerticalVideoAndText';
 import { VerticalPhoto } from '../../components/ArticleComponents/VerticalPhoto/VerticalPhoto';
 import { BlankLink } from '../../components/UI/BlankLink/BlankLink';
+import { DialogBubble } from '../../components/ArticleComponents/DialogBubble/DialogBubble';
 import Head from 'next/head';
 import Script from 'next/script';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
@@ -121,6 +122,7 @@ const PostPage: NextPage<Props> = withTheme<Props>(
                 ),
                 BlankLink: (props) => <BlankLink {...props} />,
                 VerticalPhoto: (props) => <VerticalPhoto {...props} />,
+                DialogBubble: (props) => <DialogBubble {...props} />,
               }}
             >
               <Article />

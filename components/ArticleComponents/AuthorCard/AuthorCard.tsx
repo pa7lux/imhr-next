@@ -5,11 +5,21 @@ import CardStyles from './AuthorCard.module.css';
 
 type Props = {
   src: string;
+  direction?: 'ltr' | 'rtl';
 };
 
-const AuthorCard: FC<PropsWithChildren<Props>> = ({ children, src }) => {
+const AuthorCard: FC<PropsWithChildren<Props>> = ({
+  children,
+  src,
+  direction,
+}) => {
   return (
-    <div className={CardStyles.author_block}>
+    <div
+      className={cn(
+        CardStyles.author_block,
+        direction === 'rtl' && CardStyles['rtl-card']
+      )}
+    >
       <div className={cn(CardStyles.author_content, 'box-radius')}>
         <svg
           className={CardStyles.author_image}
