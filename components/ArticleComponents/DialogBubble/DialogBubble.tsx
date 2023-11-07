@@ -9,14 +9,26 @@ type Props = {
   direction?: 'ltr' | 'rtl';
 };
 
+type Author = {
+  id: number | string;
+  name: string;
+  img: string;
+};
+
 const DialogBubble: FC<PropsWithChildren<Props>> = ({
   children,
   people,
   direction,
 }) => {
-  const authorsArray = people.split(',');
-  const bubbleAuthors = authorsArray.map((author) => {
-    return authors.find((person) => person.id === parseInt(author));
+  const authorsArray: Array<string> = people.split(',');
+  const bubbleAuthors: Author[] = authorsArray.map((author) => {
+    return (
+      authors.find((person) => person.id === parseInt(author)) || {
+        id: 0,
+        name: 'Someone',
+        img: '/images/unknown.jpg',
+      }
+    );
   });
   return (
     <div
@@ -28,9 +40,9 @@ const DialogBubble: FC<PropsWithChildren<Props>> = ({
       <ul className={cn(CardStyles.people_list)}>
         {bubbleAuthors.map((person) => {
           return (
-            <li key={person!.id}>
-              <img src={person!.img} alt={`На фото ${person!.name}`} />
-              <span>{person!.name}</span>
+            <li key={person.id}>
+              <img src={person.img} alt={`На фото ${person.name}`} />
+              <span>{person.name}</span>
             </li>
           );
         })}
