@@ -25,13 +25,13 @@
   top: 0;
   left: 0;
   width: 37.2%;
-  transform: translate(-50%, -6%);
+  transform: translate(-43%, -7%);
 }
 
 .rtl-card .author_image {
   left: auto;
   right: 0;
-  transform: translate(50%, -6%);
+  transform: translate(43%, -7%);
 }
 
 .author_heading {
@@ -67,6 +67,6 @@
     padding-right: clamp(1.25rem, 0.732rem + 2.7624vw, 2.5rem);
     padding-bottom: clamp(1.25rem, 0.732rem + 2.7624vw, 2.5rem);
     padding-left: clamp(3.75rem, 2.7141rem + 5.5249vw, 6.25rem);
-    transform: translateX(2vw);
+    /* transform: translateX(2vw); */
   }
 }
