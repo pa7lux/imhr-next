@@ -16,7 +16,6 @@ let cx = classNames.bind(HeadingStyles);
 
 const Heading: FC<Props> = ({ photoLeft = false, author, title, img }) => {
   const { t } = useTranslation('components');
-
   return (
     <section
       className={cx({

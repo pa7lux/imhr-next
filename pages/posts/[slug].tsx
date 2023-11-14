@@ -186,6 +186,7 @@ export async function getStaticProps({
       },
       ...(await serverSideTranslations(locale, [
         'components',
+        'bubble-authors',
         'header',
         'footer',
       ])),
