@@ -9,6 +9,20 @@
   align-items: start;
 }
 
+.image_grid:has(li:nth-child(3)) {
+  grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+}
+
+@media (max-width: 650px) {
+  .image_grid {
+    grid-template-columns: 1fr;
+  }
+
+  .image_grid:has(li:nth-child(3)) {
+    grid-template-columns: 1fr;
+  }
+}
+
 .image_grid_item {
   width: 100%;
 }
