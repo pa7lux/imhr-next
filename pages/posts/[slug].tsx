@@ -28,6 +28,7 @@ import { VerticalVideoAndText } from '../../components/ArticleComponents/Vertica
 import { VerticalPhoto } from '../../components/ArticleComponents/VerticalPhoto/VerticalPhoto';
 import { BlankLink } from '../../components/UI/BlankLink/BlankLink';
 import { DialogBubble } from '../../components/ArticleComponents/DialogBubble/DialogBubble';
+import { ContentImageGridList } from '../../components/ArticleComponents/ContentImageGridList/ContentImageGridList';
 import Head from 'next/head';
 import Script from 'next/script';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
@@ -123,6 +124,9 @@ const PostPage: NextPage<Props> = withTheme<Props>(
                 BlankLink: (props) => <BlankLink {...props} />,
                 VerticalPhoto: (props) => <VerticalPhoto {...props} />,
                 DialogBubble: (props) => <DialogBubble {...props} />,
+                ContentImageGridList: (props) => (
+                  <ContentImageGridList {...props} />
+                ),
               }}
             >
               <Article />
