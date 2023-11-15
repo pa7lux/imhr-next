@@ -1,0 +1,41 @@
+.svg {
+  position: absolute;
+  height: 100%;
+  z-index: 0;
+}
+
+.svg path {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+}
+
+.svg.svg_israel-star {
+  width: 25%;
+  right: 3%;
+  bottom: -30%;
+}
+
+@media (width <= 600px) {
+  .svg.svg_israel-star {
+    width: 15%;
+    right: 3%;
+    bottom: -20%;
+  }
+}
+
+.svg.svg_israel-star path:not(:first-child) {
+  animation-duration: 3s;
+  animation-delay: 0.3s;
+}
+
+.svg.svg_israel-star path:first-child {
+  animation-duration: 1s;
+}
+
+@keyframes svgAnimation {
+  to {
+    stroke-dashoffset: 0;
+  }
+}

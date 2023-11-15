@@ -8,4 +8,5 @@ export type SVG =
   | 'route'
   | 'star'
   | 'lightning'
-  | 'rain';
+  | 'rain'
+  | 'israel-star';
