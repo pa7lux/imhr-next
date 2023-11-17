@@ -77,7 +77,7 @@ body {
 @media screen and (max-width: 650px) {
   :root {
     --inner-width-main: 80%;
-    --inner-width-large: 80%;
+    --inner-width-large: 95%;
     --inner-width-over-content: var(--content-section-width-main);
     --full-page-aspect-ratio: 1376/900;
     --body-padding-top-bottom: 0 0 calc(2 * var(--size-unit));
@@ -103,6 +103,7 @@ figure,
 blockquote {
   margin: 0;
   padding: 0;
+  text-wrap: balance;
 }
 
 a {

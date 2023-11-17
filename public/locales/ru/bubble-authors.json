@@ -1,0 +1,22 @@
+{
+  "1": {
+    "id": 1,
+    "name": "Оля",
+    "img": "/images/israel/olya.jpg"
+  },
+  "2": {
+    "id": 2,
+    "name": "Саша",
+    "img": "/images/israel/sasha.jpg"
+  },
+  "3": {
+    "id": 3,
+    "name": "Сёма",
+    "img": "/images/israel/kot.jpg"
+  },
+  "4": {
+    "id": 4,
+    "name": "Шимон",
+    "img": "/images/israel/shimon.jpg"
+  }
+}

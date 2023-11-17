@@ -1,4 +1,4 @@
-.story {
+/* .story {
   aspect-ratio: 433/236;
 }
 
@@ -6,7 +6,7 @@
   .story {
     aspect-ratio: initial;
   }
-}
+} */
 
 .story_link {
   display: block;
@@ -44,6 +44,7 @@
   font-variation-settings: var(--text-weight-bold);
   line-height: 1.2;
   color: var(--text-color-primary);
+  margin-bottom: var(--space-m);
 }
 
 @media screen and (max-width: 1035px) {

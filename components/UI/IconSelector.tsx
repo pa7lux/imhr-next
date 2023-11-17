@@ -10,6 +10,7 @@ import { Route } from './route-icon/route-icon';
 import { Star } from './star-icon/star-icon';
 import { Lightning } from './lightning-icon/lightning-icon';
 import { Rain } from './rain-icon/rain-icon';
+import { IsraelStar } from './israel-star-icon/israel-star-icon';
 
 type Props = {
   className?: string;
@@ -47,6 +48,9 @@ const IconSelector: FC<Props> = ({ className, icon }) => {
 
     case 'rain':
       return <Rain className={className} />;
+
+    case 'israel-star':
+      return <IsraelStar className={className} />;
 
     default:
       return <Backpack />;

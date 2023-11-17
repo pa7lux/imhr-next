@@ -6,9 +6,14 @@ import { useTranslation } from 'react-i18next';
 
 type Props = {
   author: string;
+  hasAuthor?: boolean;
 };
 
-const TextWithUnder: FC<PropsWithChildren<Props>> = ({ children, author }) => {
+const TextWithUnder: FC<PropsWithChildren<Props>> = ({
+  children,
+  author,
+  hasAuthor,
+}) => {
   const { t } = useTranslation('components');
 
   return (
@@ -20,7 +25,7 @@ const TextWithUnder: FC<PropsWithChildren<Props>> = ({ children, author }) => {
           'text-type-p mt-2'
         )}
       >
-        {t('heading')} {author}
+        {!hasAuthor && t('heading')} {author}
       </p>
     </section>
   );

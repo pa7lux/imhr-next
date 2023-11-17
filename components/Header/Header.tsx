@@ -1,10 +1,9 @@
-import { FC, useEffect } from 'react';
+import { useEffect } from 'react';
 import Link from 'next/link';
 import { withTheme } from '../../store/context/themeContext';
 import { useRouter } from 'next/router';
 import cn from 'classnames';
 import { useTranslation } from 'next-i18next';
-import { GetStaticProps } from 'next';
 
 import HeaderStyles from './Header.module.css';
 

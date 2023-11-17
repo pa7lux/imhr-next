@@ -47,7 +47,7 @@ metaOgImage: 'some link on some image'
 - `theme` - Main color which will be used on article's page. **Before writing name, ask if it exists**
 - `svg` - Picture which will be used in button on home page. **Before writing name, ask if it exists**
 - `metaTitle` - Title which will be the name for tab in browser. Mostly you need to write in this way: `'imhr.top - title'`
-- `metaDescription` - Meta description. Mostly you need to write in this way: `'I am here. Сайт, на котором подростки из Украины рассказывают свои истории.'`. Inner text depends on language for which you currently creating an article.
+- `metaDescription` - Meta description. Mostly you need to write in this way: `'I am here. Сайт, где подростки осмысляют войну и мир.'`. Inner text depends on language for which you currently creating an article.
 - `metaOgTitle` - Mostly you need to write in this way: `'imhr.top - title'`
 - `metaOgImage` - Image which will be shown as an icon for tab in browser.
 
